@@ -1,3 +1,4 @@
-/bootstrap/compiled.php
-.env.*.php
-.env.php
+public/assets/
+/vendor
+/node_modules
+.env

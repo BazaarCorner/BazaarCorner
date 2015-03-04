@@ -2,18 +2,15 @@
 
 namespace BazaarCorner;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Merchant extends Model
+class Merchants
 {
     protected $table = 'merchants';
     
-    public function fetured()
+    private $merchants;
+    
+    public function getCurrentFeatured($limit = 0)
     {
-//        return $this->table->where()->get();
-        
-        //sample
-        return [
+        $this->merchants = [
             [
                 'name' => 'HeartStrings',
                 'discount' => 60,
@@ -33,30 +30,14 @@ class Merchant extends Model
                 'shipping' => 'PH Nationwide'
             ],
         ];
+        
+        return $this->merchants;
     }
-    
-    public function findByName($name)
+        
+    public function getInfo($name)
     {
-        return $this->table->where('name', $name)->first();
-    }
-
-    /**
-     * Fetch Items model object
-     * 
-     * @return BazaarCorner\Items
-     */
-    public function items()
-    {
-        return $this->hasMany('BazaarCorner\Items');
-    }
-    
-    /**
-     * Fetch Users model object
-     * 
-     * @return BazaarCorner\User
-     */
-    public function user()
-    {
-        return $this->belongsTo('BazaarCorner\User');
+        return DB::table($this->table)
+            ->where('name','=', $name)
+            ->get();
     }
 }

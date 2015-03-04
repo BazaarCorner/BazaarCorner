@@ -3,27 +3,24 @@
 namespace BazaarCorner\Http\Helpers;
 
 use Illuminate\View\View;
-use BazaarCorner\Product;
+use BazaarCorner\Item;
 
 class ProductViewHelper
 {
-    protected $product;
+    protected $item;
     
-    public function __construct(Product $product)
+    public function __construct(Item $item)
     {
-        $this->product = $product;
+        $this->item = $item;
     }
     
     public function recentlyAdded(View $view)
     {
-        $view->with(
-            'pages',
-            array_chunk($this->product->getRecentlyAdded(), 6)
-        );
+        $view->with('pages', array_chunk($this->item->recentlyAdded(), 6));
     }
     
     public function halfPriced(View $view)
     {
-        $view->with('items', $this->product->getHalfPricedItems());
+        $view->with('items', $this->item->halfPriced());
     }
 }

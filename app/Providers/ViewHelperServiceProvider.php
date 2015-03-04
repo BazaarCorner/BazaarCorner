@@ -17,6 +17,8 @@ class ViewHelperServiceProvider extends ServiceProvider
         $this->getRecentlyAddedProducts();
         $this->getHalfPricedItems();
         $this->getFeaturedMerchants();
+        $this->getUserInfo();
+        $this->countFollowers();
     }
 
     /**
@@ -38,8 +40,7 @@ class ViewHelperServiceProvider extends ServiceProvider
             'layout.partial.head-menu',
             'BazaarCorner\Http\Helpers\MainMenuViewHelper@composeView'
         );
-    }
-    
+    }    
     
     private final function getRecentlyAddedProducts()
     {
@@ -62,6 +63,28 @@ class ViewHelperServiceProvider extends ServiceProvider
         view()->composer(
             'layout.widget.featured-merchants',
             'BazaarCorner\Http\Helpers\MerchantViewHelper@composeView'
+        );
+    }
+    
+    /**
+     * Merchant page information
+     */
+    private final function getUserInfo()
+    {
+        view()->composer(
+            'layout.widget.user-details',
+            'BazaarCorner\Http\Helpers\UserViewHelper@getInfo'
+        );
+    }
+    
+    /**
+     * Count followers
+     */
+    private final function countFollowers()
+    {
+        view()->composer(
+            'layout.widget.user-rankings',
+            'BazaarCorner\Http\Helpers\UserViewHelper@countFollowers'
         );
     }
 }

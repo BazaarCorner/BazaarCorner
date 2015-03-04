@@ -40,6 +40,7 @@
 @stop
 
 @section('inline-script')
+
 <!--<script type="text/javascript" 
         src="//cdn.jsdelivr.net/fastclick/1.0.3/fastclick.min.js">
 </script>

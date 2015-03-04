@@ -4,7 +4,7 @@
         <div class="col-sm-12 col-md-3 bazaar">
             <div class="clearfix">
                 <div class="pull-left">
-                    <img src="img/bazaar.jpg" alt="Inside Bazaar">
+                    <img src="{{asset('img/bazaar.jpg')}}">
                 </div>
                 <p class="text-nowrap">
                     <span class="text-uppercase bazaartxt">
@@ -33,7 +33,7 @@
         <div class="col-sm-12 col-md-6 logo">
             <a href="/">
                 <img class="img-responsive center-block" 
-                     src="img/logo.png" alt="logo">
+                     src="{{asset('img/logo.png')}}">
             </a>
             <p class="tagline text-center">
                 <em>
@@ -62,12 +62,17 @@
         
         <!-- signin join -->
         <div class="col-sm-12 col-md-3 signins">
+            @unless (Auth::check())
             <p class="text-uppercase">
-                <a href="/login">Sign In / Join Us</a>;
-                <!--<a href="/login">Join us</a>-->
+                <a href="{{url('auth/login')}}">Sign In</a>
+                <span>/</span>
+                <a href="{{url('auth/register')}}">Join us</a>
             </p>
+            @endunless
+            
+            @if (Auth::check())
             <!-- wishlist shopping cart -->
-<!--            <section class="wishcart">
+            <section class="wishcart">
                  <ul class="list-inline">
                     <li>
                         <a href="/wishlist">
@@ -87,9 +92,8 @@
                         </a>
                     </li>
                 </ul>
-            </section> end 
-
-             click to offer 
+            </section>
+             <!--click to offer--> 
             <section class="clickoffer">
                 <div class="clearfix">
                     <div class="pull-left">
@@ -104,7 +108,8 @@
                      </div>
                      <img src="img/offer-badge.png" alt="Offer badge">
                  </div>
-            </section> end -->
+            </section>
+            @endif
         </div><!-- end -->
     </div>
 </div>

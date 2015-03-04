@@ -135,6 +135,8 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
+        'Laravel\Socialite\SocialiteServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
 
         /**
          * Application Service Providers...
@@ -144,8 +146,7 @@ return [
         'BazaarCorner\Providers\ConfigServiceProvider',
         'BazaarCorner\Providers\EventServiceProvider',
         'BazaarCorner\Providers\RouteServiceProvider',
-        'BazaarCorner\Providers\RouteServiceProvider',
-        'BazaarCorner\Providers\ViewHelperServiceProvider'
+        'BazaarCorner\Providers\ViewHelperServiceProvider',
 
     ],
 
@@ -196,10 +197,12 @@ return [
         'URL'       => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View'      => 'Illuminate\Support\Facades\View',
+        'Form'      => 'Illuminate\Html\FormFacade',
+        'Html'      => 'Illuminate\Html\HtmlFacade',
         
         /**
          * Append Additional Facades here
          */
-        //
+        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
     ]
 ];

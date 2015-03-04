@@ -2,18 +2,21 @@
 
 namespace BazaarCorner;
 
-//use Illuminate\Database\Eloquent\Model;
-//
-//class Product extends Model {
-//
-//	//
-//
-//}
+use Illuminate\Database\Eloquent\Model;
 
-class Product
+class Item extends Model
 {
-    public function getRecentlyAdded()
+    protected $table = 'items';
+    
+    public function merchant()
     {
+        $this->belongsTo("BazaarCorner\Merchant");
+    }
+    
+    public function scopeRecentlyAdded($query)
+    {
+//        $query->where();
+        //sample output
         return [
             [
                 'name' => 'Striped Appeal',
@@ -143,9 +146,13 @@ class Product
             ]            
         ];
     }
-    
-    public function getHalfPricedItems()
+
+
+    public function halfPriced()
     {
+//        return $this->table->where('');
+        
+        //sample output
         return [
             [
                 'name' => 'Fujitsu Laptop Tablet',

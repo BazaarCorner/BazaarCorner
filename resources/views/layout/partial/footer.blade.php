@@ -9,12 +9,12 @@
                             <strong>See how <br> it works</strong>
                         </p>
                     </div>
-                    <img class="playvid" src="img/play.png" 
+                    <img class="playvid" src="{{asset('img/play.png')}}" 
                          alt="Play Bazaar video sale">
                     <br>
                     <a href="#" data-reveal-id="videoModal">
                         <div id="how-it-works">
-                            <img src="img/video.png" alt="">
+                            <img src="{{asset('img/video.png')}}" alt="">
                         </div>
                     </a>
                 </div>
@@ -72,7 +72,7 @@
                 </form>-->
                 <br><br>
                 <p><strong>Types of payment</strong></p>
-                <img src="img/payments.png" alt="Type of payments">
+                <img src="{{asset('img/payments.png')}}" alt="Type of payments">
             </div><!-- end -->
             
             <!-- copyright links -->
@@ -84,16 +84,22 @@
                     </strong>
                 </p>
                 <ul class="list-unstyled">
-                    <li><a href="/about-us">About Us</a></li>
-                    <li><a href="/get-help">Get Help</a></li>
+                    <li><a href="{{url('about-us')}}">About Us</a></li>
+                    <li><a href="{{url('get-help')}}">Get Help</a></li>
                     <li>
-                        <a href="/shipping-and-returns">Shipping and Returns</a>
+                        <a href="{{url('shipping-and-returns')}}">
+                            Shipping and Returns
+                        </a>
                     </li>
-                    <li><a href="/privacy-policy">Privacy Policy</a></li>
                     <li>
-                        <a href="/terms-and-condition">Terms and Conditions</a>
+                        <a href="{{url('privacy-policy')}}">Privacy Policy</a>
                     </li>
-                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li>
+                        <a href="{{url('terms-and-condition')}}">
+                            Terms and Conditions
+                        </a>
+                    </li>
+                    <li><a href="{{url('contact-us')}}">Contact Us</a></li>
                 </ul>
             </div><!-- end -->
         </section>
@@ -103,7 +109,10 @@
 <div id="videoModal" class="reveal-modal">
   <h2>How it Works?</h2>
   <div class="flex-video">
-    <iframe width="800" height="315" src="http://www.youtube.com/embed/IkOQw96cfyE" frameborder="0" allowfullscreen></iframe>
+    <iframe width="800" height="315" 
+            src="http://www.youtube.com/embed/IkOQw96cfyE" 
+            frameborder="0" allowfullscreen>
+    </iframe>
   </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>

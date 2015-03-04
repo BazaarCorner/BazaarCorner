@@ -15,7 +15,7 @@
 <div class="container bazaarlogins">
     <div class="row">
         <!-- welcome splash -->
-<!--        <div class="col-sm-12 col-md-7 welcome">
+        <div class="col-sm-12 col-md-7 welcome">
             <h1 id="fittext1">Welcome back! Log here</h1>
             <h4>
                 Have a Facebook or Twitter account linked to your account?
@@ -41,10 +41,8 @@
                         </a>
                     </li>
                 </ul> 
-            </section> end 
-        </div> end -->
-
-        
+            </section>
+        </div>        
 
         <!-- user login form -->
         <div class="col-sm-12 col-md-5 pull-left loginform">
@@ -53,19 +51,26 @@
             
             <div class="container-fluid">
                 <div class="row-fluid">
-                {{ Form::open(['url' => 'user/login']) }}
+                {!! Form::open(['url' => 'auth/login']) !!}
+                    @if($errors->has())
+                    <div class="alert alert-warning">
+                         @foreach($errors->all() as $error)
+                            <span class="text-danger">* {{$error}}</span><br>
+                         @endforeach
+                    </div>
+                    @endif
                     <div class="form-group">
-                        {{ Form::text(
-                            'username', //input type
+                        {!! Form::email(
+                            'email', // input type
                             '', 
-                            [
+                            [   // form style
                                 'class' => 'form-control', 
-                                'placeholder' => 'Username'
+                                'placeholder' => 'email@sample.com'
                             ]
-                        ) }}
+                        ) !!}
                     </div>
                     <div class="form-group">
-                        {{ Form::input(
+                        {!! Form::input(
                             'password', //input type
                             'password', 
                             '',
@@ -73,12 +78,17 @@
                                 'class' => 'form-control', 
                                 'placeholder' => 'Password'
                             ]
-                        ) }}
+                        ) !!}
                     </div>
                     <div class="form-group">
-                        {{ Form::submit('Login with Bazaar Corner', ['class' => 'btn btn-danger']) }}
+                        {!! Form::submit(
+                            'Login with Bazaar Corner',
+                            [
+                                'class' => 'btn btn-danger'
+                            ]
+                        ) !!}
                     </div>
-                {{ Form::close()}}
+                {!! Form::close() !!}
                 </div>                
             </div>
         </div><!-- end -->
@@ -92,13 +102,13 @@
             <div class="clearfix">
                 <div class="pull-left">
                     <img class="bazaarlogorevo" 
-                         src="img/logo-revo.png" alt="BazaarCorner logo">
+                         src="{{asset('img/logo-revo.png')}}">
                     <h1 id="fittext2">Revolutionize the way you shop!</h1>
                 </div>
 
                 <div class="pull-right">
                     <img class="revopic" 
-                         src="img/stockphoto.jpg" alt="Stock image">
+                         src="{{asset('img/stockphoto.jpg')}}">
                 </div>
             </div>
         </div><!-- end -->

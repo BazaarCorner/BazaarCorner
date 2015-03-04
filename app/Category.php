@@ -9,21 +9,13 @@ class Category extends Model
 {
     protected $table = 'categories';
     
-    public function getParentCategory()
+    /**
+     * @uses Query Scope - To append additional query logic
+     * @see http://laravel.com/docs/5.0/eloquent#query-scopes
+     * @param Query Scope $query
+     */
+    public final function scopeParentCategory($query)
     {
-        $categories = DB::select(
-            "SELECT * "
-            . "FROM {$this->table} "
-            . "WHERE "
-                . "is_active = 1 "
-                . "AND parent_id IS NULL "
-        );
-            
-        foreach ($categories AS $category) {
-            $category->slug = strtolower(str_replace(" ", "-", $category->name));
-            $main []= $category;
-        }
-
-        return $main;
+        $query->where('is_active', '=', '1')->whereNull('parent_id');
     }
 }

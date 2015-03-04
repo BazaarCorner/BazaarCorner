@@ -32,5 +32,20 @@ return [
     'stripe' => [
         'model'  => 'User',
         'secret' => '',
-    ]
+    ],
+    
+    /** 
+     * Laravel\Socialite services
+     */
+    'facebook' => [
+        'client_id' => env('FB_CLIENT_ID'),
+        'client_secret' => env('FB_CLIENT_SECRET'),
+        'redirect' => env('FB_REDIRECT')
+    ],
+    
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT')
+    ]    
 ];

@@ -1,12 +1,15 @@
-<script type="text/javascript" src="/assets/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js">
+<script type="text/javascript" 
+        src="{{asset('assets/jquery/jquery.min.js')}}">
+</script>
+<script type="text/javascript"
+        src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}">
 </script>
 
 <!--<script src="js/default.min.js"></script>-->
-<script src="js/jquery.default.reveal.min.js"></script>
+<script src="{{asset('js/jquery.default.reveal.min.js')}}"></script>
 <!--<script src="js/jquery.default.forms.min.js"></script>-->
 
-<script src="js/jquery.hoverIntent.min.js"></script>
+<script src="{{asset('js/jquery.hoverIntent.min.js')}}"></script>
 <script type="text/javascript" charset="utf-8">
     //<![CDATA[
     $(document).ready(function() {

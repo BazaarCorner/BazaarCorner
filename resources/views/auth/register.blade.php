@@ -21,7 +21,7 @@
             <br>
             <div class="container-fluid">
                 <div class="row-fluid">
-                {{ Form::open(['url' => 'user/registration']) }}
+                {!! Form::open(['url' => 'auth/register']) !!}
                     @if($errors->has())
                     <div class="alert alert-warning">
                          @foreach($errors->all() as $error)
@@ -30,17 +30,17 @@
                     </div>
                     @endif
                     <div class="form-group">
-                        {{ Form::text(
+                        {!! Form::text(
                             'username', //input type
                             '', 
                             [
                                 'class' => 'form-control', 
                                 'placeholder' => 'Username'
                             ]
-                        ) }}
+                        ) !!}
                     </div>
                     <div class="form-group">
-                        {{ Form::input(
+                        {!! Form::input(
                             'password', //input type
                             'password', 
                             '',
@@ -48,10 +48,10 @@
                                 'class' => 'form-control', 
                                 'placeholder' => 'Password'
                             ]
-                        ) }}
+                        ) !!}
                     </div>
                     <div class="form-group">
-                        {{ Form::input(
+                        {!! Form::input(
                             'password', //input type
                             'password_confirmation', 
                             '',
@@ -59,20 +59,20 @@
                                 'class' => 'form-control', 
                                 'placeholder' => 'Re-enter to confirm password'
                             ]
-                        ) }}
+                        ) !!}
                     </div>
                     <div class="form-group">
-                        {{ Form::email(
+                        {!! Form::email(
                             'email', // input type
                             '', 
                             [   // form style
                                 'class' => 'form-control', 
                                 'placeholder' => 'email@sample.com'
                             ]
-                        ) }}
+                        ) !!}
                     </div>
                     <div class="form-group">
-                        {{ Form::checkbox('agreed', true, true) }}
+                        {!! Form::checkbox('agreed', true, true) !!}
                         <span>
                             I agree with the 
                             <a href="/terms-and-condition" target="_blank">
@@ -81,9 +81,11 @@
                         </span>
                     </div>
                     <div class="form-group">
-                        {{ Form::submit('Join Bazaar!', ['class' => 'btn btn-danger']) }}
+                        {!! Form::submit(
+                            'Join Bazaar!', ['class' => 'btn btn-danger']
+                        ) !!}
                     </div>
-                {{ Form::close()}}
+                {!! Form::close() !!}
                 </div>
             </div>
         </div><!-- end -->
@@ -124,14 +126,13 @@
             <div class="clearfix">
                 <div class="pull-left">
                     <img class="bazaarlogorevo" 
-                         src="img/logo-revo.png" 
-                         alt="BazaarCorner logo">
+                         src="{{asset('img/logo-revo.png')}}"
                     <h1 id="fittext2">Join & Shop on Bazaar Community<h1>
                 </div>
 
                 <div class="pull-right">
                     <img class="revopic" 
-                         src="img/stockphoto02.jpg" alt="Stock image 02">
+                         src="{{asset('img/stockphoto02.jpg')}}">
                 </div>
             </div>
         </div><!-- end -->

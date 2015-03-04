@@ -33,4 +33,14 @@ class User extends Model
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+    
+    public function followers()
+    {
+        return $this->hasMany('BazaarCorner\Follower', 'user_id');
+    }
+    
+    public function merchant()
+    {
+        return $this->hasOne('BazaarCorner\Merchant');
+    }
 }

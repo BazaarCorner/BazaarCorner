@@ -40,7 +40,7 @@
                          width:400px; 
                          position: 
                          relative;bottom:9px">
-                        <img src="/img/modules/inside-bazaar-model.png" 
+                        <img src="{{asset('img/modules/inside-bazaar-model.png')}}" 
                              style="width:400px; 
                              position: relative" />
                         <!--<a href="#"></a>-->

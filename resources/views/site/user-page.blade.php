@@ -25,23 +25,16 @@
     <div class="row">
         <div class="col-md-3">
             <div class="row">
-                @include('layout.site.widget.user-details')
+                @include('layout.widget.user-details')
             </div>
             <div class="row">
-                @include('layout.site.widget.user-rankings')
+                @include('layout.widget.user-rankings')
             </div>
             <div class="row">
-                @include('layout.site.widget.user-feedback')
+                @include('layout.widget.user-feedback')
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="row">
-                @include('layout.site.widget.user-banner')
-            </div>
-            <div class="row">
-                @include('layout.site.user-item-listing')
-            </div>
-        </div>
+        
     </div>
 </div>
 @stop

@@ -18,3 +18,11 @@ Route::get('/get-help', 'PageController@getHelp');
 Route::get('privacy-policy', 'PageController@privacyPolicy');
 Route::get('terms-and-condition', 'PageController@termsAndCondition');
 Route::get('shipping-and-returns', 'PageController@shippingAndReturns');
+
+Route::get('/{username}', 'UserController@index');
+
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);

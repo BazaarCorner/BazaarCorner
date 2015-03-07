@@ -1,16 +1,29 @@
 <section class="searchbar">
-<form method="POST" action="">
-    <div class="form-group">
-        <div class="input-group">
-            <em>
-                <input type="text" class="form-control"
-                       placeholder="Clothing, Decor, Travel etc.">
-            </em>
-            <span class="input-group-btn">
-                <input type="submit" class="btn btn-default"
-                       value="Search Here">
-            </span>
+    {!! Form::open(['url' => '/item/search', 'method' => 'get']) !!}
+        @if($errors->has())
+        <div class="alert alert-warning">
+             @foreach($errors->all() as $error)
+                <span class="text-danger">&nbsp;*&nbsp;{{$error}}</span>                            
+             @endforeach
         </div>
-    </div>
-</form>
-</section><!-- end -->
+        @endif
+
+        <div class="form-group">
+            <div class="input-group">
+                <em>
+                    {!! Form::text(
+                        'q',
+                        '',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'What product you have in mind?'
+                        ]
+                    ) !!}
+                </em>
+                <span class="input-group-btn">
+                    {!! Form::submit('Check if available!', ['class' => 'btn btn-default']) !!}
+                </span>
+            </div>
+        </div>
+    {!! Form::close() !!}
+</section>

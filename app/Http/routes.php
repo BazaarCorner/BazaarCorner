@@ -30,7 +30,5 @@ Route::controllers([
     'password' => 'Auth\PasswordController'
 ]);
 
-
-Route::get('/test/blade', function(){
-    return view('tests.index');
-});
+Route::get('/item/info', 'ProductDetailsController@index');
+Route::get('/item/search', 'SearchController@index');

@@ -29,3 +29,8 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
+
+
+Route::get('/test/blade', function(){
+    return view('tests.index');
+});

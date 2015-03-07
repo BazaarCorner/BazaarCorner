@@ -36,3 +36,8 @@
   </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
+
+@section('footer-inline-script')    
+<script type="text/javascript" src="{{asset('js/jquery.default.reveal.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bazaarcorner/video.footer.js')}}"></script>
+@stop

@@ -70,3 +70,8 @@
         </div>
     </div>
 </div>
+
+@section('header-inline-script')
+<script type="text/javascript" src="{{asset('js/jquery.hoverIntent.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bazaarcorner/menu.main.js')}}"></script>
+@stop

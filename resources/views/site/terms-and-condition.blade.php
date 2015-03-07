@@ -240,5 +240,5 @@
 </div>
 @stop
 
-@section('inline-script')
+@section('content-inline-script')
 @stop

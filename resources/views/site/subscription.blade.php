@@ -17,7 +17,7 @@
 </div>
 @stop
 
-@section('inline-script')
+@section('content-inline-script')
 <script type="text/javascript">
     $(document).ready(function() {
         window.setTimeout(

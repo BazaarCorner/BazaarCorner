@@ -54,7 +54,7 @@ $link_rel_type = 'rel=stylesheet type=text/css';
 </div>
 @stop
 
-@section('inline-script')
+@section('content-inline-script')
     <!--<script src="{{asset('js/default.min.js')}}"></script>-->
     <script src="js/app.js"></script>
     <script src="js/default4.min.js"></script>

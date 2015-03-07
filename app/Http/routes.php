@@ -29,3 +29,6 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
+
+Route::get('/item/info', 'ProductDetailsController@index');
+Route::get('/item/search', 'SearchController@index');

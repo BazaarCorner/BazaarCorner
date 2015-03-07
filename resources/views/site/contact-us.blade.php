@@ -33,8 +33,5 @@ serve you. </p>
 </div>
 @stop
 
-@section('inline-script')
-<!--<script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.3/fastclick.min.js"></script>
-<script type="text/javascript" src="/js/jquery.fittext.js"></script>
-<script type="text/javascript" src="/js/script.js"></script>-->
+@section('content-inline-script')
 @stop

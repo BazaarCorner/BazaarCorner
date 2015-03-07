@@ -39,4 +39,4 @@
 </div>
 @stop
 
-@section('inline-script') @stop
+@section('content-inline-script') @stop

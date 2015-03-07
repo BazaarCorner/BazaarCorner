@@ -126,7 +126,7 @@
             <div class="clearfix">
                 <div class="pull-left">
                     <img class="bazaarlogorevo" 
-                         src="{{asset('img/logo-revo.png')}}"
+                         src="{{asset('img/logo-revo.png')}}">
                     <h1 id="fittext2">Join & Shop on Bazaar Community<h1>
                 </div>
 

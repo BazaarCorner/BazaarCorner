@@ -12,14 +12,17 @@
 */
 
 Route::get('/', 'PageController@index');
-Route::get('/about-us', 'PageController@aboutUs');
-Route::get('/contact-us', 'PageController@contactUs');
-Route::get('/get-help', 'PageController@getHelp');
+Route::get('about-us', 'PageController@aboutUs');
+Route::get('contact-us', 'PageController@contactUs');
+Route::get('get-help', 'PageController@getHelp');
 Route::get('privacy-policy', 'PageController@privacyPolicy');
 Route::get('terms-and-condition', 'PageController@termsAndCondition');
 Route::get('shipping-and-returns', 'PageController@shippingAndReturns');
+Route::post('subscribe', 'PageController@subscribe');
 
 Route::get('/{username}', 'UserController@index');
+
+Route::get('/shop-by/{category}', 'ShopController@index');
 
 
 Route::controllers([

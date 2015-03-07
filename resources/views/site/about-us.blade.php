@@ -105,5 +105,4 @@
 </div>
 @stop
 
-@section('inline-script')
-@stop
+@section('inline-script') @stop

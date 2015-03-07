@@ -17,8 +17,6 @@ class ViewHelperServiceProvider extends ServiceProvider
         $this->getRecentlyAddedProducts();
         $this->getHalfPricedItems();
         $this->getFeaturedMerchants();
-        $this->getUserInfo();
-        $this->countFollowers();
     }
 
     /**
@@ -37,7 +35,7 @@ class ViewHelperServiceProvider extends ServiceProvider
     private final function getMainMenu()
     {
         view()->composer(
-            'layout.partial.head-menu',
+            'widget.navigation.header.menu',
             'BazaarCorner\Http\Helpers\MainMenuViewHelper@composeView'
         );
     }    
@@ -45,7 +43,7 @@ class ViewHelperServiceProvider extends ServiceProvider
     private final function getRecentlyAddedProducts()
     {
         view()->composer(
-            'layout.widget.recently-added-products',
+            'widget.item.recently-added',
             'BazaarCorner\Http\Helpers\ProductViewHelper@recentlyAdded'
         );
     }
@@ -53,7 +51,7 @@ class ViewHelperServiceProvider extends ServiceProvider
     private final function getHalfPricedItems()
     {
         view()->composer(
-            'layout.widget.half-price-tag',
+            'widget.item.half-price-tag',
             'BazaarCorner\Http\Helpers\ProductViewHelper@halfPriced'
         );
     }
@@ -61,30 +59,8 @@ class ViewHelperServiceProvider extends ServiceProvider
     private final function getFeaturedMerchants()
     {
         view()->composer(
-            'layout.widget.featured-merchants',
+            'widget.merchant.featured',
             'BazaarCorner\Http\Helpers\MerchantViewHelper@composeView'
-        );
-    }
-    
-    /**
-     * Merchant page information
-     */
-    private final function getUserInfo()
-    {
-        view()->composer(
-            'layout.widget.user-details',
-            'BazaarCorner\Http\Helpers\UserViewHelper@getInfo'
-        );
-    }
-    
-    /**
-     * Count followers
-     */
-    private final function countFollowers()
-    {
-        view()->composer(
-            'layout.widget.user-rankings',
-            'BazaarCorner\Http\Helpers\UserViewHelper@countFollowers'
         );
     }
 }

@@ -3,61 +3,18 @@
         <!-- inside bazaar -->
         <div class="col-sm-12 col-md-3 bazaar">
             <div class="clearfix">
-                <div class="pull-left">
-                    <img src="{{asset('img/bazaar.jpg')}}">
-                </div>
-                <p class="text-nowrap">
-                    <span class="text-uppercase bazaartxt">
-                        Check out the <em>coolest</em> 
-                        <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        Items this season
-                    </span>
-                    <br> &nbsp; &nbsp;
-<!--                    <span class="bazaarmediumtxt">
-                        <a href="#" target="">
-                            <u>Inside Bazaar</u>
-                            <span class="glyphicon glyphicon-play"
-                                  aria-hidden="true">
-                            </span>
-                        </a>
-                    </span>-->
-                </p>
+                @include('widget.banner.inside-bazaar')
                 <!-- bazaar collection links -->
                 <section class="bazaarcollection"">
-                    @include('layout.partial.head-menu')
+                    @include('widget.navigation.header.menu')
                 </section><!-- end -->
             </div>
         </div><!-- end -->
-
-        <!-- logo -->
+        <!-- logo and search form -->
         <div class="col-sm-12 col-md-6 logo">
-            <a href="/">
-                <img class="img-responsive center-block" 
-                     src="{{asset('img/logo.png')}}">
-            </a>
-            <p class="tagline text-center">
-                <em>
-                    Your #1 Social E-Commerce. Revolutionize the way you shop
-                </em>
-            </p>
-
+            @include('widget.site-logo')
             <!-- search bar -->
-            <section class="searchbar">
-            <form method="POST" action="">
-                <div class="form-group">
-                    <div class="input-group">
-                        <em>
-                            <input type="text" class="form-control"
-                                   placeholder="Clothing, Decor, Travel etc.">
-                        </em>
-                        <span class="input-group-btn">
-                            <input type="submit" class="btn btn-default"
-                                   value="Search Here">
-                        </span>
-                    </div>
-                </div>
-            </form>
-            </section><!-- end -->
+            @include('widget.search.site')
         </div><!-- end -->
         
         <!-- signin join -->
@@ -110,6 +67,6 @@
                  </div>
             </section>
             @endif
-        </div><!-- end -->
+        </div>
     </div>
 </div>

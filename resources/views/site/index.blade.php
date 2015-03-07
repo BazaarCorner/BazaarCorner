@@ -17,33 +17,26 @@
     <div class="row" style="padding-bottom: 50px;">
         <div class="col-md-9 col-sm-9">
             <div class="container-fluid" style="padding-bottom: 30px;">
-                <div class="row"> @include('layout.widget.banner') </div>
+                <div class="row"> @include('widget.banner.index-page') </div>
             </div>
             <div class="row">
-                 @include('layout.widget.recently-added-products') 
+                 @include('widget.item.recently-added') 
             </div>
         </div>
         <div class="col-md-3 col-sm-3">
             <div class="container-fluid">                
                 <div class="row">
-                     @include('layout.widget.featured-merchants') 
+                     @include('widget.merchant.featured') 
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            @include('layout.widget.half-price-tag')
+            @include('widget.item.half-price-tag')
         </div>
     </div>
 </div>
 @stop
 
-@section('inline-script')
-
-<!--<script type="text/javascript" 
-        src="//cdn.jsdelivr.net/fastclick/1.0.3/fastclick.min.js">
-</script>
-<script type="text/javascript" src="/js/jquery.fittext.js"></script>
-<script type="text/javascript" src="/js/script.js"></script>-->
-@stop
+@section('inline-script') @stop

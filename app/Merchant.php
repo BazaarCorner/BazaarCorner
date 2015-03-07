@@ -34,11 +34,11 @@ class Merchant extends Model
             ],
         ];
     }
-    
-    public function findByName($name)
-    {
-        return $this->table->where('name', $name)->first();
-    }
+//    
+//    public function findByName($name)
+//    {
+//        return $this->table->where('name', $name)->first();
+//    }
 
     /**
      * Fetch Items model object
@@ -58,5 +58,25 @@ class Merchant extends Model
     public function user()
     {
         return $this->belongsTo('BazaarCorner\User');
+    }
+    
+    /** 
+     * Fetch merchant followers
+     * 
+     * @return BazaarCorner\MerchantFollowers
+     */
+    public function followers()
+    {
+        return $this->hasMany('BazaarCorner\MerchantFollower', 'user_id');
+    }
+    
+    public function orders()
+    {
+        return $this->hasMany('BazaarCorner\Order', 'merchant_id');
+    }
+    
+    public function feedback()
+    {
+        return $this->hasMany('BazaarCorner\MerchantFeedback', 'merchant_id');
     }
 }

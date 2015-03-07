@@ -7,4 +7,4 @@
     rel="stylesheet" type="text/css">
 <link href="{{asset('css/style.css')}}" media="screen" rel="stylesheet" type="text/css">
 
-@section('head-link') @show
+@yield('head-link')

@@ -3,7 +3,6 @@
 namespace BazaarCorner;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Category extends Model
 {
@@ -17,5 +16,10 @@ class Category extends Model
     public final function scopeParentCategory($query)
     {
         $query->where('is_active', '=', '1')->whereNull('parent_id');
+    }
+    
+    public function brand()
+    {
+        return $this->hasMany('BazaarCorner\BrandCategory', 'category_id');
     }
 }

@@ -2,6 +2,9 @@
 
 namespace BazaarCorner\Http\Controllers;
 
+use BazaarCorner\Http\Requests\SiteSubscriptionRequest;
+use BazaarCorner\Subscriber;
+
 class PageController extends Controller
 {
     public function index()
@@ -37,5 +40,13 @@ class PageController extends Controller
     public function shippingAndReturns()
     {
         return view('site.shipping-and-returns');
+    }
+    
+    public function subscribe(
+        SiteSubscriptionRequest $request,
+        Subscriber $subscriber
+    ) {
+        $subscriber->create($request->all());
+        return view('site.subscription');
     }
 }

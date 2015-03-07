@@ -9,7 +9,7 @@
             </dl>
         </div>
     </div>
-    <div class="row-fluid">
+    <div class="row">
         <!-- 1st ROW START -->
         <div class="row">
             <div class="col-md-3" style="margin-bottom: 30px">
@@ -18,15 +18,15 @@
                     <div class="col-sm-6 col-xs-6"><div class="ribbon-discount user-product"><span class="spanq3">60%</span> <span class="spanq4">OFF</span></div></div>
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-xs-3"><a href="#" class="favorite-button user-product">favorite</a></div>
-                            <div class="col-xs-9"><a href="#" class="share-button user-product">Share</a></div>
+<!--                            <div class="col-xs-3"><a href="#" class="favorite-button user-product">favorite</a></div>
+                            <div class="col-xs-9"><a href="#" class="share-button user-product">Share</a></div>-->
                         </div>
                     </div>
                 </div>
                 <div class="user-product">
-                    Item Image 
+                    
                     <span class="ItemImage">
-                        <img src="img/items/BALENCIAGA-CLASSIC-VELO.jpg" class="img-shadow" />
+                        <img src="{{asset('img/items/BALENCIAGA-CLASSIC-VELO.jpg')}}" class="img-shadow" />
                     </span>
                     <div class="ItemAction">
                         <div class="wrap"></div>
@@ -59,13 +59,13 @@
                     <div class="col-sm-6 col-xs-6"><div class="ribbon-discount user-product"><span class="spanq3">60%</span> <span class="spanq4">OFF</span></div></div>
                     <div class="col-sm-6 col-xs-6">
                         <div class="row">
-                            <div class="col-xs-3"><a href="#" class="favorite-button user-product">favorite</a></div>
-                            <div class="col-xs-9"><a href="#" class="share-button user-product">Share</a></div>
+<!--                            <div class="col-xs-3"><a href="#" class="favorite-button user-product">favorite</a></div>
+                            <div class="col-xs-9"><a href="#" class="share-button user-product">Share</a></div>-->
                         </div>
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/Bag-Shoulder-CANDEM-Abbacino-Bags-8360.jpg" class="img-shadow" />
                         </span>
@@ -100,13 +100,13 @@
                     <div class="col-sm-6 col-xs-6"><div class="ribbon-discount user-product hide"><span class="spanq3">60%</span> <span class="spanq4">OFF</span></div></div>
                     <div class="col-sm-6 col-xs-6">
                         <div class="row">
-                            <div class="col-xs-3"><a href="#" class="favorite-button user-product">favorite</a></div>
-                            <div class="col-xs-9"><a href="#" class="share-button user-product">Share</a></div>
+<!--                            <div class="col-xs-3"><a href="#" class="favorite-button user-product">favorite</a></div>
+                            <div class="col-xs-9"><a href="#" class="share-button user-product">Share</a></div>-->
                         </div>
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1094.jpg" class="img-shadow" />
                         </span>
@@ -147,7 +147,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1259.jpg" class="img-shadow" />
                         </span>
@@ -193,7 +193,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1136.jpg" class="img-shadow" />
                         </span>
@@ -234,7 +234,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1245.jpg" class="img-shadow" />
                         </span>
@@ -275,7 +275,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1276.jpg" class="img-shadow" />
                         </span>
@@ -316,7 +316,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1348.jpg" class="img-shadow" />
                         </span>
@@ -362,7 +362,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1246.jpg" class="img-shadow" />
                         </span>
@@ -403,7 +403,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1365.jpg" class="img-shadow" />
                         </span>
@@ -444,7 +444,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1260.jpg" class="img-shadow" />
                         </span>
@@ -485,7 +485,7 @@
                     </div>
                 </div>
                 <div class="user-product">
-                         Item Image 
+                         
                         <span class="ItemImage">
                             <img src="img/items/IMG_1340.jpg" class="img-shadow" />
                         </span>

@@ -18,7 +18,7 @@ class User extends Model
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'bazaarusers';
 
     /**
      * The attributes that are mass assignable.
@@ -42,5 +42,10 @@ class User extends Model
     public function merchant()
     {
         return $this->hasOne('BazaarCorner\Merchant');
+    }
+    
+    public function orders()
+    {
+        return $this->hasMany('BazaarCorner\Order', 'user_id');
     }
 }

@@ -8,7 +8,6 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T7N3HT');</script>
     <!-- End Google Tag Manager -->
-
 <?php endif; ?>
 
-@section('head-script') @show
+@yield('head-script')

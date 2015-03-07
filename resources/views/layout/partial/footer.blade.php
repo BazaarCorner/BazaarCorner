@@ -3,109 +3,29 @@
         <section class="bazaarfoos">
             <!-- video playback -->
             <div class="col-sm-12 col-md-3 foo1">
-                <div class="clearfix">
-                    <div class="pull-left">
-                        <p class="text-uppercase">
-                            <strong>See how <br> it works</strong>
-                        </p>
-                    </div>
-                    <img class="playvid" src="{{asset('img/play.png')}}" 
-                         alt="Play Bazaar video sale">
-                    <br>
-                    <a href="#" data-reveal-id="videoModal">
-                        <div id="how-it-works">
-                            <img src="{{asset('img/video.png')}}" alt="">
-                        </div>
-                    </a>
-                </div>
+                @include('widget.video.footer')
             </div><!-- end -->
-
+            
             <!-- stay connected -->
             <div class="col-sm-12 col-md-3 foo2">
-                <p><strong>Stay Connected</strong></p>
-                <div class="clearfix">
-                    <div class="pull-left">
-                        <ul class="soc">
-                            <li>
-                                <a class="soc-facebook"
-                                   href=
-                                   "https://www.facebook.com/BazaarCorner2012"
-                                   target="_blank"
-                                >
-                                </a>
-                            </li>
-                            <li>
-                                <a class="soc-twitter soc-icon-last"
-                                   href="https://twitter.com/bazaarcorner"
-                                   target="_blank"
-                                >    
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <p class="text-nowrap">bazaarcorner</p><br>
-                    <p class="text-nowrap">#bazaarcorner</p>
-                </div>
+                @include('widget.site-social-links')
             </div><!-- end -->
 
             <!-- get updates -->
             <div class="col-sm-12 col-md-3 foo3">
-<!--                <p>
-                    <strong>
-                        Get updates direct to your
-                        <span class="text-uppercase">email</span>
-                    </strong>
-                </p>
-                <form method="POST" action="">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <em>
-                                <input type="text" class="form-control" 
-                                       placeholder="Enter your email here...">
-                            </em>
-                            <span class="input-group-btn">
-                                <input type="submit" class="btn btn-default"
-                                       value="Submit">
-                            </span>
-                        </div>
-                    </div>
-                </form>-->
-                <br><br>
-                <p><strong>Types of payment</strong></p>
-                <img src="{{asset('img/payments.png')}}" alt="Type of payments">
+                @include('widget.site-subscription')
+                @include('widget.payment-types')
             </div><!-- end -->
             
             <!-- copyright links -->
             <div class="col-sm-12 col-md-3 foo4">
-                <p>
-                    <strong>
-                        &COPY; Bazaar Corner 2012 - 
-                        <?php echo date('Y'); ?> <br> All rights reserved.
-                    </strong>
-                </p>
-                <ul class="list-unstyled">
-                    <li><a href="{{url('about-us')}}">About Us</a></li>
-                    <li><a href="{{url('get-help')}}">Get Help</a></li>
-                    <li>
-                        <a href="{{url('shipping-and-returns')}}">
-                            Shipping and Returns
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{url('privacy-policy')}}">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="{{url('terms-and-condition')}}">
-                            Terms and Conditions
-                        </a>
-                    </li>
-                    <li><a href="{{url('contact-us')}}">Contact Us</a></li>
-                </ul>
+                @include('widget.site-footer-links')
             </div><!-- end -->
         </section>
     </div>
 </div>
 
+<!-- hidden -->
 <div id="videoModal" class="reveal-modal">
   <h2>How it Works?</h2>
   <div class="flex-video">

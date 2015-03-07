@@ -1,21 +1,29 @@
+<?php
+$meta_name = "description";
+$meta_content = "Your top-1 Social E-Commerce. Revolutionize the way you shop";
+$meta_title = "BazaarCorner. Your top-1 Social E-Commerce."
+    . " Revolutionize the way you shop";
+
+$page_title = "Bazaar Corner";
+
+$link_rel_type = 'rel=stylesheet type=text/css';
+?>
+
 @extends('layout.site')
 
 @section('meta-name')
-    <meta name="description" 
-          content="Your top-1 Social E-Commerce. Revolutionize the way you shop"
-    >
+    <meta name="{{$meta_name}}" content="{{$meta_content}}">
 @stop
 
 @section('page-title')
-    <title>Bazaar Corner</title>
-    <meta 
-        title="BazaarCorner. Your top-1 Social E-Commerce.
-            Revolutionize the way you shop">
+    <title>{{$page_title}}</title>
+    <meta title="{{$meta_title}}">
 @stop
 
 @section('head-link')
-    <link rel="stylesheet" href="css/normalize.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.min.css" media="all" />
+    <link {{$link_rel_type}} href="{{asset('css/normalize.min.css')}}" />
+    <link  
+          href="css/jquery.jscrollpane.min.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/etalage.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.override.css">
 @stop
@@ -23,30 +31,31 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-3">
             <div class="row">
-                @include('layout.widget.user-details')
+                @include('widget.user.details')
             </div>
             <div class="row">
-                @include('layout.widget.user-rankings')
+                @include('widget.user.rankings')
             </div>
             <div class="row">
-                @include('layout.widget.user-feedback')
+                @include('widget.user.feedback')
             </div>
         </div>
-        
+        <div class="col-lg-9 col-md-9">
+            <div class="row">
+                @include('widget.user.banner')
+            </div>
+            <div class="row-fluid">
+                @include('profile.partial.item-listing')
+            </div>
+        </div>
     </div>
 </div>
 @stop
 
 @section('inline-script')
-    <script>
-        document.write('<script src=js/vendor/' +
-        ('__proto__' in {} ? 'zepto.min' : 'jquery') +
-        '.js><\/script>')
-    </script>
-    <script src="js/default.min.js"></script>
-    <!--<script src="assets/jquery/jquery.js"></script>-->
+    <!--<script src="{{asset('js/default.min.js')}}"></script>-->
     <script src="js/app.js"></script>
     <script src="js/default4.min.js"></script>
     <script src="js/jquery.default.reveal.min.js"></script>
@@ -69,10 +78,6 @@
             });
         });
     </script>
-<!--RECENT FEEDBACKS END-->
-
-
-<!--FACESCROLL START-->
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/facescroll/jquery.ui.touch-punch.min.js"></script>
@@ -89,7 +94,6 @@
 		$('.feedback-scroll').alternateScroll({ 'vertical-bar-class': 'styled-h-bar', 'hide-bars': false });	
 	})
 </script>
-<!--FACESCROLL END-->
 
 <script src="js/jquery.etalage.min.js"></script>
 <script>

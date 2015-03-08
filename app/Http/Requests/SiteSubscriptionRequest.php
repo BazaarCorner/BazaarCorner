@@ -4,6 +4,11 @@ use BazaarCorner\Http\Requests\Request;
 
 class SiteSubscriptionRequest extends Request
 {
+    public function __construct()
+    {
+        $this->setErrorBag('subscription');
+    }
+    
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -22,7 +27,7 @@ class SiteSubscriptionRequest extends Request
     public function rules()
     {
         return [
-            'email' => 'required|email|unique:subscribers'
+            'subscription_email' => 'required|email|unique:subscribers,email'
         ];
     }
 }

@@ -46,7 +46,8 @@ class PageController extends Controller
         SiteSubscriptionRequest $request,
         Subscriber $subscriber
     ) {
-        $subscriber->create($request->all());
+        $subscriber->create(['email'=> $request->subscription_email]);
+        
         return view('site.subscription');
     }
 }

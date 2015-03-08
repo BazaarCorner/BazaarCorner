@@ -5,6 +5,11 @@ use Illuminate\Validation\Validator;
 
 class SearchRequest extends Request
 {
+    public function __construct()
+    {
+        $this->setErrorBag('search');
+    }
+    
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -27,13 +32,13 @@ class SearchRequest extends Request
         ];
     }
     
-    protected function formatErrors(Validator $validator)
+    public function formatErrors(Validator $validator)
     {
         return $validator->getCustomMessages();
     }
     
     public function messages()
     {
-        return ["You can try looking for Clothing, Decor, or Travel"];
+        return ['q.required' => "You can try looking for Clothing, Decor, or Travel"];
     }
 }

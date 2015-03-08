@@ -5,20 +5,19 @@
     </strong>
 </p>
 
-{!! Form::open(['url' => '/subscribe']) !!}
-    @if($errors->has())
+{!! Form::open(['url' => '/subscribe', 'name'=> 'subscribe']) !!}
+    @if($errors->getBag('subscription')->has())
     <div class="alert alert-warning">
-         @foreach($errors->all() as $error)
+         @foreach($errors->getBag('subscription')->all() as $error)
             <span class="text-danger">&nbsp;*&nbsp;{{$error}}</span>                            
          @endforeach
     </div>
-    @endif
-    
+    @endif    
     <div class="form-group">
         <div class="input-group">
             <em>
                 {!! Form::email(
-                    'email',
+                    'subscription_email',
                     '',
                     [
                         'class' => 'form-control',

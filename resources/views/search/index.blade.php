@@ -7,7 +7,7 @@
         @include('shop.partial.sidebar-banner')
     </div>
     <div class="col-lg-9 col-md-9">
-        <h1>Look what we have found for: &QUOT;{{$term}}&QUOT;</h1>
+        <h1>Look what we have in store for: &QUOT;{{$term}}&QUOT;</h1>
     </div>
 </div>
 @stop

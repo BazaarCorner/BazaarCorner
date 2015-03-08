@@ -7,12 +7,12 @@
             </div><!-- end -->
             
             <!-- stay connected -->
-            <div class="col-sm-12 col-md-3 foo2">
+            <div class="col-sm-12 col-md-2 foo2">
                 @include('widget.site-social-links')
             </div><!-- end -->
 
             <!-- get updates -->
-            <div class="col-sm-12 col-md-3 foo3">
+            <div class="col-sm-12 col-md-4 foo3">
                 @include('widget.site-subscription')
                 @include('widget.payment-types')
             </div><!-- end -->

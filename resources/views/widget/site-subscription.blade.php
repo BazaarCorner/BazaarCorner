@@ -26,7 +26,7 @@
                 ) !!}
             </em>
             <span class="input-group-btn">
-                {!! Form::submit('Submit', ['class' => 'btn btn-default']) !!}
+                {!! Form::submit('Notify Me!', ['class' => 'btn btn-default']) !!}
             </span>
         </div>
     </div>

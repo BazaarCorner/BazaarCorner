@@ -1,27 +1,27 @@
-<div class="container bazaarfoo">
-    <div class="row">
-        <section class="bazaarfoos">
-            <!-- video playback -->
-            <div class="col-sm-12 col-md-3 foo1">
-                @include('widget.video.footer')
-            </div><!-- end -->
-            
-            <!-- stay connected -->
-            <div class="col-sm-12 col-md-2 foo2">
-                @include('widget.site-social-links')
-            </div><!-- end -->
+<div class="col-lg-3 col-md-3">
+    <div class="row-fluid">
+        @include('widget.video.footer')
+    </div>
+</div>
 
-            <!-- get updates -->
-            <div class="col-sm-12 col-md-4 foo3">
-                @include('widget.site-subscription')
-                @include('widget.payment-types')
-            </div><!-- end -->
-            
-            <!-- copyright links -->
-            <div class="col-sm-12 col-md-3 foo4">
+<div class="col-lg-9 col-md-9">
+    <div class="row-fluid">
+        <div class="col-lg-2 col-md-2">
+            @include('widget.site-social-links')
+        </div>
+        <div class="col-lg-10 col-md-10">
+            <div class="row">
+                <div class="col-lg-5 col-md-5">
+                    @include('widget.payment-types')
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    @include('widget.site-subscription')
+                </div>
+            </div>
+            <div class="row text-right">
                 @include('widget.site-footer-links')
-            </div><!-- end -->
-        </section>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -37,7 +37,20 @@
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
+
+<?php
+    $scripts = [
+        'js/jquery.default.reveal.min.js',
+        'js/bazaarcorner/video.footer.js',
+        
+        /**
+         * Append required scripts here
+         */
+    ];
+?>
+
 @section('footer-inline-script')    
-<script type="text/javascript" src="{{asset('js/jquery.default.reveal.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/bazaarcorner/video.footer.js')}}"></script>
+    @foreach($scripts as $script)
+        <script type="text/javascript" src="{{asset($script)}}"></script>
+    @endforeach
 @stop

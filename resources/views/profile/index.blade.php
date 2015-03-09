@@ -46,9 +46,7 @@ $link_rel_type = 'rel=stylesheet type=text/css';
             <div class="row">
                 @include('widget.user.banner')
             </div>
-            <div class="row-fluid">
-                @include('profile.partial.item-listing')
-            </div>
+           
         </div>
     </div>
 </div>

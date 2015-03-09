@@ -33,14 +33,14 @@
 </div>
 <div class="divider"><br><hr></div>
 <div class="row">
-        <div class="col-md-12">
-            <nav>
-                <ul class="pagination">
-                    <li><a href="#" class="page-active">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#" aria-label="Next">Next</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="col-md-12">
+        <nav>
+            <ul class="pagination">
+                <li><a href="#" class="page-active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#" aria-label="Next">Next</a></li>
+            </ul>
+        </nav>
     </div>
+</div>

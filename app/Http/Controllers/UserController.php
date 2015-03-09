@@ -37,7 +37,7 @@ class UserController extends Controller
         return view('profile.index', $this->data);
     }
     
-    
+
     /**
      * Validate if User or Merchant data exists
      * 

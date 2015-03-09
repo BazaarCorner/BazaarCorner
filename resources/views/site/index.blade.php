@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <div class="half-price">
-                <img src="img/half_price_shop.png">
+                <img src="{{asset('img/half_price_shop.png')}}">
                 <a class="pull-right view-more" href="/item/search?q=half+priced">
                     SHOP NOW 
                     <span class="glyphicon glyphicon-play" aria-hidden="true"></span>

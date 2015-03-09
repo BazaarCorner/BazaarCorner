@@ -146,8 +146,7 @@ return [
         'BazaarCorner\Providers\ConfigServiceProvider',
         'BazaarCorner\Providers\EventServiceProvider',
         'BazaarCorner\Providers\RouteServiceProvider',
-        'BazaarCorner\Providers\ViewHelperServiceProvider',
-        'BazaarCorner\Providers\UserProfileServiceProvider',
+        'BazaarCorner\Providers\ViewHelperServiceProvider'
     ],
 
     /*

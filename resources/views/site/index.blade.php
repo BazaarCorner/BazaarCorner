@@ -25,9 +25,10 @@
         </div>
         <div class="col-md-3 col-sm-3">
             <div class="container-fluid">                
-                <div class="row">
-                     @include('widget.merchant.featured') 
-                </div>
+                <div class="row"> @include('widget.merchant.featured') </div>
+                <div class="row"> @include('widget.item.most-bought') </div>
+                <br>
+                <div class="row"> @include('widget.item.top-brand') </div>
             </div>
         </div>
     </div>

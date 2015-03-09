@@ -33,8 +33,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            @include('widget.item.half-price-tag')
+        <div class="col-sm-12 col-md-12">
+            <div class="half-price">
+                <img src="img/half_price_shop.png">
+                <a class="pull-right view-more" href="/item/search?q=half+priced">
+                    SHOP NOW 
+                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="row-fluid">
+                @include('widget.item.half-price-tag')
+            </div>
         </div>
     </div>
 </div>

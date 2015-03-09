@@ -36,7 +36,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-7">
-                                    <span class="text-right pull-right" style="color: cornsilk;">
+                                    <!-- cornsilk -->
+                                    <span class="text-right pull-right" style="color: #C11B17;">
                                         <!-- item name -->
                                         Donec ut augue quis sem
                                     </span>

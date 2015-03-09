@@ -1,6 +1,6 @@
 <div class="col-sm-12 col-md-12">
     <h4 class="pull-left"><strong>Recently Added Stuff</strong></h4>
-    <a class="pull-right view-more" href="/products/recently-added">
+    <a class="pull-right view-more" href="/item/search?q=new">
         View More
         <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
     </a>

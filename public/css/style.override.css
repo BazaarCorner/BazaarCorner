@@ -92,7 +92,7 @@ width:100%;height: 65px;background-color: #ededed
 .add-to-wishlist           { background: url(../img/buttons/add-to-wishlist.png) no-repeat 0 0; display: block; width: 115px; height:33px;text-indent: -9999px;  }
 .add-to-wishlist:hover     { background-position: 0 -33px; cursor: pointer }
 /*BUTTONS END*/
-.ribbon-discount         { background: url(../img/icons/ribbon-discount.png) no-repeat 0 0; display: block; width: 110px; height:33px !important; padding:7px 0px 0px 4px }
+.ribbon-discount         { background: url(../img/icons/ribbon-discount.png) no-repeat 0 0; display: block; width: 110px; height:33px !important; padding:7px 0px 0px 4px; }
 .ribbon-discount span    { font-family: arial,sans-serif; color: white; 
 text-shadow: 1px 2px 2px #000000; }
 .ribbon-discount.user-product { position: relative; left: -10px}

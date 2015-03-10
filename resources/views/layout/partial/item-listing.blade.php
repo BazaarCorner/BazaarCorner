@@ -25,11 +25,14 @@
     </div>
 </div>
 <div class="divider"><hr><br></div>
-<div class="row">
-    <div class="col-md-12">
-        @include('widget.item.product-profile')
-        <div class="clearfix"></div>
-    </div>
+<div class="row-fluid">    
+    @for ($i=1; $i <= 12; $i++)
+        <div class=" col-lg-3 col-md-3" style="padding: 5px;">
+            @include('widget.item.product-profile')
+        </div>
+    @endfor
+    <div class="clearfix"></div>
+    
 </div>
 <div class="divider"><br><hr></div>
 <div class="row">

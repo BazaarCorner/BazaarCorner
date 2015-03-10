@@ -1,5 +1,5 @@
 <section class="searchbar">
-    {!! Form::open(['url' => '/item/search', 'method' => 'get', 'name'=> 'search']) !!}
+    {!! Form::open(['route' => 'serp', 'method' => 'get', 'name'=> 'search']) !!}
         @if($errors->getBag('search')->has())
         <div class="alert alert-warning">
              @foreach($errors->getBag('search')->all() as $error)

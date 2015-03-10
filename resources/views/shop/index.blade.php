@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/normalize.min.css')}}" />
     <link href="{{asset('css/jquery.jscrollpane.min.css')}}" media="all" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/etalage.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.override.css')}}">
+    <!--<link rel="stylesheet" type="text/css" href="{{asset('css/style.override.css')}}">-->
 @stop
 
 @section('content')

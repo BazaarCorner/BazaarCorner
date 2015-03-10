@@ -23,11 +23,11 @@ class UserController extends Controller
      * 
      * @return View
      */
-    public function index()
+    public function index($username)
     {
-        $this->data['user']     = $this->getInfo();
+        $this->data['user']     = $this->getInfo($username);
         $this->data['filters']  = $this->filters();
-        
+
         //TO DO
         $this->data['followers']  = $this->countFollowers();
         $this->data['items_sold']    = $this->itemSold();
@@ -41,12 +41,11 @@ class UserController extends Controller
     /**
      * Validate if User or Merchant data exists
      * 
+     * @param string username
      * @return User | Merchant
      */
-    private function getInfo()
-    {
-        $username = str_slug($this->request->getPathInfo(), '/');
-        
+    private function getInfo($username)
+    {   
         if ($merchant = Merchant::where('username', $username)->first()) {
             
             $merchant->age = $this->getAge($merchant->birthdate);
@@ -107,10 +106,10 @@ class UserController extends Controller
         
         switch ($sort_by) {
             case 'all':
-            case 'popularity':
-            case 'most-recent':
-            case 'most-bought':
-            case 'discounts':
+//            case 'popularity':
+//            case 'most-recent':
+//            case 'most-bought':
+//            case 'discounts':
                 //DO NOTHING
                 break;
             default :
@@ -124,26 +123,26 @@ class UserController extends Controller
                 'url'       => $this->request->getPathInfo().'?sort-by=all',
                 'name'      => 'All'
             ],
-            [
-                'active' => ($sort_by === 'popularity')? true : false,
-                'url'   => $this->request->getPathInfo().'?sort-by=popularity',
-                'name'      => 'Popularity'
-            ],
-            [
-                'active' => ($sort_by === 'most-recent')? true : false,
-                'url'   => $this->request->getPathInfo().'?sort-by=most-recent',
-                'name'      => 'Most Recent'
-            ],
-            [
-                'active' => ($sort_by === 'most-bought')? true : false,
-                'url'   => $this->request->getPathInfo().'?sort-by=most-bought',
-                'name'      => 'Most Bought'
-            ],
-            [
-                'active' => ($sort_by === 'discounts')? true : false,
-                'url'   => $this->request->getPathInfo().'?sort-by=discounts',
-                'name'      => 'Discounts'
-            ],
+//            [
+//                'active' => ($sort_by === 'popularity')? true : false,
+//                'url'   => $this->request->getPathInfo().'?sort-by=popularity',
+//                'name'      => 'Popularity'
+//            ],
+//            [
+//                'active' => ($sort_by === 'most-recent')? true : false,
+//                'url'   => $this->request->getPathInfo().'?sort-by=most-recent',
+//                'name'      => 'Most Recent'
+//            ],
+//            [
+//                'active' => ($sort_by === 'most-bought')? true : false,
+//                'url'   => $this->request->getPathInfo().'?sort-by=most-bought',
+//                'name'      => 'Most Bought'
+//            ],
+//            [
+//                'active' => ($sort_by === 'discounts')? true : false,
+//                'url'   => $this->request->getPathInfo().'?sort-by=discounts',
+//                'name'      => 'Discounts'
+//            ],
         ];
         
 //        $profile = $this->getUser();

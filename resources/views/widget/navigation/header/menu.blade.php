@@ -8,7 +8,7 @@
                     <ul class="menu-category">                       
                         @foreach($main_category as $category)
                         <li>
-                            <a href="/shop-by/{{$category->slug}}">
+                            <a href="{{route('shops',$category->slug)}}">
                                 {{$category->name}}
                             </a>
                         </li>

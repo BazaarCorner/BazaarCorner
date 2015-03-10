@@ -25,7 +25,7 @@ $link_rel_type = 'rel=stylesheet type=text/css';
     <link  
           href="css/jquery.jscrollpane.min.css" media="all" />
     <link rel="stylesheet" type="text/css" href="css/etalage.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.override.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.override.css">-->
 @stop
 
 @section('content')
@@ -46,7 +46,9 @@ $link_rel_type = 'rel=stylesheet type=text/css';
             <div class="row">
                 @include('widget.user.banner')
             </div>
-           
+            <div class="row-fluid">
+                @include('profile.partial.item-listing')
+            </div>
         </div>
     </div>
 </div>

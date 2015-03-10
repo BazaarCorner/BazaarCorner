@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', 'PageController@index');
-Route::get('about-us', 'PageController@aboutUs');
-Route::get('contact-us', 'PageController@contactUs');
-Route::get('get-help', 'PageController@getHelp');
-Route::get('privacy-policy', 'PageController@privacyPolicy');
-Route::get('terms-and-condition', 'PageController@termsAndCondition');
-Route::get('shipping-and-returns', 'PageController@shippingAndReturns');
-Route::post('subscribe', 'PageController@subscribe');
+Route::get('/', ['as' => 'home', 'uses' => 'PageController@index']);
+Route::get('about-us/', ['as' => 'about', 'uses' => 'PageController@aboutUs']);
+Route::get('contact-us/', ['as' => 'contact', 'uses' => 'PageController@contactUs']);
+Route::get('get-help/', ['as' => 'help', 'uses' => 'PageController@getHelp']);
+Route::get('privacy-policy/', ['as' => 'policy', 'uses' => 'PageController@privacyPolicy']);
+Route::get('terms-and-condition/', ['as' => 'terms', 'uses'=> 'PageController@termsAndCondition']);
+Route::get('shipping-and-returns/', ['as' => 'shipping', 'uses' => 'PageController@shippingAndReturns']);
+Route::post('subscribe/', ['as' => 'subscription', 'uses' => 'PageController@subscribe']);
 
 /**
  * Filter parameters would be the following:
@@ -29,7 +29,7 @@ Route::post('subscribe', 'PageController@subscribe');
  * ?sort-by=most-bought - Popular/Most Ordered
  * ?sort-by=discounted  - %-off
  */
-Route::get('/{username}', 'UserController@index');
+Route::get('/{user}', ['as' => 'profile', 'uses' => 'UserController@index']);
 
 /**
  * @todo After User page implementation
@@ -42,16 +42,17 @@ Route::get('/{username}', 'UserController@index');
  * ?sort-by=most-bought - Popular/Most Ordered
  * ?sort-by=discounts  - %-off
  */
-Route::get('/shop-by/{category}', 'ShopController@index');
+Route::get('shop-by/{category}', ['as' => 'shops', 'uses' => 'ShopController@index']);
+
+/**
+ * @todo SERP implementation
+ */
+Route::get('item/info', ['as' => 'product-page', 'uses' => 'ProductDetailsController@index']);
+Route::get('item/search', ['as' => 'serp', 'uses' => 'SearchController@index']);
+
 
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
-
-/**
- * @todo SERP implementation
- */
-Route::get('/item/info', 'ProductDetailsController@index');
-Route::get('/item/search', 'SearchController@index');

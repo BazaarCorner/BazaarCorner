@@ -1,4 +1,6 @@
-<?php namespace BazaarCorner\Http\Requests;
+<?php
+
+namespace BazaarCorner\Http\Requests;
 
 use BazaarCorner\Http\Requests\Request;
 use Illuminate\Validation\Validator;

@@ -1,69 +1,52 @@
-<div class="col-sm-12 col-md-12">
-    <h4 class="pull-left"><strong>Recently Added Stuff</strong></h4>
-    <a class="pull-right view-more" href="/item/search?q=new">
-        View More
-        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-    </a>
-</div>
+<div class="row-fluid" style="padding: 5px">
 
-<div class="col-sm-12 col-md-4 ">
-    <div class="item-wrap-recent">
-        <img class="img-responsive" src="img/recent_stuff/roku_headset.jpg">
-        <div class="item-price" >
-            <span class="item-name">Roku Headphones Headset</span>
-            <span class="current-price">&#36;22080</span>
-            <span class="last-price">&#36;35 tag price</span>
-        </div>
-    </div>
-</div>
-
-<div class="col-sm-12 col-md-8 r-padding">
-    <div id="added-item" class="carousel-ind carousel slide"
-         data-ride="carousel">                
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            @foreach($pages as $products => $items)
-                <div class="item @if($products == 0) active @endif">
-                    <div class="row">
-                        @foreach($items as $item)
-                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                <div class="item-wrap">
-                                    <a href="/product/{{$item['name']}}">
-                                        <div class="item-price">
-                                            <span class="item-name">
-                                                {{$item['name']}}
-                                            </span>
-                                            <span class="item-name">
-                                                &#36;{{$item['current_price']}}
-                                            </span>
-                                            <span class="item-name">
-                                                &#36;{{$item['last_price']}}
-                                                tag price
-                                            </span>
+@for ($i=0; $i < 6; $i++)
+<div class="col-lg-4 col-md-4">
+    <div id="product-holder" class="img-thumbnail">
+        <div id="item-container">           
+            <div class="row-fluid" style="border: solid 1px silver">
+                <div id="image-holder">
+                    <img src="{{asset('img/recent_stuff/roku_headset.jpg')}}" class="img-center img-responsive">
+                </div>                
+                <div style="width: 100%; height:inherit; position: relative; background-color: black; opacity: 0.9;">
+                    <div class="row-fluid">
+                        <div class="container-fluid" style="text-wrap: inherit; font-size-adjust: inherit;">
+                            <div class="row">
+                                <div class="col-md-5 col-xs-12 col-sm-12">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <!--this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
+                                            <span class="text-warning" style="color: #FFFFFF">$2,000,000.00</span>
                                         </div>
-                                        <img class="img-responsive" 
-                                             src="{{$item['logo']}}">
-                                    </a>
+                                        <div class="col-xs-12">
+                                            <span class="text-muted discount" style="text-decoration: line-through;">$35,000,000.00</span>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-xs-12 col-sm-12">
+                                     <!--cornsilk--> 
+                                    <span class="text-right pull-right" style="color: #C11B17;">
+                                         <!--item name--> 
+                                        Donec ut augue quis sem
+                                    </span>
                                 </div>
                             </div>
-                        @endforeach
-                        <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
+                    <div class="divider"><hr></div>
+                    <div id="brand" class="row-fluid text-center">
+                             <!--brand name--> 
+                            <h6 class="text-uppercase" style="color: #FF4500">Art Collective - with long brand name</h6>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-            @endforeach
+            </div>
         </div>
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <?php $keys = array_keys($pages); ?>
-            @foreach($keys as $key)
-                <li data-target="#added-item" 
-                    data-slide-to="<?php echo $key;?>"
-                    @if($key == 0)
-                        class ="active"
-                    @endif
-                    >
-                </li>            
-            @endforeach
-        </ol>
+        <div class="clearfix"></div>
     </div>
+</div>
+@endfor
+
+<div class="clearfix"></div>
 </div>

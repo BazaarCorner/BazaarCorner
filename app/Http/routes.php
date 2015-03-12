@@ -21,18 +21,6 @@ Route::get('shipping-and-returns/', ['as' => 'shipping', 'uses' => 'PageControll
 Route::post('subscribe/', ['as' => 'subscription', 'uses' => 'PageController@subscribe']);
 
 /**
- * Filter parameters would be the following:
- * 
- * ?sort-by=all         - Default
- * ?sort-by=popularity  - Popular/Most Liked/With good feedback
- * ?sort-by=most-recent - Newly added products
- * ?sort-by=most-bought - Popular/Most Ordered
- * ?sort-by=discounted  - %-off
- */
-Route::get('/{user}', ['as' => 'profile', 'uses' => 'UserController@index']);
-
-/**
- * @todo After User page implementation
  * 
  * Filter parameters would be the following:
  * 
@@ -42,15 +30,28 @@ Route::get('/{user}', ['as' => 'profile', 'uses' => 'UserController@index']);
  * ?sort-by=most-bought - Popular/Most Ordered
  * ?sort-by=discounts  - %-off
  */
-Route::get('shop-by/{category}', ['as' => 'shops', 'uses' => 'ShopController@index']);
+Route::get('shop-by/{category?}', ['as' => 'shops', 'uses' => 'ShopController@index']);
+
+
+/**
+ * Filter parameters would be the following:
+ * 
+ * @todo After Shops page implementation
+ * 
+ * ?sort-by=all         - Default
+ * ?sort-by=popularity  - Popular/Most Liked/With good feedback
+ * ?sort-by=most-recent - Newly added products
+ * ?sort-by=most-bought - Popular/Most Ordered
+ * ?sort-by=discounted  - %-off
+ */
+Route::get('/{user}', ['as' => 'profile', 'uses' => 'UserController@index']);
+
 
 /**
  * @todo SERP implementation
  */
 Route::get('item/info', ['as' => 'product-page', 'uses' => 'ProductDetailsController@index']);
 Route::get('item/search', ['as' => 'serp', 'uses' => 'SearchController@index']);
-
-
 
 Route::controllers([
     'auth' => 'Auth\AuthController',

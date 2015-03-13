@@ -42,7 +42,7 @@ class PageController extends Controller
         return view('site.shipping-and-returns');
     }
     
-    public function subscribe(
+    public function subscribe (
         SiteSubscriptionRequest $request,
         Subscriber $subscriber
     ) {

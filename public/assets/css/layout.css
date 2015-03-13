@@ -1,0 +1,85 @@
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic);
+
+body {
+    width: 100%; 
+    height: 100%;
+    background-color: #f6f6f6;
+}
+
+hr {
+   display: block;
+   position: relative;
+   padding: 0;
+   margin: 1px auto;
+   height: 0;
+   width: 100%;
+   max-height: 0;
+   line-height: 0;
+   clear: both;
+   border: none;
+   opacity: 0.2;
+   border-bottom: 1px solid silver;
+}
+
+#site {
+    background-color: #fff;
+    box-shadow: 0px 2px 3px silver;
+}
+
+#site .row {
+    padding-bottom: 10px;
+}
+
+#site-footer {
+    border-top: 1px solid chocolate;
+    background-color: #f6f6f6;
+}
+
+#site-header, #site-footer {
+    padding-top: 20px;
+}
+
+
+#site-footer .copyright{
+    color: grey;
+}
+
+#site-footer .list-inline a {
+    color: black;
+}
+
+#site-footer .list-inline a:hover {
+    color: red;
+}
+
+#site-footer a:hover {
+    text-decoration: none;
+}
+
+#site-footer a, a:link  {
+    color: gray;
+    text-decoration: none;
+}
+
+#site-footer .fa-facebook-square:hover {
+    color: #0073ea;
+}
+
+#site-footer .fa-twitter-square:hover {
+    color: #00b3ee;
+}
+
+#site-footer .fa-instagram:hover {
+    color: chocolate;
+}
+
+#site-footer .fa-pinterest-square:hover {
+    color: red;
+}
+
+.footer-border-bottom {
+    background: #CC0033; 
+    color: #fff; 
+    padding: 5px 0px;
+}

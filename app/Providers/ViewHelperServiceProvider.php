@@ -14,9 +14,6 @@ class ViewHelperServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->getMainMenu();
-        $this->getRecentlyAddedProducts();
-        $this->getHalfPricedItems();
-        $this->getFeaturedMerchants();
     }
 
     /**
@@ -35,32 +32,8 @@ class ViewHelperServiceProvider extends ServiceProvider
     private final function getMainMenu()
     {
         view()->composer(
-            'widget.navigation.header.menu',
+            'layout.widgets.store-menu',
             'BazaarCorner\Http\Helpers\MainMenuViewHelper@composeView'
-        );
-    }    
-    
-    private final function getRecentlyAddedProducts()
-    {
-        view()->composer(
-            'widget.item.recently-added',
-            'BazaarCorner\Http\Helpers\ProductViewHelper@recentlyAdded'
-        );
-    }
-    
-    private final function getHalfPricedItems()
-    {
-        view()->composer(
-            'widget.item.half-price-tag',
-            'BazaarCorner\Http\Helpers\ProductViewHelper@halfPriced'
-        );
-    }
-    
-    private final function getFeaturedMerchants()
-    {
-        view()->composer(
-            'widget.merchant.featured',
-            'BazaarCorner\Http\Helpers\MerchantViewHelper@composeView'
         );
     }
 }

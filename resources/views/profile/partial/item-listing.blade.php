@@ -1,1 +1,0 @@
-@extends('layout.partial.item-listing')

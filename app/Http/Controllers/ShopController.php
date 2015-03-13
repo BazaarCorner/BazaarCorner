@@ -3,7 +3,7 @@
 namespace BazaarCorner\Http\Controllers;
 
 use Illuminate\Http\Request;
-use BazaarCorner\ShopCategory;
+use BazaarCorner\BazaarCategory;
 
 class ShopController extends Controller
 {
@@ -22,7 +22,7 @@ class ShopController extends Controller
         $this->data['filters']  = $this->filters();
         $this->data['store_categories'] = $this->getCategories($category);
         
-        return view('shop.index', $this->data);
+        return view('site.store', $this->data);
     }
     
     /**
@@ -33,7 +33,7 @@ class ShopController extends Controller
      */
     private function getCategories($category)
     {
-        $shop = ShopCategory::where('is_active', true);
+        $shop = BazaarCategory::where('is_active', true);
         
         if (empty($category)) {
             
@@ -55,8 +55,7 @@ class ShopController extends Controller
             $sort_by = 'all';
         } else {
             $sort_by = strtolower($this->request->get('sort-by'));
-        }
-        
+        }        
         
         switch ($sort_by) {
             case 'all':

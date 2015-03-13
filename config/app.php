@@ -135,8 +135,8 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-        'Laravel\Socialite\SocialiteServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
+//        'Laravel\Socialite\SocialiteServiceProvider',
 
         /**
          * Application Service Providers...
@@ -202,6 +202,6 @@ return [
         /**
          * Append Additional Facades here
          */
-        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+//        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
     ]
 ];

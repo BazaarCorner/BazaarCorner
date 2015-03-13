@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
+use BazaarCorner\ProductCategory;
+
 abstract class AbstractTableSeeder extends Seeder
 {
     protected $table;
@@ -49,6 +51,7 @@ class DatabaseSeeder extends Seeder
         $this->call('BazaarCategoryTableSeeder');
         $this->call('CategoryTableSeeder');
         $this->call('MainCategoryTableSeeder');
+        $this->call('BrandTableSeeder');
         
 //        $this->call('ProductStoreCategoryTableSeeder');        
 //        $this->call('ProductSubcategoryTableSeeder');
@@ -134,7 +137,7 @@ class MainCategoryTableSeeder extends AbstractTableSeeder
 }
 
 
-use BazaarCorner\ProductCategory;
+
 
 class ProductStoreCategoryTableSeeder extends AbstractTableSeeder
 {
@@ -197,8 +200,50 @@ class SubcategoryTableSeeder extends AbstractTableSeeder
 }
 
 
-use BazaarCorner\ProductCategory;
-use BazaarCorner\Subcategory;
+class BrandTableSeeder extends AbstractTableSeeder
+{
+    protected $table = 'brands';
+    
+    protected function insertRows()
+    {
+        return [
+            ['name'=>'Ray Ban', 'slug'=>'ray_ban', 'is_active'=>true, 'image' => 'assets/img/sample/logo/ray-ban.jpg'],
+            ['name'=>'Alchemist London', 'slug'=>'alchemist_london', 'is_active'=>true, 'image' => 'assets/img/sample/logo/Alchemist-London.gif'],
+            ['name'=>'Ambiance Design', 'slug'=>'ambiance_design', 'is_active'=>true, 'image' => 'assets/img/sample/logo/Ambiance-Design.gif'],
+            ['name'=>'Bee Charming', 'slug'=>'bee_charming', 'is_active'=>true, 'image' => 'assets/img/sample/logo/Bee-Charming.gif'],
+            ['name'=>'BOSS', 'slug'=>'boss', 'is_active'=>true, 'image' => 'assets/img/sample/logo/boss.jpg'],
+            ['name'=>'Chanel', 'slug'=>'chanel', 'is_active'=>true, 'image' => 'assets/img/sample/logo/chanel.jpg'],
+            ['name'=>'Fuzzy Ink', 'slug'=>'fuzzy_ink', 'is_active'=>true, 'image' => 'assets/img/sample/logo/Fuzzy-Ink.gif'],
+            ['name'=>'Good Art HLYWD', 'slug'=>'good_art_hlywd', 'is_active'=>true, 'image' => 'assets/img/sample/logo/Good-Art-HLYWD.gif'],
+            ['name'=>'Hearts', 'slug'=>'hearts', 'is_active'=>true, 'image' => 'assets/img/sample/logo/Hearts.gif'],
+            ['name'=>'Heartstrings', 'slug'=>'heartstrings', 'is_active'=>true, 'image' => 'assets/img/sample/logo/heartstrings.png'],
+            ['name'=>'Jet Setter', 'slug'=>'jetsetter', 'is_active'=>true, 'image' => 'assets/img/sample/logo/jetsetter.gif'],
+            ['name'=>'Louis Vuitton', 'slug'=>'louis_vuitton', 'is_active'=>true, 'image' => 'assets/img/sample/logo/louis-vuitton.jpg'],
+            ['name'=>'Nike', 'slug'=>'nike', 'is_active'=>true, 'image' => 'assets/img/sample/logo/nike.jpg'],
+            ['name'=>'Paul Smith', 'slug'=>'paul_smith', 'is_active'=>true, 'image' => 'assets/img/sample/logo/paul-smith.jpg'],
+            ['name'=>'Paul Prada', 'slug'=>'prada', 'is_active'=>true, 'image' => 'assets/img/sample/logo/prada.jpg'],
+        ];
+    }
+}
+
+
+class MerchantTableSeeder extends AbstractTableSeeder
+{
+    protected $table = 'merchants';
+    
+    protected function insertRows()
+    {
+        return [
+            ['name'=>"21dgrs",'username'=>'21dgrs','password'=>Hash::make('password')],
+            ['name'=>"25togo Design",'username'=>'25togo_design','password'=>Hash::make('password')],
+            ['name'=>"2Flamingos",'username'=>'2flamingos','password'=>Hash::make('password')],
+            ['name'=>"2times",'username'=>'2times','password'=>Hash::make('password')],
+            ['name'=>"3 D Intelligent Interior",'username'=>'3_d_intelligent_interior','password'=>Hash::make('password')],
+        ];
+    }
+}
+
+
 class ProductSubcategoryTableSeeder extends AbstractTableSeeder
 {
     protected $table = 'product_subcategories';
@@ -210,7 +255,7 @@ class ProductSubcategoryTableSeeder extends AbstractTableSeeder
 }
 
 
-class BrandTableSeeder extends AbstractTableSeeder
+class BrandsTableSeeder extends AbstractTableSeeder
 {
     protected $table = 'brands';
     
@@ -424,7 +469,7 @@ class BrandTableSeeder extends AbstractTableSeeder
 }
 
 
-class MerchantTableSeeder extends AbstractTableSeeder
+class MerchantsTableSeeder extends AbstractTableSeeder
 {
     protected $table = 'merchants';
     

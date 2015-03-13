@@ -3,7 +3,7 @@
 namespace BazaarCorner\Http\Helpers;
 
 use Illuminate\View\View;
-use BazaarCorner\ShopCategory;
+use BazaarCorner\BazaarCategory;
 
 class MainMenuViewHelper implements ViewHelperAwareInterface
 {
@@ -14,6 +14,6 @@ class MainMenuViewHelper implements ViewHelperAwareInterface
      */
     public function composeView(View $view)
     {
-        $view->with('stores', ShopCategory::where('is_active', true)->get());
+        $view->with('stores', BazaarCategory::where('is_active', true)->get());
     }
 }

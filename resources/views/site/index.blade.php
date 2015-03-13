@@ -17,16 +17,10 @@
     <div class="row" style="padding-bottom: 10px;">        
         <div class="col-lg-3 col-md-3">
             <div class="container-fluid">                
-<<<<<<< HEAD
-                <div class="row"> @include('widget.merchant.featured') </div>
-                <div class="row"> @include('widget.item.most-bought') </div>                
-                <!--<div class="row"> @include('widget.item.top-brand') </div>-->
-=======
                 <!--<div class="row"> include('widget.merchant.featured') </div>-->
                 <!--<div class="row"> include('widget.item.most-bought') </div>-->
-                <br>
                 <!--<div class="row"> include('widget.item.top-brand') </div>-->
->>>>>>> fix-layout
+                <div class="clearfix"></div>
             </div>
         </div>
         

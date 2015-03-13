@@ -26,22 +26,11 @@
     </div>
 </div>
 <div class="divider"><hr><br></div>
-<<<<<<< HEAD:resources/views/layout/partial/item-listing.blade.php
-<div class="row-fluid">    
-    @for ($i=1; $i <= 12; $i++)
-        <div class=" col-lg-3 col-md-3" style="padding: 5px;">
-            @include('widget.item.product-profile')
-        </div>
-    @endfor
-    <div class="clearfix"></div>
-    
-=======
 <div class="row">
     <div class="col-md-12">
         @include('layout.widgets.product-profiler')
         <div class="clearfix"></div>
     </div>
->>>>>>> fix-layout:resources/views/site/partial/item-listing.blade.php
 </div>
 <div class="divider"><br><hr></div>
 <div class="row">

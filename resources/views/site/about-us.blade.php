@@ -16,8 +16,8 @@
 @stop
 
 @section('content')
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
+    <div class="row-fluid">
         <h1>About Us</h1>
         <p>
             Bazaar Corner is an virtual market place where people and merchants
@@ -26,7 +26,7 @@
             amazing taste on the coolest products.
         </p>
     </div>
-    <div class="row">
+    <div class="row-fluid">
         <h1>We love to connect merchants and consumers</h1>
         <p>
             Our main mission is to revolutionize they way people shop online,

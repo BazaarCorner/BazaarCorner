@@ -13,6 +13,12 @@ class ShoppingCategory extends Model
     
     public function bazaarCategory()
     {
-        return $this->belongsTo('BazzarCorner\BazaarCategory');
+        return $this->belongsToMany('BazzarCorner\BazaarCategory');
+    }
+    
+    public function mainCategory()
+    {
+        return $this->hasMany('BazaarCorner\MainCategory')
+            ->where('is_active', true)->get();
     }
 }

@@ -1,4 +1,15 @@
-<ul id="menu">
+<ul class="menu-category list-inline">
+    @foreach($stores as $store)
+    <li>
+        <a href="{{route('shops',[$store->slug])}}">
+            {{$store->name}}
+        </a>
+    </li>
+    @endforeach
+</ul>
+
+
+<!--<ul id="menu">
     <li class="mega" style="box-shadow: 1px 2px 5px silver; display: block; padding: 5px 0px;">
         <div class="row-fluid text-center">
             <h4><a href="{{route('shops')}}">Store Category&nbsp;&nbsp;<span class="caret"></span></a></h4>
@@ -16,7 +27,7 @@
                         </li>
                         @endforeach
                     </ul>
-                </div>
+                </div>-->
 <!--                <div class="col-md-4 col-sm-4">
                     <ul class="menu-other" style="margin-top: 10px">
                         <li>
@@ -48,7 +59,7 @@
                         <a href="#"></a>
                     </div>
                 </div>-->
-          </div>
+<!--          </div>
         </div>
     </li>
-</ul>
+</ul>-->

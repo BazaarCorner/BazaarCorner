@@ -1,13 +1,62 @@
 <div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3">
+            <a href="/">
+                <img class="img-responsive img-center" width="inherit"
+                     src="{{asset('assets/img/site/logo.png')}}">
+            </a>
+        </div>
+        <div class="col-lg-9 col-md-9 center-block">
+            <div class="row">
+                <div class="col-lg-7 col-md-7">
+                    @include('layout.widgets.search')
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <div class="col-md-6"> BASKET </div>
+                    <div class="col-md-6"> MY WISHLIST </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid" style="font-size: 13px">
+        <!--<span class="text-capitalize">SHOP BY <i class="caret"></i></span>-->
+        @include('layout.widgets.store-menu')
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
     <div class="col-lg-3 col-md-3">
         <div class="row">
-            <!--include('widget.banner.inside-bazaar')-->
+            include('widget.banner.inside-bazaar')
         </div>
         <div class="row">
-            <!-- bazaar collection links -->
+             bazaar collection links 
             <section class="bazaarcollection"">
-                @include('layout.widgets.store-menu')
-            </section><!-- end -->
+                include('layout.widgets.store-menu')
+            </section> end 
         </div>
     </div>
     
@@ -19,10 +68,10 @@
             </a>
         </div>
         <div>
-            <!-- search bar -->
+             search bar 
              @include('layout.widgets.search')
         </div>    
-    </div>
+    </div>-->
     <!--
     <div class="col-lg-3 col-md-3">
         <div class="row">
@@ -64,4 +113,4 @@
             <img src="{{asset('img/offer-badge.png')}}">
         </div>
     </div>-->
-</div>
+<!--</div>-->

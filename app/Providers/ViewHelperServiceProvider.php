@@ -13,7 +13,7 @@ class ViewHelperServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->getMainMenu();
+        $this->getAvailableShops();
     }
 
     /**
@@ -29,7 +29,7 @@ class ViewHelperServiceProvider extends ServiceProvider
     /**
      * Get top level Categories as main menu
      */
-    private final function getMainMenu()
+    private final function getAvailableShops()
     {
         view()->composer(
             'layout.widgets.store-menu',

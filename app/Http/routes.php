@@ -18,6 +18,7 @@ Route::get('get-help/', ['as' => 'help', 'uses' => 'PageController@getHelp']);
 Route::get('privacy-policy/', ['as' => 'policy', 'uses' => 'PageController@privacyPolicy']);
 Route::get('terms-and-condition/', ['as' => 'terms', 'uses'=> 'PageController@termsAndCondition']);
 Route::get('shipping-and-returns/', ['as' => 'shipping', 'uses' => 'PageController@shippingAndReturns']);
+
 Route::post('subscribe/', ['as' => 'subscription', 'uses' => 'PageController@subscribe']);
 
 /**
@@ -30,8 +31,7 @@ Route::post('subscribe/', ['as' => 'subscription', 'uses' => 'PageController@sub
  * ?sort-by=most-bought - Popular/Most Ordered
  * ?sort-by=discounts  - %-off
  */
-Route::get('shop-by/{category?}', ['as' => 'shops', 'uses' => 'ShopController@index']);
-
+Route::get('shops/{store?}/{category?}', ['as' => 'shops', 'uses' => 'ShopController@index']);
 
 /**
  * Filter parameters would be the following:

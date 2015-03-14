@@ -2,14 +2,14 @@
 <div class="row">
     <div class="col-md-7" style="padding-top: 10px;">
         <span style="float: left; margin-top: 10px;">Sort by:</span>
-        <ul class="sortby">
+        <ul class="list-inline sortby">
             @foreach($filters as $filter)
                 <li role="presentation" 
                     @if($filter['active'])
                         class="active"
                     @endif
                 >
-                    <a href="{{$filter['url']}}">{{$filter['name']}}</a>
+                    <a href="{{url($filter['url'])}}">{{$filter['name']}}</a>
                 </li>
             @endforeach
         </ul>

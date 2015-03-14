@@ -10,9 +10,9 @@ class CreateShoppingCategoriesTable extends Migration
         Schema::create('shopping_categories', function(Blueprint $table)
         {
             $table->string('store_id');
-            $table->integer('category_id')->unsigned();
-            $table->text('bazzar_category_id');
-            $table->boolean('is_active')->default(true);
+            $table->integer('main_category_id')->unsigned();
+            $table->string('store_shopping_category_id');
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

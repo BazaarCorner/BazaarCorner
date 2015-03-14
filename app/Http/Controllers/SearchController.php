@@ -3,6 +3,7 @@
 namespace BazaarCorner\Http\Controllers;
 
 use BazaarCorner\Http\Requests\SearchRequest;
+use Illuminate\Http\Request;
 
 /**
  * Search sequence
@@ -15,14 +16,22 @@ use BazaarCorner\Http\Requests\SearchRequest;
 class SearchController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return Response
+     * THIS METHOD IS REQUIRED, DO NOT REMOVE.
+     * 
+     * @param Request $request
      */
+    public function __construct(Request $request)
+    {
+        parent::__construct($request);
+    }    
+    
     public function index(SearchRequest $request)
     {
         $term = $request->get('q');
-        return view('search.index', ['term' => $term]);
+        
+        $this->data['term'] = $term;
+        
+        return view('site.serp', $this->data);
     }
     
     protected function getPageFilters()

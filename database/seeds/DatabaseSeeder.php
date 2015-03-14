@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 use BazaarCorner\ProductCategory;
+use BazaarCorner\MainCategory;
 
 abstract class AbstractTableSeeder extends Seeder
 {
@@ -51,6 +52,9 @@ class DatabaseSeeder extends Seeder
         $this->call('BazaarCategoryTableSeeder');
         $this->call('CategoryTableSeeder');
         $this->call('MainCategoryTableSeeder');
+        $this->call('ShoppingCategoryTableSeeder');
+        
+        
         $this->call('BrandTableSeeder');
         
 //        $this->call('ProductStoreCategoryTableSeeder');        
@@ -73,20 +77,20 @@ class BazaarCategoryTableSeeder extends AbstractTableSeeder
     protected function insertRows()
     {
         return [
-            ['store_id'=>'BC01', 'name'=>'Arts and Design', 'slug'=>'arts_and_design', 'is_active'=> false],
-            ['store_id'=>'BC02', 'name'=>'Automobiles, Boats and Airplanes', 'slug'=>'automobiles-comma-_boats_and_airplanes', 'is_active'=> false],
-            ['store_id'=>'BC03', 'name'=>'Pampered Kids', 'slug'=>'pampered_kids', 'is_active'=> false],
-            ['store_id'=>'BC04', 'name'=>'Books and Media', 'slug'=>'books_and_media', 'is_active'=> false],
-            ['store_id'=>'BC05', 'name'=>'DIY (Do it yourself)', 'slug'=>'do_it_yourself', 'is_active'=> false],
-            ['store_id'=>'BC06', 'name'=>'Fashion', 'slug'=>'fashion', 'is_active'=> false],
-            ['store_id'=>'BC06-100', 'name'=>'Fashion Men', 'slug'=>'fashion', 'is_active'=> true],
-            ['store_id'=>'BC06-200', 'name'=>'Fashion Women', 'slug'=>'fashion', 'is_active'=> true],
-            ['store_id'=>'BC06-300', 'name'=>'Fashion Kids', 'slug'=>'fashion', 'is_active'=> false],
-            ['store_id'=>'BC07', 'name'=>'Gadgets and Electronics', 'slug'=>'gadgets_and_electronics', 'is_active'=> false],
-            ['store_id'=>'BC08', 'name'=>'Homewares', 'slug'=>'homewares', 'is_active'=> false],
-            ['store_id'=>'BC09', 'name'=>'Toys', 'slug'=>'toys', 'is_active'=> false],
-            ['store_id'=>'BC10', 'name'=>'Sporting Equipment', 'slug'=>'sporting_equipment', 'is_active'=> false],
-            ['store_id'=>'BC11', 'name'=>'Travel and Tours', 'slug'=>'travel_and_tours', 'is_active'=> false]
+            ['store_id'=>'BC01', 'name'=>'Arts and Design', 'slug'=>'arts_and_design', 'is_active'=> true],
+            ['store_id'=>'BC02', 'name'=>'Automobiles, Boats and Airplanes', 'slug'=>'automobiles-comma-_boats_and_airplanes', 'is_active'=> true],
+            ['store_id'=>'BC03', 'name'=>'Pampered Kids', 'slug'=>'pampered_kids', 'is_active'=> true],
+            ['store_id'=>'BC04', 'name'=>'Books and Media', 'slug'=>'books_and_media', 'is_active'=> true],
+//            ['store_id'=>'BC05', 'name'=>'DIY', 'slug'=>'do_it_yourself', 'is_active'=> true],
+            ['store_id'=>'BC06', 'name'=>'Fashion', 'slug'=>'fashion', 'is_active'=> true],
+            ['store_id'=>'BC06-100', 'name'=>'Fashion Men', 'slug'=>'fashion/men', 'is_active'=> false],
+            ['store_id'=>'BC06-200', 'name'=>'Fashion Women', 'slug'=>'fashion/women', 'is_active'=> false],
+            ['store_id'=>'BC06-300', 'name'=>'Fashion Kids', 'slug'=>'fashion/kids', 'is_active'=> false],
+            ['store_id'=>'BC07', 'name'=>'Gadgets and Electronics', 'slug'=>'gadgets_and_electronics', 'is_active'=> true],
+            ['store_id'=>'BC08', 'name'=>'Homewares', 'slug'=>'homewares', 'is_active'=> true],
+            ['store_id'=>'BC09', 'name'=>'Toys', 'slug'=>'toys', 'is_active'=> true],
+            ['store_id'=>'BC10', 'name'=>'Sporting Equipment', 'slug'=>'sporting_equipment', 'is_active'=> true],
+            ['store_id'=>'BC11', 'name'=>'Travel and Tours', 'slug'=>'travel_and_tours', 'is_active'=> true]
         ];
     }
 }
@@ -128,15 +132,81 @@ class MainCategoryTableSeeder extends AbstractTableSeeder
     protected function insertRows()
     {
         return [
-            ['name'=>'Men', 'slug'=> 'men', 'is_active' => true],
-            ['name'=>'Women', 'slug'=> 'women', 'is_active' => true],
-            ['name'=>'Art', 'slug'=> 'art', 'is_active' => false],
-            ['name'=>'Design', 'slug'=> 'design', 'is_active' => false],
+            // Fashion
+            ['name'=>'Clothing', 'slug'=> 'clothing', 'is_active' => true],
+            ['name'=>'Accessories', 'slug'=> 'accessories', 'is_active' => true],
+            ['name'=>'Shoes', 'slug'=> 'shoes', 'is_active' => true],
+            ['name'=>'Bags', 'slug'=> 'bags', 'is_active' => true],
+            ['name'=>'Sports', 'slug'=> 'sports', 'is_active' => false],
+//            ['name'=>'DIY', 'slug'=> 'design', 'is_active' => false],
         ];
     }
 }
 
+class ShoppingCategoryTableSeeder extends AbstractTableSeeder
+{
+    protected $table = 'shopping_categories';
+    
+    protected function getStoreCategoriesMapping()
+    {
+        return [
+            // FASHION Men
+            [
+                'store_id' => 'BC06-100',
+                'categories' => [
+                    ['name' => 'Clothing', 'is_active' => true],
+                    ['name' => 'Accessories', 'is_active' => true],
+                    ['name' => 'Shoes', 'is_active' => true],
+                ]
+            ],
+            // FASHION Women
+            [
+                'store_id' => 'BC06-200',
+                'categories' => [
+                    ['name' => 'Clothing', 'is_active' => true],
+                    ['name' => 'Accessories', 'is_active' => true],
+                    ['name' => 'Shoes', 'is_active' => true],
+                ]
+            ],
+            // FASHION Kids
+            [
+                'store_id' => 'BC06-300',
+                'categories' => [
+                    ['name' => 'Clothing', 'is_active' => true],
+                    ['name' => 'Accessories', 'is_active' => true],
+                    ['name' => 'Shoes', 'is_active' => true],
+                ]
+            ],
+            
+            //APPEND OTHER STORES HERE
+            
+        ];
+    }
 
+    
+    protected function insertRows()
+    {
+        $store_categories = [];
+        // Loops every category per store
+        foreach ($this->getStoreCategoriesMapping() as $store) {     
+            
+            foreach ($store['categories'] as $category) {
+        
+                $category_id = MainCategory::where('name', $category['name'])->first()->main_category_id;
+                
+                // Append category listing information
+                $store_categories[] = [
+                    'store_id' => $store['store_id'],
+                    'main_category_id' => $category_id,
+                    'store_shopping_category_id' => $store['store_id'].'_'. "MCXXX-" .$category_id,
+                    'is_active' => $category['is_active']
+                ];
+            }
+        }
+        
+        return $store_categories;
+    }    
+}
 
 
 class ProductStoreCategoryTableSeeder extends AbstractTableSeeder

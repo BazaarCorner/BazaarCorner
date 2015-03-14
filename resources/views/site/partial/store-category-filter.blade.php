@@ -2,12 +2,14 @@
     <div class="bazaarcategories">
     <span class="square">-</span><b> Bazaar by Category</b>
         <ul class="stores">
-            @foreach($store_categories as $categories)
+            @foreach($shop_categories as $categories)
             <li>
                 <div class="category">
                     <strong><a href='{{route('shops', $categories->slug)}}'>{{$categories->name}}</a></strong>
                 </div>
                 <!-- subcategory here -->
+                <ul class="main_category">
+                </ul>
             </li>
             @endforeach
         </ul>

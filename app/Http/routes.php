@@ -2,10 +2,10 @@
 
 Route::get('/', ['as' => 'home', 'uses' => 'Site\PageController@index']);
 Route::get('about', ['as' => 'about', 'uses' => 'Site\PageController@aboutUs']);
-//Route::get('contact-us/', ['as' => 'contact', 'uses' => 'Site\PageController@contactUs']);
 Route::get('help', ['as' => 'help', 'uses' => 'Site\PageController@getHelp']);
-Route::get('policy/', ['as' => 'policy', 'uses' => 'Site\PageController@privacyPolicy']);
-Route::get('terms-and-condition/', ['as' => 'terms', 'uses'=> 'Site\PageController@termsAndCondition']);
+Route::get('policy', ['as' => 'policy', 'uses' => 'Site\PageController@privacyPolicy']);
+Route::get('terms-and-condition', ['as' => 'terms', 'uses'=> 'Site\PageController@termsAndCondition']);
+Route::get('item/search', ['as' => 'serp', 'uses' => 'Site\SearchController@index']);
 
 /**
  * Must be authorized to navigate the following routes
@@ -48,7 +48,7 @@ Route::get('market', ['as'=>'market', 'uses'=> 'MarketController@index']);
  * @todo SERP implementation
  */
 Route::get('item/info', ['as' => 'product-page', 'uses' => 'ProductDetailsController@index']);
-Route::get('item/search', ['as' => 'serp', 'uses' => 'SearchController@index']);
+
 
 Route::controllers([
     'member' => 'Auth\AuthController',

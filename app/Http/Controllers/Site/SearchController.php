@@ -1,7 +1,8 @@
 <?php
 
-namespace BazaarCorner\Http\Controllers;
+namespace BazaarCorner\Http\Controllers\Site;
 
+use BazaarCorner\Http\Controllers\Controller;
 use BazaarCorner\Http\Requests\SearchRequest;
 use Illuminate\Http\Request;
 
@@ -37,5 +38,5 @@ class SearchController extends Controller
     protected function getPageFilters()
     {
         return [];
-    }
+    }    
 }

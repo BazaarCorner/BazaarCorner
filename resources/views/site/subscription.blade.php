@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row-fluid">
         <h1>Thank you for subscribing!</h1>
         <p>
             You will be automatically redirected to our home page in 5 seconds 

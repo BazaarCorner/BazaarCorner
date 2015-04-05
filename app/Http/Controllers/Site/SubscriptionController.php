@@ -4,7 +4,7 @@ namespace BazaarCorner\Http\Controllers\Site;
 
 use BazaarCorner\Http\Controllers\Controller;
 use BazaarCorner\Http\Requests\SiteSubscriptionRequest;
-use BazaarCorner\Subscriber;
+use BazaarCorner\Models\Subscription\Subscriber;
 
 class SubscriptionController extends Controller
 {

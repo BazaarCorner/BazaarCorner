@@ -43,20 +43,19 @@ abstract class Controller extends BaseController
     
     protected function getFilters()
     {
-        $sort_by = $this->request->has('sort-by');        
-        
+        $sort_by = $this->request->has('sort-by');
         
         if (!$param = $this->request->has('sort-by')) {
             $sort_by = 'all';
         } else {
             $sort_by = strtolower($this->request->get('sort-by'));
-        }        
+        }
         
         switch ($sort_by) {
             case 'all':
-//            case 'popularity':
+            case 'popularity':
 //            case 'most-recent':
-//            case 'most-bought':
+            case 'most-bought':
 //            case 'discounts':
                 //DO NOTHING
                 break;
@@ -71,21 +70,21 @@ abstract class Controller extends BaseController
                 'url'       => $this->request->getPathInfo().'?sort-by=all',
                 'name'      => 'All'
             ],
-//            [
-//                'active' => ($sort_by === 'popularity')? true : false,
-//                'url'   => $this->request->getPathInfo().'?sort-by=popularity',
-//                'name'      => 'Popularity'
-//            ],
+            [
+                'active' => ($sort_by === 'popularity')? true : false,
+                'url'   => $this->request->getPathInfo().'?sort-by=popularity',
+                'name'      => 'Popularity'
+            ],
 //            [
 //                'active' => ($sort_by === 'most-recent')? true : false,
 //                'url'   => $this->request->getPathInfo().'?sort-by=most-recent',
 //                'name'      => 'Most Recent'
 //            ],
-//            [
-//                'active' => ($sort_by === 'most-bought')? true : false,
-//                'url'   => $this->request->getPathInfo().'?sort-by=most-bought',
-//                'name'      => 'Most Bought'
-//            ],
+            [
+                'active' => ($sort_by === 'most-bought')? true : false,
+                'url'   => $this->request->getPathInfo().'?sort-by=most-bought',
+                'name'      => 'Most Bought'
+            ],
 //            [
 //                'active' => ($sort_by === 'discounts')? true : false,
 //                'url'   => $this->request->getPathInfo().'?sort-by=discounts',

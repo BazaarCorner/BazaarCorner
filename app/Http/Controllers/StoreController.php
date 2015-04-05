@@ -2,11 +2,8 @@
 
 namespace BazaarCorner\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class StoreController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +11,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-            //
+        //
     }
 
     /**
@@ -24,7 +21,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-            //
+        //
     }
 
     /**
@@ -34,7 +31,7 @@ class StoreController extends Controller
      */
     public function store()
     {
-            //
+        //
     }
 
     /**
@@ -45,7 +42,7 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-            //
+        //
     }
 
     /**
@@ -56,7 +53,7 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-            //
+        //
     }
 
     /**

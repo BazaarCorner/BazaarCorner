@@ -77,20 +77,20 @@ class BazaarCategoryTableSeeder extends AbstractTableSeeder
     protected function insertRows()
     {
         return [
-            ['store_id'=>'BC01', 'name'=>'Arts and Design', 'slug'=>'arts_and_design', 'is_active'=> true],
-            ['store_id'=>'BC02', 'name'=>'Automobiles, Boats and Airplanes', 'slug'=>'automobiles-comma-_boats_and_airplanes', 'is_active'=> true],
-            ['store_id'=>'BC03', 'name'=>'Pampered Kids', 'slug'=>'pampered_kids', 'is_active'=> true],
-            ['store_id'=>'BC04', 'name'=>'Books and Media', 'slug'=>'books_and_media', 'is_active'=> true],
-//            ['store_id'=>'BC05', 'name'=>'DIY', 'slug'=>'do_it_yourself', 'is_active'=> true],
-            ['store_id'=>'BC06', 'name'=>'Fashion', 'slug'=>'fashion', 'is_active'=> true],
-            ['store_id'=>'BC06-100', 'name'=>'Fashion Men', 'slug'=>'fashion/men', 'is_active'=> false],
-            ['store_id'=>'BC06-200', 'name'=>'Fashion Women', 'slug'=>'fashion/women', 'is_active'=> false],
-            ['store_id'=>'BC06-300', 'name'=>'Fashion Kids', 'slug'=>'fashion/kids', 'is_active'=> false],
-            ['store_id'=>'BC07', 'name'=>'Gadgets and Electronics', 'slug'=>'gadgets_and_electronics', 'is_active'=> true],
-            ['store_id'=>'BC08', 'name'=>'Homewares', 'slug'=>'homewares', 'is_active'=> true],
-            ['store_id'=>'BC09', 'name'=>'Toys', 'slug'=>'toys', 'is_active'=> true],
-            ['store_id'=>'BC10', 'name'=>'Sporting Equipment', 'slug'=>'sporting_equipment', 'is_active'=> true],
-            ['store_id'=>'BC11', 'name'=>'Travel and Tours', 'slug'=>'travel_and_tours', 'is_active'=> true]
+            ['store_id'=>'BC01', 'name'=>'Arts and Design', 'slug'=>'arts_and_design', 'is_active'=> false],
+            ['store_id'=>'BC02', 'name'=>'Automobiles, Boats and Airplanes', 'slug'=>'automobiles-comma-_boats_and_airplanes', 'is_active'=> false],
+            ['store_id'=>'BC03', 'name'=>'Pampered Kids', 'slug'=>'pampered_kids', 'is_active'=> false],
+            ['store_id'=>'BC04', 'name'=>'Books and Media', 'slug'=>'books_and_media', 'is_active'=> false],
+            ['store_id'=>'BC05', 'name'=>'DIY', 'slug'=>'do_it_yourself', 'is_active'=> false],
+            ['store_id'=>'BC06', 'name'=>'Fashion', 'slug'=>'fashion', 'is_active'=> false],
+            ['store_id'=>'BC06-100', 'name'=>'Fashion Men', 'slug'=>'fashion/men', 'is_active'=> true],
+            ['store_id'=>'BC06-200', 'name'=>'Fashion Women', 'slug'=>'fashion/women', 'is_active'=> true],
+            ['store_id'=>'BC06-300', 'name'=>'Fashion Kids', 'slug'=>'fashion/kids', 'is_active'=> true],
+            ['store_id'=>'BC07', 'name'=>'Gadgets and Electronics', 'slug'=>'gadgets_and_electronics', 'is_active'=> false],
+            ['store_id'=>'BC08', 'name'=>'Homewares', 'slug'=>'homewares', 'is_active'=> false],
+            ['store_id'=>'BC09', 'name'=>'Toys', 'slug'=>'toys', 'is_active'=> false],
+            ['store_id'=>'BC10', 'name'=>'Sporting Equipment', 'slug'=>'sporting_equipment', 'is_active'=> false],
+            ['store_id'=>'BC11', 'name'=>'Travel and Tours', 'slug'=>'travel_and_tours', 'is_active'=> false]
         ];
     }
 }
@@ -292,6 +292,7 @@ class BrandTableSeeder extends AbstractTableSeeder
             ['name'=>'Nike', 'slug'=>'nike', 'is_active'=>true, 'image' => 'assets/img/sample/logo/nike.jpg'],
             ['name'=>'Paul Smith', 'slug'=>'paul_smith', 'is_active'=>true, 'image' => 'assets/img/sample/logo/paul-smith.jpg'],
             ['name'=>'Paul Prada', 'slug'=>'prada', 'is_active'=>true, 'image' => 'assets/img/sample/logo/prada.jpg'],
+            ['name'=>'Bazaar Corner', 'slug'=>'bazaar_corner', 'is_active'=>true, 'image' => 'assets/img/site/logo-revo.jpg'],
         ];
     }
 }

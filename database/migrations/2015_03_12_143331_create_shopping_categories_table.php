@@ -11,7 +11,7 @@ class CreateShoppingCategoriesTable extends Migration
         {
             $table->string('store_id');
             $table->integer('main_category_id')->unsigned();
-            $table->string('store_shopping_category_id');
+            $table->string('store_shopping_category_id')->unique();
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

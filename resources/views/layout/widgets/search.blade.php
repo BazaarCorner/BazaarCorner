@@ -12,7 +12,7 @@
                 ) !!}
             </em>
             <span class="input-group-btn">
-                {!! Form::submit('Check if available!', ['class' => 'btn btn-default']) !!}
+                {!! Form::submit("Check Availability", ['class' => 'btn btn-default']) !!}
             </span>
         </div>
     </div>

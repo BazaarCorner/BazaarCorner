@@ -13,8 +13,8 @@ class CreateBrandsTable extends Migration
         Schema::create('brands', function(Blueprint $table)
         {
             $table->bigIncrements('brand_id')->unsigned();
-            $table->string('name', 150);
-            $table->string('slug', 250)->default("");
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->string('image')->default("brand/no-image.jpg");
             $table->text('description')->default("");
             $table->boolean('is_active')->default(false);

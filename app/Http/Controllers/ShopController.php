@@ -46,7 +46,7 @@ class ShopController extends Controller
             return $stores;
         }
         
-        return [$store->where('slug',"{$shop}")->first()];
+        return [$store->whereSlug($shop)->first()];
     }
     
     

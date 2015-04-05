@@ -6,10 +6,8 @@
         @include('layout.partial.head.script')
     </head>
     <body>
+        @include('layout.partial.header')
         <div id="site" class="container">
-            <div class="row" id="site-header">
-                @include('layout.partial.header')
-            </div>
             <div class="row" id="site-content">
                 @yield('content')
             </div>

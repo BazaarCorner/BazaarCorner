@@ -1,116 +1,34 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-3 col-md-3">
-            <a href="/">
-                <img class="img-responsive img-center" width="inherit"
-                     src="{{asset('assets/img/site/logo.png')}}">
+<nav class="navbar navbar-fixed-top" style="background-color: white; box-shadow: 1px 0px 4px silver;">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand img-responsive center-block" href="{{route('home')}}">
+                <img src="{{asset('assets/img/site/logo.png')}}" style="width: 150px;">
             </a>
         </div>
-        <div class="col-lg-9 col-md-9 center-block">
-            <div class="row">
-                <div class="col-lg-7 col-md-7">
-                    @include('layout.widgets.search')
-                </div>
-                <div class="col-lg-5 col-md-5">
-                    <div class="col-md-6"> BASKET </div>
-                    <div class="col-md-6"> MY WISHLIST </div>
-                </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <div class="nav navbar-nav navbar-left col-md-4">
+                @include('layout.widgets.search')
             </div>
-        </div>
-    </div>
-    <div class="row-fluid" style="font-size: 13px">
-        <!--<span class="text-capitalize">SHOP BY <i class="caret"></i></span>-->
-        @include('layout.widgets.store-menu')
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="container">
-    <div class="col-lg-3 col-md-3">
-        <div class="row">
-            include('widget.banner.inside-bazaar')
-        </div>
-        <div class="row">
-             bazaar collection links 
-            <section class="bazaarcollection"">
-                include('layout.widgets.store-menu')
-            </section> end 
-        </div>
-    </div>
-    
-    <div class="col-lg col-md-6">
-        <div class="row">
-            <a href="/">
-                <img class="img-responsive img-center center-block"
-                     src="{{asset('assets/img/site/logo.png')}}">
-            </a>
-        </div>
-        <div>
-             search bar 
-             @include('layout.widgets.search')
-        </div>    
-    </div>-->
-    <!--
-    <div class="col-lg-3 col-md-3">
-        <div class="row">
-            @unless (Auth::check())
-            <p class="text-uppercase">
-                <a href="{{url('auth/login')}}">Sign In</a>
-                <span>/</span>
-                <a href="{{url('auth/register')}}">Join us</a>
-            </p>
-            @endunless
-        </div>
-
-        <div class="row" id="wishcart">
-            <ul class="list-inline">
-                <li>
-                    <a href="/wishlist" class="text-uppercase">                
-                        <img src="{{asset('img/wishlist.png')}}"> My Wishlist
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li><a href="#"> Market Place </a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                          <!--<i class="fa fa-user"></i>-->
+                        Account
+                        <span class="caret"></span>
                     </a>
-                </li>
-                <li>
-                    <a href="/cart" class="text-uppercase">
-                        <img src="{{asset('img/cart.png')}}"> My Cart
-                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                    @if(Auth::guest())
+                        <li><a href="{{url('member/login')}}">Sign In</a></li>
+                        <li><a href="{{url('member/register')}}">Register</a></li>
+                    @endif
+                    @if(Auth::check())
+                        <li><a href="{{route('profile')}}">Profile Settings</a></li>
+                        <li><a href="{{url('member/logout')}}">Logout</a></li>
+                    @endif
+                    </ul>
                 </li>
             </ul>
         </div>
-
-        <div class="row" id="garage">
-            <div class="pull-left">
-                <p class="text-uppercase">
-                    <small>Got some cool things to</small>
-                    <br>
-                    <a href="/garage">
-                        <u>Click to sell</u>
-                        <span class="caret"></span>
-                    </a>
-                </p>
-            </div>
-            <img src="{{asset('img/offer-badge.png')}}">
-        </div>
-    </div>-->
-<!--</div>-->
+    </div>
+</nav>

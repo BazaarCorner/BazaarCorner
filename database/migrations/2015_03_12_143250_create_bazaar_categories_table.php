@@ -9,9 +9,9 @@ class CreateBazaarCategoriesTable extends Migration
     {
         Schema::create('bazaar_categories', function(Blueprint $table)
         {
-            $table->increments('store_id');
-            $table->string('name');
-            $table->string('slug');
+            $table->string('store_id')->unique();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->mediumText('long_description')->default("");
             $table->text('short_description')->default("");
             $table->boolean('is_active')->default(false);

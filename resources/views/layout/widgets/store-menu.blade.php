@@ -1,13 +1,12 @@
 <ul class="menu-category list-inline">
     @foreach($stores as $store)
     <li>
-        <a href="{{route('shops',[$store->slug])}}">
+        <a href="{{route('shops', $store->slug)}}">
             {{$store->name}}
         </a>
     </li>
     @endforeach
 </ul>
-
 
 <!--<ul id="menu">
     <li class="mega" style="box-shadow: 1px 2px 5px silver; display: block; padding: 5px 0px;">

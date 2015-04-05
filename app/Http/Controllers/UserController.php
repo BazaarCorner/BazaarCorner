@@ -27,14 +27,14 @@ class UserController extends Controller
     {
         $this->data['user']     = $this->getInfo($username);
         $this->data['filters']  = $this->getFilters();
-
-        //TO DO
-        $this->data['followers']  = $this->countFollowers();
-        $this->data['items_sold']    = $this->itemSold();
-        $this->data['ratings']  = $this->userRatings();
-        $this->data['feedbacks']  = $this->userFeedbacks();
         
-        return view('profile.index', $this->data);
+        //TO DO
+//        $this->data['followers']  = $this->countFollowers();
+//        $this->data['items_sold']    = $this->itemSold();
+//        $this->data['ratings']  = $this->userRatings();
+//        $this->data['feedbacks']  = $this->userFeedbacks();
+        
+        return view('merchant.index', $this->data);
     }
     
 
@@ -48,19 +48,20 @@ class UserController extends Controller
      * @return User | Merchant
      */
     private function getInfo($username)
-    {   
-        var_dump($username); exit;
-        if ($merchant = Merchant::where('username', $username)->first()) {
-            
-            $merchant->age = $this->getAge($merchant->birthdate);
-            return $merchant;
-        }
+    {
         
-        if ($user = User::where('username', $username)->first()) {
-            
-            $user->age = $this->getAge($user->birthdate);
+//        if ($merchant = Merchant::where('username', $username)->first()) {
+//            
+//            $merchant->age = $this->getAge($merchant->birthdate);
+//            return $merchant;
+//        }
+        
+        if ($user = User::where('username', $username)->first()) {            
+//            $user->age = $this->getAge($user->birthdate);
             return $user;
         }
+        
+        
         
         // Missing information or page not found
         abort(404);
@@ -103,18 +104,8 @@ class UserController extends Controller
     {
         return [];
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
-        /**
+    /**
      * @todo Rating computation
      * @return int
      */

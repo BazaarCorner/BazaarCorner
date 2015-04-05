@@ -13,8 +13,8 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function(Blueprint $table)
         {
             $table->bigIncrements('category_id')->unsigned();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->text('short_description')->default("");
             $table->boolean('is_active')->default(false);
             $table->timestamps();

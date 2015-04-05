@@ -11,13 +11,20 @@ class AuthController extends Controller
 {
     use AuthenticatesAndRegistersUsers;
     
-    protected $redirectTo = '/';
+    protected $redirectTo = 'member/account';
 
     public function __construct(Guard $auth, Registrar $registrar)
     {
         $this->auth = $auth;
         $this->registrar = $registrar;
         
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => ['getLogout', 'viewAccount']]);
+    }
+    
+    public function viewAccount()
+    {
+        $this->data['user'] = $this->auth->user()->toArray();
+        
+        return view('auth.index', $this->data);
     }
 }

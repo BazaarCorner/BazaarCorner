@@ -1,51 +1,48 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', ['as' => 'home', 'uses' => 'PageController@index']);
-Route::get('about-us/', ['as' => 'about', 'uses' => 'PageController@aboutUs']);
-Route::get('contact-us/', ['as' => 'contact', 'uses' => 'PageController@contactUs']);
-Route::get('get-help/', ['as' => 'help', 'uses' => 'PageController@getHelp']);
-Route::get('privacy-policy/', ['as' => 'policy', 'uses' => 'PageController@privacyPolicy']);
-Route::get('terms-and-condition/', ['as' => 'terms', 'uses'=> 'PageController@termsAndCondition']);
-Route::get('shipping-and-returns/', ['as' => 'shipping', 'uses' => 'PageController@shippingAndReturns']);
-
-Route::post('subscribe/', ['as' => 'subscription', 'uses' => 'PageController@subscribe']);
+Route::get('/', ['as' => 'home', 'uses' => 'Site\PageController@index']);
+Route::get('about', ['as' => 'about', 'uses' => 'Site\PageController@aboutUs']);
+//Route::get('contact-us/', ['as' => 'contact', 'uses' => 'Site\PageController@contactUs']);
+Route::get('help', ['as' => 'help', 'uses' => 'Site\PageController@getHelp']);
+Route::get('policy/', ['as' => 'policy', 'uses' => 'Site\PageController@privacyPolicy']);
+Route::get('terms-and-condition/', ['as' => 'terms', 'uses'=> 'Site\PageController@termsAndCondition']);
 
 /**
- * 
- * Filter parameters would be the following:
- * 
- * ?sort-by=all         - Default
- * ?sort-by=popularity  - Popular/Most Liked/With good feedback
- * ?sort-by=most-recent - Newly added products
- * ?sort-by=most-bought - Popular/Most Ordered
- * ?sort-by=discounts  - %-off
+ * Must be authorized to navigate the following routes
  */
-Route::get('shops/{store?}/{category?}', ['as' => 'shops', 'uses' => 'ShopController@index']);
+Route::group(['middleware' => 'auth'], function() {
+    
+    Route::get('member/account', ['as' => 'profile', 'uses' => 'Auth\AuthController@viewAccount']);
+    
+    Route::group(['prefix'=> 'member/catalog'], function() {
+        Route::get('/', ['as' => 'catalog-dashboard', 'uses'=> 'Catalog\DashboardController@index']);
+        Route::resource('product', 'Catalog\ProductController');
+        Route::resource('brand', 'Catalog\BrandController');
+        Route::resource('category', 'Catalog\CategoryController');
+    });
+    
+    //CHECKOUT
+});
+
+Route::group(['middleware' => 'guest'], function() {
+    //LOGIN and REGISTRATION
+});
+
+Route::post('subscribe', ['as' => 'subscription', 'uses' => 'Site\SubscriptionController@subscribe']);
 
 /**
- * Filter parameters would be the following:
- * 
- * @todo After Shops page implementation
- * 
- * ?sort-by=all         - Default
- * ?sort-by=popularity  - Popular/Most Liked/With good feedback
- * ?sort-by=most-recent - Newly added products
- * ?sort-by=most-bought - Popular/Most Ordered
- * ?sort-by=discounted  - %-off
+ * Basket
  */
-Route::get('/{user}', ['as' => 'profile', 'uses' => 'UserController@index']);
+//Route::get('basket', ['as' => 'basket', 'uses' => 'BasketController@index']);
+//Route::get('checkout', ['as' => 'checkout', 'uses' => 'CheckoutController@index']);
 
+
+/**
+ * Market place
+ */
+Route::get('market', ['as'=>'market', 'uses'=> 'MarketController@index']);
+
+//Route::get('wishlist', ['as'=>'wishlist', 'uses'=> 'WishlistController@index']);
 
 /**
  * @todo SERP implementation
@@ -54,6 +51,29 @@ Route::get('item/info', ['as' => 'product-page', 'uses' => 'ProductDetailsContro
 Route::get('item/search', ['as' => 'serp', 'uses' => 'SearchController@index']);
 
 Route::controllers([
-    'auth' => 'Auth\AuthController',
+    'member' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
 ]);
+
+/**
+ * Filter parameters would be the following:
+ * 
+ * @todo After Shops page implementation
+ * 
+ * ?sort-by=popularity  - Popular/Most Liked/With good feedback
+ * ?sort-by=most-recent - Newly added products
+ * ?sort-by=most-bought - Popular/Most Ordered
+ * ?sort-by=discounted  - %-off
+ */
+Route::get('{username}', ['as' => 'member', 'uses' => 'Membership\PageController@show']);
+
+/**
+ * 
+ * Filter parameters would be the following:
+ * 
+ * ?sort-by=popularity  - Popular/Most Liked/With good feedback
+ * ?sort-by=most-recent - Newly added products
+ * ?sort-by=most-bought - Popular/Most Ordered
+ * ?sort-by=discounts  - %-off
+ */
+Route::get('{category}/{subcategory}', ['as' => 'shops', 'uses' => 'Site\ShopController@index']);

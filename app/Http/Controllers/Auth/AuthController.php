@@ -12,6 +12,7 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers;
     
     protected $redirectTo = 'member/account';
+    protected $loginPath = 'member/login';
 
     public function __construct(Guard $auth, Registrar $registrar)
     {

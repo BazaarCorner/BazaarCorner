@@ -12,106 +12,54 @@
 @stop
 
 @section('content')
-<div class="container bazaarlogins">
+<div class="container">
     <div class="row">
-        <!-- welcome splash -->
-        <div class="col-sm-12 col-md-7 welcome">
-            <h1 id="fittext1">Welcome back! Log here</h1>
-            <h4>
-                Have a Facebook or Twitter account linked to your account?
-            </h4>
-             secure social log in 
-            <section class="securelog">
-                <h4>Secure Log in with one click:</h4>
-                <ul class="list-inline">
-                    <li>
-                        <a class="btn btn-primary"
-                           href="#"
-                           role="button">
-                            <i class="fa fa-facebook fa-lg"></i>
-                            Log in with Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a class="btn btn-info"
-                           href="#"
-                           role="button">
-                            <i class="fa fa-twitter fa-lg"></i>
-                            Log in with Twitter
-                        </a>
-                    </li>
-                </ul>
-            </section>
+        <div class="col-md-4">
+            <h3>I already have an account</h3>            
+            <p>I would like to sign in with my account.</p>
+            @include('auth.form.login')
+            <h4>Don't have an account?</h4>
+            <a href="{{url('member/register')}}">
+                Click here to register (it's FREE)
+            </a>
+            <div class="clearfix"></div>
         </div>
-
-        <!-- user login form -->
-        <div class="col-sm-12 col-md-5 pull-left loginform">
-            <h3>Do you have an Bazaar Corner account?</h3>
-            <br>
-            
-            <div class="container-fluid">
-                <div class="row-fluid">
-                {!! Form::open(['url' => 'member/login']) !!}
-                    @if($errors->has())
-                    <div class="alert alert-warning">
-                         @foreach($errors->all() as $error)
-                            <span class="text-danger">* {{$error}}</span><br>
-                         @endforeach
+        <div class="col-md-8" style="border-left: 1px solid silver">
+            <div id="banner" class="carousel carousel-shadow slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <a href="#"><img src="{{url('assets/img/site/banners/fashion.jpg')}}" alt="Fashion"></a>
                     </div>
-                    @endif
-                    <div class="form-group">
-                        {!! Form::email(
-                            'email', // input type
-                            '', 
-                            [   // form style
-                                'class' => 'form-control', 
-                                'placeholder' => 'email@sample.com'
-                            ]
-                        ) !!}
+                    <div class="item">
+                        <a href="#"><img src="{{url('assets/img/site/banners/homewares.jpg')}}" alt="Home Wares"></a>
                     </div>
-                    <div class="form-group">
-                        {!! Form::input(
-                            'password', //input type
-                            'password', 
-                            '',
-                            [
-                                'class' => 'form-control', 
-                                'placeholder' => 'Password'
-                            ]
-                        ) !!}
+                    <div class="item">
+                        <a href="#"><img src="{{url('assets/img/site/banners/DIY.jpg')}}" alt="DIY"></a>
                     </div>
-                    <div class="form-group">
-                        {!! Form::submit(
-                            'Login with Bazaar Corner',
-                            [
-                                'class' => 'btn btn-danger'
-                            ]
-                        ) !!}
+                    <div class="item">
+                        <a href="#"><img src="{{url('assets/img/site/banners/gadgets.jpg')}}" alt="Gadgets"></a>
                     </div>
-                {!! Form::close() !!}
-                </div>                
-            </div>
-        </div><!-- end -->
-    </div>
-</div>
-
-<div class="container bazaarevo">
-    <div class="row">
-        <!-- bazaar revolutionize -->
-        <div class="col-sm-12 col-md-12"> 
-            <div class="clearfix">
-                <div class="pull-left">
-                    <img class="bazaarlogorevo" 
-                         src="{{asset('assets/img/site/logo-revo.png')}}">
-                    <h1 id="fittext2">Revolutionize the way you shop!</h1>
-                </div>
-
-                <div class="pull-right">
-                    <img class="revopic" 
-                         src="{{asset('assets/img/site/stockphoto02.jpg')}}">
                 </div>
             </div>
-        </div><!-- end -->
+            <div class="divider"><hr><br><br></div>
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <div class="pull-left">
+                        <img class="bazaarlogorevo" 
+                            src="{{url('assets/img/site/logo-revo.png')}}">
+                        <h2 id="fittext2">Revolutionize the way you shop!</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="pull-right">
+                        <img class="revopic" 
+                            src="{{url('assets/img/site/stockphoto02.jpg')}}">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     </div>
 </div>
 @stop

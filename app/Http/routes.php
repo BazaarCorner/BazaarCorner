@@ -5,6 +5,9 @@ Route::get('about', ['as' => 'about', 'uses' => 'Site\PageController@aboutUs']);
 Route::get('help', ['as' => 'help', 'uses' => 'Site\PageController@getHelp']);
 Route::get('policy', ['as' => 'policy', 'uses' => 'Site\PageController@privacyPolicy']);
 Route::get('terms-and-condition', ['as' => 'terms', 'uses'=> 'Site\PageController@termsAndCondition']);
+/**
+ * @todo SERP implementation
+ */
 Route::get('item/search', ['as' => 'serp', 'uses' => 'Site\SearchController@index']);
 
 /**
@@ -14,11 +17,11 @@ Route::group(['middleware' => 'auth'], function() {
     
     Route::get('member/account', ['as' => 'profile', 'uses' => 'Auth\AuthController@viewAccount']);
     
-    Route::group(['prefix'=> 'member/catalog'], function() {
+    Route::group(['prefix'=> 'member/catalog', 'middleware' => 'auth.merchant'], function() {
         Route::get('/', ['as' => 'catalog-dashboard', 'uses'=> 'Catalog\DashboardController@index']);
         Route::resource('product', 'Catalog\ProductController');
         Route::resource('brand', 'Catalog\BrandController');
-        Route::resource('category', 'Catalog\CategoryController');
+//        Route::resource('category', 'Catalog\CategoryController');
     });
     
     //CHECKOUT
@@ -40,14 +43,9 @@ Route::post('subscribe', ['as' => 'subscription', 'uses' => 'Site\SubscriptionCo
 /**
  * Market place
  */
-Route::get('market', ['as'=>'market', 'uses'=> 'MarketController@index']);
+//Route::get('market', ['as'=>'market', 'uses'=> 'MarketController@index']);
 
 //Route::get('wishlist', ['as'=>'wishlist', 'uses'=> 'WishlistController@index']);
-
-/**
- * @todo SERP implementation
- */
-Route::get('item/info', ['as' => 'product-page', 'uses' => 'ProductDetailsController@index']);
 
 
 Route::controllers([

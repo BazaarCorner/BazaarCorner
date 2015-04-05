@@ -27,6 +27,7 @@ class Kernel extends HttpKernel
     */
    protected $routeMiddleware = [
         'auth' => 'BazaarCorner\Http\Middleware\Authenticate',
+        'auth.merchant' => 'BazaarCorner\Http\Middleware\AuthorizedIfMerchant',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
         'guest' => 'BazaarCorner\Http\Middleware\RedirectIfAuthenticated',
    ];

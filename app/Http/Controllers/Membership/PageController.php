@@ -4,7 +4,7 @@ namespace BazaarCorner\Http\Controllers\Membership;
 
 use BazaarCorner\Http\Controllers\Controller;
 use BazaarCorner\Models\Memebership\Member;
-use BazaarCorner\User;
+use BazaarCorner\Models\Membership\User;
 
 class PageController extends Controller
 {
@@ -41,9 +41,9 @@ class PageController extends Controller
     private function getRankings()
     {
         return [
-            'items' => 10,
-            'ratings' => 1,
-            'followers' => 100,
+            'items' => 0,
+            'ratings' => 0,
+            'followers' => 0,
         ];
     }
     

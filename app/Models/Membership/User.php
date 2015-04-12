@@ -1,6 +1,6 @@
 <?php
 
-namespace BazaarCorner;
+namespace BazaarCorner\Models\Membership;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Authenticatable;

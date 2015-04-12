@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => 'BazaarCorner\User',
+    'model' => 'BazaarCorner\Models\Membership\User',
 
     /*
     |--------------------------------------------------------------------------

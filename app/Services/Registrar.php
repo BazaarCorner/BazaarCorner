@@ -2,7 +2,7 @@
 
 namespace BazaarCorner\Services;
 
-use BazaarCorner\User;
+use BazaarCorner\Models\Membership\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

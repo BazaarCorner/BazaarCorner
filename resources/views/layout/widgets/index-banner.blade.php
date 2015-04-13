@@ -2,16 +2,16 @@
   <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-                <img src="{{asset('assets/img/site/banners/fashion.jpg')}}">
+                <img src="{{asset('assets/bazaarcorner/img/site/banners/fashion.jpg')}}">
         </div>
         <div class="item">
-                <img src="{{asset('assets/img/site/banners/homewares.jpg')}}">
+                <img src="{{asset('assets/bazaarcorner/img/site/banners/homewares.jpg')}}">
         </div>
         <div class="item">
-                <img src="{{asset('assets/img/site/banners/DIY.jpg')}}">
+                <img src="{{asset('assets/bazaarcorner/img/site/banners/DIY.jpg')}}">
         </div>
         <div class="item">
-                <img src="{{asset('assets/img/site/banners/gadgets.jpg')}}">
+                <img src="{{asset('assets/bazaarcorner/img/site/banners/gadgets.jpg')}}">
         </div>
     </div>
 </div>

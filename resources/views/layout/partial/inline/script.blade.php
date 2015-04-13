@@ -8,6 +8,7 @@
 <script type="text/javascript" src="{{asset('assets/jquery/jquery.min.js')}}"> </script>
 <script type="text/javascript"src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript"src="{{asset('assets/bootstrap/js/tooltip.js')}}"></script>
+<script type="text/javascript"src="{{asset('assets/bazaarcorner/js/custom.js')}}"></script>
 
 @yield('header-inline-script')
 @yield('content-inline-script')

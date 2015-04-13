@@ -16,6 +16,7 @@ Route::get('item/search', ['as' => 'serp', 'uses' => 'Site\SearchController@inde
 Route::group(['middleware' => 'auth'], function() {
     
     Route::get('member/account', ['as' => 'profile', 'uses' => 'Auth\AuthController@viewAccount']);
+    Route::post('member/{username}/edit', ['as' => 'profile.update', 'uses' => 'Auth\AuthController@edit']);
     
     Route::group(['prefix'=> 'member/catalog', 'middleware' => 'auth.merchant'], function() {
         Route::get('/', ['as' => 'catalog-dashboard', 'uses'=> 'Catalog\DashboardController@index']);

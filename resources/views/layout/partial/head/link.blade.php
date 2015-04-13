@@ -4,8 +4,8 @@ $styles = [
     'bootstrap/css/bootstrap.min.css',
     'bootstrap/css/bootstrap-theme.min.css',
     'font-awesome/css/font-awesome.min.css',
-    'css/layout.css',
-//    'css/style.widgets.css',
+    'bazaarcorner/css/layout.css',
+    'bazaarcorner/css/widgets.css',
 ];
 ?>
 

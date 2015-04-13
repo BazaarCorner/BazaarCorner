@@ -28,7 +28,7 @@
                 </small>
             </h3>
             <p>I would like to join the Bazaar Corner community</p>
-            @include('auth.form.customer-registration')
+            @include('auth.form.customer.registration')
             <h4>Have an existing account?</h4>
             <a href="{{url('member/login')}}">Click here to sign in</a>
             <div class="clearfix"></div>

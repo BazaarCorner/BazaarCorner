@@ -29,8 +29,8 @@ class PageController extends Controller
         if ($this->member) {
             $this->member->facebook = "https://www.facebook.com/gabbydgab";
             $this->member->twitter = "https://twitter.com/gabbydgab";
-            $this->member->address = "Iligan City, Philippines";
-            //$member->age = $this->getAge($user->birthdate);
+            $this->member->address = "Philippines";
+            $this->member->age = 18;
             return $this->member;
         }
         

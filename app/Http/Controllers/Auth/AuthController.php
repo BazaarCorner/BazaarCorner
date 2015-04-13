@@ -24,8 +24,14 @@ class AuthController extends Controller
     
     public function viewAccount()
     {
-        $this->data['user'] = $this->auth->user()->toArray();
+        $this->data['user'] = $this->auth->user();
         
         return view('auth.index', $this->data);
+    }
+    
+    
+    public function edit($username)
+    {
+        
     }
 }

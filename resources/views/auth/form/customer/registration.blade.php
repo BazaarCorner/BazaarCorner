@@ -15,11 +15,21 @@
     @endif
         <div class="form-group">
             {!! Form::text(
-                'username', //input type
-                '', 
+                'first_name', //input type
+                '',                
                 [
                     'class' => 'form-control', 
-                    'placeholder' => 'Username'
+                    'placeholder' => 'First Name'
+                ]
+            ) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::text(
+                'last_name', //input type
+                '',                
+                [
+                    'class' => 'form-control', 
+                    'placeholder' => 'Last Name'
                 ]
             ) !!}
         </div>
@@ -30,18 +40,7 @@
                 '',
                 [
                     'class' => 'form-control', 
-                    'placeholder' => 'Password'
-                ]
-            ) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::input(
-                'password', //input type
-                'password_confirmation', 
-                '',
-                [
-                    'class' => 'form-control', 
-                    'placeholder' => 'Re-enter to confirm password'
+                    'placeholder' => 'Password (passphrase recommended)'
                 ]
             ) !!}
         </div>
@@ -60,24 +59,32 @@
             updates and promotions.
         </em>
         <br><br>
+        <div class="form-group">
+            {!! Form::text(
+                'username', //input type
+                '', 
+                [
+                    'class' => 'form-control', 
+                    'placeholder' => 'Username'
+                ]
+            ) !!}
+        </div>        
+        <em class="text-muted" style="font-size: 11px;">
+            This will serve as your url to view your profile.
+            <br>
+            Example: www.bazaarcorner.com/johndoe
+        </em>
+        <br><br>
         <div class="row">
             <div class="col-md-8">
                 <span class="pull-left" style="font-weight: bold;">
-                    Agree with our 
+                    By submitting this registration form, you are acknowledging our
                     <a href="{{route('terms') . '#buyer'}}"
                        class="text-capitalize"
                        target="_blank">
                         Terms
-                    </a>?
+                    </a>
                 </span>
-                <br> <!-- <br> required to add separation-->
-                <div class="form-group">
-                    <input class="checkbox checkbox-inline"
-                           type="checkbox"
-                           checked="checked"
-                           name="agreed">
-                    <span>Yes, I agree.</span>
-                </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">

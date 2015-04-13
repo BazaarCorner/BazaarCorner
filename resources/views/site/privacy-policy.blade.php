@@ -77,7 +77,7 @@
 </div>
 <div class="col-md-3">
     <div class="affix">
-        <h5>Our Policies</h5>
+        <h4>Our Policies</h4>
         <ul>
             <!--<li><a href="#company">Our Policy</a></li>-->
             <li><a href="#membership">Member's Privacy</a></li>

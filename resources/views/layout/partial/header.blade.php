@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand img-responsive center-block" href="{{route('home')}}">
-                <img src="{{asset('assets/img/site/logo.png')}}" style="width: 150px;">
+                <img src="{{asset('assets/bazaarcorner/img/site/logo.png')}}" style="width: 150px;">
             </a>
         </div>
         <div class="navbar-collapse collapse" id="navbar">

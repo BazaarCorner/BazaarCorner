@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-<div class="container">
+<div class="col-md-9 text-justify">
     <h1>Welcome to Bazaar Corner!</h1>
     <p>
         Bazaar Corner, Inc. (“Bazaar Corner or “us” or “our”) operates this 
@@ -237,6 +237,12 @@
         principles in order to ensure that the confidentiality of personal
         information is protected and maintained. 
     </p>
+</div>
+<div class="col-md-3">
+    <div class="affix">
+        <h4>Our Terms</h4>
+        <h4>Our Conditions</h4>
+    </div>
 </div>
 @stop
 

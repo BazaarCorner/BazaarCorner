@@ -12,18 +12,38 @@
             <ul class="nav navbar-nav navbar-right">
                 <!--<li><a href="#"> Market Place </a></li>-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                          <!--<i class="fa fa-user"></i>-->
-                        Account
+                    <a href="#"
+                       class="dropdown-toggle"
+                       data-toggle="dropdown"
+                       role="button"
+                       aria-expanded="false">
+                        <i class="fa fa-user"></i> Account
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
                     @if(Auth::guest())
-                        <li><a href="{{url('member/login')}}">Sign In</a></li>
-                        <li><a href="{{url('member/register')}}">Register</a></li>
+                        <li>
+                            <a href="{{url('member/login')}}">Sign In</a>
+                        </li>
+                        <li>
+                            <a href="{{url('member/register')}}">Register</a>
+                        </li>
                     @endif
                     @if(Auth::check())
-                        <li><a href="{{route('profile')}}">Profile Settings</a></li>
+                        <li>
+                            <a href="{{route('profile')}}">Profile Settings</a>
+                        </li>
+                        
+                        @if(Auth::user()->is_merchant
+                            || Auth::user()->is_reseller
+                        )
+                        <li>
+                            <a href="{{route('catalog-dashboard')}}">
+                                Manage Catalog
+                            </a>
+                        </li>
+                        @endif
+                        
                         <li><a href="{{url('member/logout')}}">Logout</a></li>
                     @endif
                     </ul>

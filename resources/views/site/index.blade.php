@@ -51,7 +51,7 @@
     <div class="row-fluid content-holder">
         <div class="container-fluid">
             <div class="row" style="background-color: rgb(204,0,51);">
-                <img src="{{asset('assets/img/site/half_price_shop.png')}}">                
+                <img src="{{asset('assets/bazaarcorner/img/site/half_price_shop.png')}}">                
             </div>
             <div class="row">
                  @include('layout.widgets.half-price-tag')

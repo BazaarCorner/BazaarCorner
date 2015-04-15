@@ -1,12 +1,12 @@
-<?php
+<?php namespace BazaarCorner\Http\Controllers\Catalog;
 
-class CategoryController extends \BaseController {
+use BazaarCorner\Http\Requests;
+use BazaarCorner\Http\Controllers\Controller;
 
-	protected $category_model;
+use Illuminate\Http\Request;
 
-	public function __construct(){
-		$this->category_model = new Category();
-	}
+class BrandController extends Controller {
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -14,9 +14,8 @@ class CategoryController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return view('catalog.brand');
 	}
-
 
 	/**
 	 * Show the form for creating a new resource.
@@ -28,7 +27,6 @@ class CategoryController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -39,7 +37,6 @@ class CategoryController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Display the specified resource.
 	 *
@@ -48,8 +45,8 @@ class CategoryController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		//
 	}
-
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -62,7 +59,6 @@ class CategoryController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -73,7 +69,6 @@ class CategoryController extends \BaseController {
 	{
 		//
 	}
-
 
 	/**
 	 * Remove the specified resource from storage.
@@ -86,11 +81,4 @@ class CategoryController extends \BaseController {
 		//
 	}
 
-	public function subcategory($id){
-		return $this->category_model->getSubCategories($id);
-	}
-
-	public function brand($id){
-		return Category::with('brands')->where('id',$id)->first();
-	}
 }

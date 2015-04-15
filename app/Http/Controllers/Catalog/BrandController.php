@@ -1,11 +1,6 @@
-<?php namespace BazaarCorner\Http\Controllers\Catalog;
+<?php
 
-use BazaarCorner\Http\Requests;
-use BazaarCorner\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
-
-class BrandController extends Controller {
+class BrandController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,8 +9,9 @@ class BrandController extends Controller {
 	 */
 	public function index()
 	{
-		return view('catalog.brand');
+		//
 	}
+
 
 	/**
 	 * Show the form for creating a new resource.
@@ -27,6 +23,7 @@ class BrandController extends Controller {
 		//
 	}
 
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -36,6 +33,7 @@ class BrandController extends Controller {
 	{
 		//
 	}
+
 
 	/**
 	 * Display the specified resource.
@@ -48,6 +46,7 @@ class BrandController extends Controller {
 		//
 	}
 
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -58,6 +57,7 @@ class BrandController extends Controller {
 	{
 		//
 	}
+
 
 	/**
 	 * Update the specified resource in storage.
@@ -70,6 +70,7 @@ class BrandController extends Controller {
 		//
 	}
 
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -81,4 +82,7 @@ class BrandController extends Controller {
 		//
 	}
 
+	public function category($id){
+		return Brand::with('categories')->where('id',$id)->first();
+	}
 }

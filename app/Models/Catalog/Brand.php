@@ -1,10 +1,27 @@
 <?php
 
-namespace BazaarCorner\Models\Catalog;
+class Brand extends Eloquent{
 
-use Illuminate\Database\Eloquent\Model;
+	protected $table 		= 'brands';
+	protected $primaryKey 	= 'id';
+	protected $hidden 		= array(
+									'created_at'
+									,'updated_at'
+									,'is_active'
+								);
+	
+	public function getBrandList(){
+		return Brand::where('is_active',1)
+					->orderBy('name','ASC')
+					->get();
+	}
+	
+	/*====================================================================================================================================
+	| RELATIONSHIPS
+	/*====================================================================================================================================*/
+	public function categories()
+    {
+        return $this->belongsToMany('Category','brand_categories');
+    }
 
-class Brand extends Model
-{
-    protected $table = 'brands';
 }

@@ -240,9 +240,13 @@
 </div>
 <div class="col-md-3">
     <div class="affix">
-        <h4>Our Terms</h4>
-        <h4>Our Conditions</h4>
-    </div>
+        <div class="widget-holder">
+            <div class="widget-body">
+                <h4>Our Terms</h4>
+                <h4>Our Conditions</h4>
+            </div>
+        </div>
+    </div>    
 </div>
 @stop
 

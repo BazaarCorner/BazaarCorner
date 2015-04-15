@@ -20,6 +20,7 @@
                 Join our community of known merchants and resellers by creating
                 your <strong class="text-warning">FREE*</strong> account now.
             </p>
+            @include('auth.form.merchant.registration')
         </div>
         <div class="col-md-4" style="border-left: 1px solid silver">
             <h3>I'm a Buyer 
@@ -29,11 +30,33 @@
             </h3>
             <p>I would like to join the Bazaar Corner community</p>
             @include('auth.form.customer.registration')
-            <h4>Have an existing account?</h4>
-            <a href="{{url('member/login')}}">Click here to sign in</a>
             <div class="clearfix"></div>
             <?php // echo $this->partial('template/partial/socials', []); ?>  
         </div>
+    </div>
+    <div class="row-fluid">
+        <div class="row-fluid" style="font-weight: bold;">
+            By submitting the registration form, you are acknowledging our
+            <a href="{{route('terms') . '#buyer'}}"
+               class="text-capitalize"
+               target="_blank">
+                Terms
+            </a>
+        </div>
+        <h4>
+            Have an existing account?
+            <small>
+                 <a href="{{url('member/login')}}">click here to sign in</a>
+            </small>
+        </h4>
+        <em class="text-muted" style="font-size: 11px;">
+            ** We value your information. Read more about our
+            <a href="{{route('policy') . '#membership'}}"
+               class="text-capitalize"
+               target="_blank">
+                Privacy policy
+            </a>
+        </em>
     </div>
 </div>
 @stop

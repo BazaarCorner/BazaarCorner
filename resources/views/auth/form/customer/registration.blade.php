@@ -75,33 +75,13 @@
             Example: www.bazaarcorner.com/johndoe
         </em>
         <br><br>
-        <div class="row">
-            <div class="col-md-8">
-                <span class="pull-left" style="font-weight: bold;">
-                    By submitting this registration form, you are acknowledging our
-                    <a href="{{route('terms') . '#buyer'}}"
-                       class="text-capitalize"
-                       target="_blank">
-                        Terms
-                    </a>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input class="btn btn-danger pull-right"
-                           type="submit"
-                           value="Join Bazaar!">
-                </div>
+        <div class="row-fluid pull-right">            
+            <div class="form-group">
+                <input class="btn btn-danger pull-right"
+                       type="submit"
+                       value="Join Bazaar!">
             </div>
         </div>
-        <em class="text-muted" style="font-size: 11px;">
-            ** We value your information. Read more about our
-            <a href="{{route('policy') . '#membership'}}"
-               class="text-capitalize"
-               target="_blank">
-                Privacy policy
-            </a>
-        </em>
     {!! Form::close() !!}
     </div>
 </div>

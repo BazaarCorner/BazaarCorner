@@ -6,6 +6,7 @@ $styles = [
     'font-awesome/css/font-awesome.min.css',
     'bazaarcorner/css/layout.css',
     'bazaarcorner/css/widgets.css',
+    'bazaarcorner/css/navigation.css',
 ];
 ?>
 

@@ -1,8 +1,12 @@
 @extends('layout.site')
 
+@section('head-link')
+    <link type="text/css" rel="stylesheet" media="screen" href="{{asset('/assets/bazaarcorner/css/navigation.css')}}">
+@stop
+
 @section('content')
 <div class="col-md-2">
-    
+    @include('auth.navigation.sidebar')
 </div>
 <div class="col-md-10">
     <div class="content-holder">

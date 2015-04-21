@@ -18,14 +18,13 @@ class AuthController extends Controller
     {
         $this->auth = $auth;
         $this->registrar = $registrar;
+        $this->data['user'] = $this->auth->user();
         
         $this->middleware('guest', ['except' => ['getLogout', 'viewAccount']]);
     }
     
     public function viewAccount()
     {
-        $this->data['user'] = $this->auth->user();
-        
         return view('auth.index', $this->data);
     }
     

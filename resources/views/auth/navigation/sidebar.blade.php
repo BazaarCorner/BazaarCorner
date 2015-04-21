@@ -23,6 +23,11 @@
             </a>
             <ul class="children">
                 <li>
+                    <a href="/member/catalog">
+                        <span class="title text-capitalize">Catalog Dashboard</span>
+                    </a>
+                </li>
+                <li>
                     <a href="/member/catalog/product">
                         <span class="title text-capitalize">Manage Products</span>
                     </a>

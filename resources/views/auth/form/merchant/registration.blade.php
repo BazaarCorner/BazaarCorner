@@ -10,13 +10,7 @@
                 * All input fields are required
             </em>
         <div class="divider"><hr><br></div>
-    @if($errors->has())
-        <div class="alert alert-warning">
-            @foreach($errors->all() as $error)
-                <span class="text-danger">* {{$error}}</span><br>
-            @endforeach
-        </div>
-    @endif
+    
     <fieldset>
         <legend>Personal Information: </legend>
         <div class="row">
@@ -105,6 +99,9 @@
                             'placeholder' => 'Product Brand'
                         ]
                     ) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::hidden('is_merchant', true) !!}
                 </div>
             </fieldset>   
         </div>

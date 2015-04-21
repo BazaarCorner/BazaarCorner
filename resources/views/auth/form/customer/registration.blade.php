@@ -6,13 +6,6 @@
                 * All input fields are required
             </em>
         <div class="divider"><hr><br></div>
-    @if($errors->has())
-        <div class="alert alert-warning">
-            @foreach($errors->all() as $error)
-                <span class="text-danger">* {{$error}}</span><br>
-            @endforeach
-        </div>
-    @endif
         <div class="form-group">
             {!! Form::text(
                 'first_name', //input type

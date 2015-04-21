@@ -24,7 +24,7 @@ class SearchController extends Controller
     public function __construct(Request $request)
     {
         parent::__construct($request);
-    }    
+    }
     
     public function index(SearchRequest $request)
     {

@@ -1,6 +1,6 @@
 <?php
-class UploadController extends BaseController {
-
+class UploadController extends BaseController
+{
 	private $base_url;
 	private $upload_path;
 	private $script_url;
@@ -53,5 +53,4 @@ class UploadController extends BaseController {
     	$this->options 	= array_merge($this->options,$options);
 		$upload 		= new UploadHandler($this->options);
 	}
-
 }

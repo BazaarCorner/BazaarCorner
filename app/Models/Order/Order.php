@@ -1,22 +1,26 @@
 <?php
 
-class Order extends Eloquent{
+namespace BazaarCorner\Models\Order;
 
+use Illuminate\Database\Eloquent\Model;
+
+class Order extends Model
+{
 	protected $table 		= 'orders';
 	protected $primaryKey 	= 'id';
-	
-	/*====================================================================================================================================
-	| RELATIONSHIPS
-	/*====================================================================================================================================*/
-	public function status(){
+    
+	public function status()
+    {
         return $this->belongsTo('OrderStatus','code','order_status');
     }
 
-    public function items(){
+    public function items()
+    {
     	return $this->hasMany('Item');
     }
 
-    public function payment(){
+    public function payment()
+    {
     	return $this->belongsTo('Payment');
     }
 

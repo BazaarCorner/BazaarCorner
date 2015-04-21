@@ -8,18 +8,26 @@ use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
 class Registrar implements RegistrarContract
 {
+    private $rules = [
+        'first_name'    => 'required',
+        'last_name'     => 'required',
+        'username'      => 'required|max:50|unique:users',
+        'email'         => 'required|email|max:255|unique:users',
+        'password'      => 'required'
+    ];
+    
     public function validator(array $data)
     {
-        return Validator::make(
-            $data,
-            [
-                'first_name'    => 'required',
-                'last_name'     => 'required',
-                'username'      => 'required|max:50|unique:users',
-                'email'         => 'required|email|max:255|unique:users',
-                'password'      => 'required|min:8'
-            ]
-        );
+        if (array_key_exists('is_merchant', $data)) {
+            
+            $merchant_rules = [
+                'is_merchant' => "required|boolean",
+            ];
+            
+            $this->rules = array_merge($this->rules, $merchant_rules);
+        }
+        
+        return Validator::make($data, $this->rules);
     }
     
     public function create(array $data)

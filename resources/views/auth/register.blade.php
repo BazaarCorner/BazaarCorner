@@ -13,6 +13,15 @@
 
 @section('content')
 <div class="container">
+    <div class="row-fluid">
+        @if($errors->has())
+            <div class="alert alert-warning">
+                @foreach($errors->all() as $error)
+                    <span class="text-danger">* {{$error}}</span><br>
+                @endforeach
+            </div>
+        @endif
+    </div>
     <div class="row">
         <div class="col-md-8">
             <h3>Would you love to sell your products here at Bazaar Corner?</h3>

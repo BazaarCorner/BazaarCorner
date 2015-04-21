@@ -61,7 +61,10 @@
                     'placeholder' => 'Username'
                 ]
             ) !!}
-        </div>        
+        </div>     
+        <div class="form-group">
+            {!! Form::hidden('is_merchant', false) !!}
+        </div>
         <em class="text-muted" style="font-size: 11px;">
             This will serve as your url to view your profile.
             <br>
@@ -74,7 +77,7 @@
                        type="submit"
                        value="Join Bazaar!">
             </div>
-        </div>
+        </div>        
     {!! Form::close() !!}
     </div>
 </div>

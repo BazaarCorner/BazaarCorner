@@ -18,14 +18,8 @@ class Registrar implements RegistrarContract
     
     public function validator(array $data)
     {
-        if (array_key_exists('is_merchant', $data)) {
-            
-            $merchant_rules = [
-                'is_merchant' => "required|boolean",
-            ];
-            
-            $this->rules = array_merge($this->rules, $merchant_rules);
-        }
+        //Need to have a unique slug value
+        $data['username'] = $this->getSlugValue($data['username']);
         
         return Validator::make($data, $this->rules);
     }
@@ -36,10 +30,17 @@ class Registrar implements RegistrarContract
             [
                 'first_name'    => $data['first_name'],
                 'last_name'     => $data['last_name'],
-                'username'      => $data['username'],
+                'username'      => $this->getSlugValue($data['username']),
                 'password'      => bcrypt($data['password']),
-                'email'         => $data['email']
+                'email'         => $data['email'],
+                'is_merchant'   => (boolean) $data['is_merchant'],
             ]
         );
+    }
+    
+    private function getSlugValue($text)
+    {
+        $username = str_replace(" ", "_", strtolower($text));
+        return $username;
     }
 }

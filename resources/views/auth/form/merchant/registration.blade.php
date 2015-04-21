@@ -71,7 +71,7 @@
                         '', 
                         [
                             'class' => 'form-control', 
-                            'placeholder' => 'Business Name'
+                            'placeholder' => 'Business Name (as Username)'
                         ]
                     ) !!}
                 </div>     
@@ -82,7 +82,7 @@
                 <br><br>-->
                 <div class="form-group">
                     {!! Form::text(
-                        'username', //input type
+                        'category', //input type
                         '', 
                         [
                             'class' => 'form-control', 
@@ -92,7 +92,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::text(
-                        'username', //input type
+                        'brand', //input type
                         '', 
                         [
                             'class' => 'form-control', 

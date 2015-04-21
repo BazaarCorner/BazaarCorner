@@ -16,7 +16,7 @@
     </div>
     <div class="content-body">
         <div class="container-fluid">
-            Welcome to Catalog Dashboard!
+            
         </div>
     </div>
 </div>

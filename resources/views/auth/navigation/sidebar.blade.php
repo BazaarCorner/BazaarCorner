@@ -24,7 +24,7 @@
             <ul class="children">
                 <li>
                     <a href="/member/catalog">
-                        <span class="title text-capitalize">Catalog Dashboard</span>
+                        <span class="title text-capitalize">Dashboard</span>
                     </a>
                 </li>
                 <li>

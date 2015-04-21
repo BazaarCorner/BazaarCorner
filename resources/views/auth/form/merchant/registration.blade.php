@@ -80,7 +80,7 @@
                     Example: www.bazaarcorner.com/johndoe
                 </em>
                 <br><br>-->
-                <div class="form-group">
+<!--                <div class="form-group">
                     {!! Form::text(
                         'category', //input type
                         '', 
@@ -99,7 +99,7 @@
                             'placeholder' => 'Product Brand'
                         ]
                     ) !!}
-                </div>
+                </div>-->
                 <div class="form-group">
                     {!! Form::hidden('is_merchant', true) !!}
                 </div>

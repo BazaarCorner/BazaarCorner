@@ -54,7 +54,7 @@
                 <img src="{{asset('assets/bazaarcorner/img/site/half_price_shop.png')}}">                
             </div>
             <div class="row">
-                 @include('layout.widgets.half-price-tag')
+                 <!--include('layout.widgets.half-price-tag')-->
             </div>
         </div>      
     </div>

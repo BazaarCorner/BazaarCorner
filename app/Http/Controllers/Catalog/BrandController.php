@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use BazaarCorner\Models\Catalog\Brand;
 use BazaarCorner\Http\Requests\Catalog\CreateBrandRequest as BrandRequest;
 use BazaarCorner\Services\Traits\SluggableValue;
+use Illuminate\Support\Facades\Input;
 
 class BrandController extends Controller
 {
@@ -26,7 +27,7 @@ class BrandController extends Controller
     
     public function index()
 	{
-        $this->data['brands'] = $this->brand->where('is_active', true)->get();
+        $this->data['brands'] = $this->brand->all();
         
 		return view('catalog.brand', $this->data);
 	}
@@ -56,13 +57,22 @@ class BrandController extends Controller
 	
     public function edit($id)
 	{
-		//
+		$this->data['brand'] = $this->brand->findOrFail($id);
+        
+        return view('catalog.brand.update', $this->data);
 	}
 
     
-	public function update($id)
-	{
-		//
+	public function update($id, BrandRequest $request)
+	{        
+		$brand = $this->brand->findOrFail($id);
+        
+        $brand->fill($request->all());
+        $brand->save();
+        
+        $this->data['brands']  = $brand->all();
+        
+		return view('catalog.brand', $this->data);
 	}
 
     

@@ -17,8 +17,8 @@
     <div class="content-body">
         <div class="container-fluid">
             <div class="table-responsive">
-                <table>
-                    <thead>
+                <table class="table table-striped table-bordered">
+                    <thead class="text-capitalize">
                         <tr>
                             <th>Image</th>
                             <th>SKU</th>
@@ -26,6 +26,7 @@
                             <th>Price</th>
                             <th>Brand</th>
                             <th>Category</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -38,7 +39,19 @@
                             <td>{{$product->price}}</td>
                             <td>{{$product->brand}}</td>
                             <td>{{$product->category}}</td>
-                            <td>{{$product->id}}</td>
+                            <td>{{$product->is_active}}</td>
+                            <td class="center-block">
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button type="button"
+                                            class="btn btn-default" 
+                                            onClick="window.location='{{url("member/catalog/product/$product->product_id/edit")}}'">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <i class="fa fa-remove"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

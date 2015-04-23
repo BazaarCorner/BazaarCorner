@@ -12,7 +12,7 @@ class CreateBrandsTable extends Migration
     {
         Schema::create('brands', function(Blueprint $table)
         {
-            $table->bigIncrements('brand_id')->unsigned();
+            $table->bigIncrements('id')->unsigned();
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->string('image')->default("brand/no-image.jpg");

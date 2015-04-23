@@ -32,18 +32,7 @@
                     @if(Auth::check())
                         <li>
                             <a href="{{route('profile')}}">Profile Settings</a>
-                        </li>
-                        
-                        @if(Auth::user()->is_merchant
-                            || Auth::user()->is_reseller
-                        )
-                        <li>
-                            <a href="{{route('catalog-dashboard')}}">
-                                Manage Catalog
-                            </a>
-                        </li>
-                        @endif
-                        
+                        </li>                        
                         <li><a href="{{url('member/logout')}}">Logout</a></li>
                     @endif
                     </ul>

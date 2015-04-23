@@ -7,7 +7,7 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar">
             <div class="nav navbar-nav navbar-left col-md-4">
-                @include('layout.widgets.search')
+                <!--include('layout.widgets.search')-->
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <!--<li><a href="#"> Market Place </a></li>-->

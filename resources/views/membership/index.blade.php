@@ -4,12 +4,12 @@
     <div class="row-fluid widget-container">
         @include('membership.profile.info', ['member' => $member['info']])
     </div>
-    <div class="row-fluid widget-container">
-        @include('membership.profile.ranking',['rankings' => $member['rankings']])
+<!--    <div class="row-fluid widget-container">
+        include('membership.profile.ranking',['rankings' => $member['rankings']])
     </div>
     <div class="row-fluid widget-container">
-        @include('membership.profile.feedback', ['feedbacks' => $member['feedbacks']])
-    </div>
+        include('membership.profile.feedback', ['feedbacks' => $member['feedbacks']])
+    </div>-->
 </div>
 <div class="col-md-9">
     <!--<div class="row-fluid"></div>-->

@@ -10,31 +10,6 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    {!! Form::label('Username:')!!}
-                    {!! Form::text('username', $user->username, ['class' => 'form-control', 'disabled']) !!}
-                </div>                 
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    {!! Form::label('Email:')!!}
-                    {!! Form::email('email', $user->email, ['class' => 'form-control']) !!}
-                </div>
-            </div>
-            <div class="col-md-4">
-                {!! Form::label('Password:')!!}
-                <div class="form-group">
-                    <a href="#"
-                       target="_blank"
-                       role="button"
-                       class="btn btn-default btn">
-                        Reset Current Password
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
                     {!! Form::label('First Name:')!!}
                     {!! Form::text('first_name', $user->first_name, ['class' => 'form-control']) !!}
                 </div>
@@ -52,7 +27,18 @@
                 </div> 
             </div>
         </div>
-    
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::label('Email:')!!}
+                    {!! Form::email('email', $user->email, ['class' => 'form-control']) !!}
+                </div>
+            </div>
+            <div class="col-md-4">                
+                
+            </div>
+            <div class="clearfix"></div>
+        </div>    
 <!--        <div class="form-group pull-right">
             <input class="btn btn-danger pull-right" type="submit" value="Update">
         </div>        -->

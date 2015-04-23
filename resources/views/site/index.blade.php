@@ -19,12 +19,12 @@
             <div class="row-fluid widget-container">
                 @include('layout.widgets.featured-merchant')
             </div>
-            <div class="row-fluid widget-container">
-                @include('layout.widgets.most-bought-item')
+<!--            <div class="row-fluid widget-container">
+                include('layout.widgets.most-bought-item')
             </div>
             <div class="row-fluid widget-container">
-                @include('layout.widgets.top-brand')
-            </div>
+                include('layout.widgets.top-brand')
+            </div>-->
         </div>
         <div class="col-lg-9 col-md-9">
             <div class="row"> @include('layout.widgets.index-banner') </div>
@@ -48,15 +48,15 @@
             </div>
         </div>        
     </div>
-    <div class="row-fluid content-holder">
+<!--    <div class="row-fluid content-holder">
         <div class="container-fluid">
             <div class="row" style="background-color: rgb(204,0,51);">
                 <img src="{{asset('assets/bazaarcorner/img/site/half_price_shop.png')}}">                
             </div>
             <div class="row">
-                 <!--include('layout.widgets.half-price-tag')-->
+                 include('layout.widgets.half-price-tag')
             </div>
         </div>      
-    </div>
+    </div>-->
 </div>
 @stop

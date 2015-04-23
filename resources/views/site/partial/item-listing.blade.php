@@ -1,21 +1,8 @@
 <div class="container-fluid">
     <div class="content-body">
         <div class="row-fluid">
-            <div class="col-md-7" style="padding-top: 10px;">
-                <span style="float: left; margin-top: 10px;">Sort by:</span>
-                <ul class="list-inline sortby">
-                    @foreach($filters as $filter)
-                        <li role="presentation" 
-                            @if($filter['active'])
-                                class="active"
-                            @endif
-                        >
-                            <a href="{{url($filter['url'])}}">{{$filter['name']}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="col-md-5">
+            <!-- add sorting filter here -->
+            <div class="col-md-12">
                 <nav class="pull-right">
                     <ul class="pagination">
                         <li><a href="#" class="page-active">1</a></li>

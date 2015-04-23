@@ -26,7 +26,7 @@ class BrandController extends Controller
     
     public function index()
 	{
-        $this->data['brands'] = $this->brand->get();
+        $this->data['brands'] = $this->brand->where('is_active', true)->get();
         
 		return view('catalog.brand', $this->data);
 	}
@@ -42,7 +42,6 @@ class BrandController extends Controller
         $input['slug'] = $this->getSlugValue($input['name']);
         
         $brand = $this->brand->create($input);
-        
         $this->data['brands'] = $brand->all();
         
 		return view('catalog.brand', $this->data);

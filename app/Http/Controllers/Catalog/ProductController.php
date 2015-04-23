@@ -5,19 +5,26 @@ namespace BazaarCorner\Http\Controllers\Catalog;
 use BazaarCorner\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
+use BazaarCorner\Models\Catalog\Product;
 
 class ProductController extends Controller
 {
-    public function __construct(Guard $auth, Registrar $registrar)
+    protected $product;
+    
+    public function __construct(Guard $auth, Registrar $registrar, Product $product)
     {
         $this->auth = $auth;
         $this->registrar = $registrar;
+        $this->product = $product;
+        
         $this->data['user'] = $this->auth->user();
     }
     
 	public function index()
 	{
-		return view('catalog.product', $this->data);
+        $this->data['products'] = $this->product->where('is_active')->get();
+        
+        return view('catalog.product', $this->data);
 	}
 
     

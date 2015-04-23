@@ -4,7 +4,7 @@
 <div class="content-holder">
     <div class="content-header">
         <div class="container-fluid text-capitalize">
-            <div class="pull-left">Catalog - New Brand</div>            
+            <div class="pull-left">Catalog - New Brand</div>
         </div>
     </div>
     <div class="content-body">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="row-fluid pull-right">
                     <div class="form-group">
-                        <a href="{{route('member.catalog.brand.store')}}"
+                        <a href="{{route('member.catalog.brand.index')}}"
                            role="button"
                            class="btn btn-default text-uppercase">
                             Cancel

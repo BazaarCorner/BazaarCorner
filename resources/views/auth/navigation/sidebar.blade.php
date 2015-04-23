@@ -22,11 +22,11 @@
                 <span class="title">My Catalog</span>
             </a>
             <ul class="children">
-                <li>
+<!--                <li>
                     <a href="/member/catalog">
                         <span class="title text-capitalize">Dashboard</span>
                     </a>
-                </li>
+                </li>-->
                 <li>
                     <a href="/member/catalog/product">
                         <span class="title text-capitalize">Manage Products</span>

@@ -11,8 +11,8 @@
                     </div>
                     <div class="col-md-8">
                         <div class="row-fluid">
-                            <span class="text-danger pull-right" ><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <span class="text-danger pull-right" ><i class="fa icon-plus-sign" aria-hidden="true"></i></span>
+                            <!--<span class="text-danger pull-right" ><i class="fa fa-star" aria-hidden="true"></i></span>-->
+                            <!--<span class="text-danger pull-right" ><i class="fa icon-plus-sign" aria-hidden="true"></i></span>-->
                         </div>
                     </div>
                     <div class="clearfix"></div>

@@ -25,6 +25,6 @@ class ProductService
     
     public function merchantProducts($id)
     {
-        return $this->product->where('merchant_id', $id)->where('is_active', true)->get();
+        return $this->product->where('merchant_id', $id)->get();
     }
 }

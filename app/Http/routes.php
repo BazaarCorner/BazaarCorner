@@ -27,9 +27,9 @@ Route::group(['middleware' => 'auth'], function() {
     
     Route::group(['middleware' => 'auth.merchant'], function() {
         /*JQuery Fileupload*/
-        Route::get('upload/{resource}','Catalog\UploadController@upload');
-        Route::post('upload/{resource}','Catalog\UploadController@upload');
-        Route::delete('upload/{resource}','Catalog\UploadController@upload');
+//        Route::get('upload/{resource}','Catalog\UploadController@upload');
+//        Route::post('upload/{resource}','Catalog\UploadController@upload');
+//        Route::delete('upload/{resource}','Catalog\UploadController@upload');
     });
     
     //CHECKOUT

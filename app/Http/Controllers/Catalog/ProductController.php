@@ -8,18 +8,21 @@ use Illuminate\Contracts\Auth\Registrar;
 use BazaarCorner\Models\Catalog\Product;
 use BazaarCorner\Http\Requests\Catalog\ProductRequest;
 use BazaarCorner\Services\Traits\SluggableValue;
+use BazaarCorner\Services\Catalog\BrandService;
 
 class ProductController extends Controller
 {
     use SluggableValue;
     
     protected $product;
-    
-    public function __construct(Guard $auth, Registrar $registrar, Product $product)
+    protected $brand;
+
+    public function __construct(Guard $auth, Registrar $registrar, Product $product, BrandService $brand)
     {
         $this->auth = $auth;
         $this->registrar = $registrar;
         $this->product = $product;
+        $this->brand = $brand;
         
         $this->data['user'] = $this->auth->user();
     }
@@ -32,10 +35,11 @@ class ProductController extends Controller
 	}
     
 	public function create()
-	{
-		return view('catalog.product.create', $this->data);
+	{   
+        $this->data['brands'] = $this->brand->getBrands();
+        
+        return view("catalog.product.create", $this->data);
 	}
-
     
 	public function store(ProductRequest $request)
 	{

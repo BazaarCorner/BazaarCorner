@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration
             $table->text('description')->default("");
             $table->string('image')->default('product/no-image.jpg');
             $table->boolean('is_active')->default(false);
+            $table->bigInteger('merchant_id')->unsigned()->default(0);
+            $table->bigInteger('brand_id')->unsigned()->default(0);
             $table->timestamps();
         });
     }

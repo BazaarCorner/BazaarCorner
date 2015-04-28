@@ -16,7 +16,7 @@ class CreateProductImagesTable extends Migration
 			$table->string('name')->unique();
 			$table->integer('is_primary')->default(0);
 			$table->timestamps();
-			$table->foreign('id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
+//			$table->foreign('id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
         });
     }
     

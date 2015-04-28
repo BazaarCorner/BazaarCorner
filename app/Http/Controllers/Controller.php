@@ -103,12 +103,4 @@ abstract class Controller extends BaseController
         
         return $filters;
     }
-
-    /**
-     * @deprecated since version 1.x
-     */
-//    protected final function setRedirectPath($path)
-//    {
-//        $this->redirectPath = $path;
-//    }
 }

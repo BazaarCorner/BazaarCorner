@@ -20,34 +20,46 @@
                 <table class="table table-striped table-bordered">
                     <thead class="text-capitalize">
                         <tr>
+                            <th>Status</th>
                             <th>Image</th>
                             <th>SKU</th>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Brand</th>
-                            <th>Category</th>
-                            <th>Status</th>
+                            <th>Category</th>                            
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($products as $product)
                         <tr>
-                            <td>{{$product->image}}</td>
+                            <td class="text-center">
+                                @if($product->is_active)
+                                    <i class="fa fa-circle text-success"></i>
+                                @else
+                                    <i class="fa fa-circle text-muted"></i>
+                                @endif
+                            </td>
+                            <td>
+                                <img class="img-center img-thumbnail img-responsive"
+                                     style="width: 75px; height: 75px"
+                                     src="{{$product->image}}">
+                            </td>
                             <td>{{$product->sku}}</td>
                             <td>{{$product->name}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->brand}}</td>
-                            <td>{{$product->category}}</td>
-                            <td>{{$product->is_active}}</td>
-                            <td class="center-block">
+                            <td>{{$product->category}}</td>  
+                            <td>
                                 <div class="btn-group btn-group-sm" role="group">
                                     <button type="button"
-                                            class="btn btn-default" 
-                                            onClick="window.location='{{url("member/catalog/product/$product->product_id/edit")}}'">
+                                            class="btn btn-default"
+                                            onClick="window.location='{{url("member/catalog/product/$product->id/edit")}}'">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button type="button" class="btn btn-default">
+                                    <button type="button"
+                                            class="btn btn-default"
+                                            onClick="window.localtion='{{route('member.catalog.product.destroy', $product->id)}}'">
                                         <i class="fa fa-remove"></i>
                                     </button>
                                 </div>

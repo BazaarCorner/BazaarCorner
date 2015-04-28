@@ -51,7 +51,9 @@
                                             onClick="window.location='{{url("member/catalog/brand/$brand->id/edit")}}'">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button type="button" class="btn btn-default">
+                                    <button type="button"
+                                            class="btn btn-default"
+                                            onClick="window.localtion='{{route('member.catalog.brand.destroy', $brand->id)}}'">
                                         <i class="fa fa-remove"></i>
                                     </button>
                                 </div>

@@ -4,7 +4,7 @@ namespace BazaarCorner\Http\Requests\Catalog;
 
 use BazaarCorner\Http\Requests\Request;
 
-class CreateBrandRequest extends Request
+class BrandRequest extends Request
 {
 	public function authorize()
 	{
@@ -14,8 +14,7 @@ class CreateBrandRequest extends Request
 	public function rules()
 	{
 		return [
-            'name'          => 'required|unique:brands',
-//            'slug'          => 'require|unique:brands',
+            'name'          => 'required',
             'description'   => 'required'
 		];
 	}

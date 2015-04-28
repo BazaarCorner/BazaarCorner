@@ -1,10 +1,10 @@
-@for ($i=4; $i <= 9; $i++)
+@foreach ($products as $product)
 <div class="col-md-2 col-sm-6 col-xs-12" style="padding: 5px;">
     <div id="product-holder" class="img-thumbnail">
         <div id="item-container">           
             <div class="row-fluid" style="border: solid 1px silver">
                 <div id="image-holder">
-                    <img src="{{asset('img/category-items/item0'.$i.'.jpg')}}" class="img-center img-responsive">
+                    <img src="{{asset($product->image)}}" class="img-center img-responsive">
                 </div>       
                 <div style="width: 100%; height:inherit; position: relative; background-color: black; opacity: 0.9;">
                     <div class="row-fluid">
@@ -25,7 +25,7 @@
                                      <!--cornsilk--> 
                                     <span class="text-right pull-right" style="color: #C11B17;">
                                          <!--item name--> 
-                                        Donec ut augue quis sem
+                                        {{$product->name}}
                                     </span>
                                 </div>
                             </div>
@@ -44,6 +44,6 @@
         <div class="clearfix"></div>
     </div>
 </div>
-@endfor
+@endforeach
 
 <div class="clearfix"></div>

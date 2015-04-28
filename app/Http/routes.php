@@ -25,6 +25,13 @@ Route::group(['middleware' => 'auth'], function() {
 //        Route::resource('category', 'Catalog\CategoryController');
     });
     
+    Route::group(['middleware' => 'auth.merchant'], function() {
+        /*JQuery Fileupload*/
+        Route::get('upload/{resource}','Catalog\UploadController@upload');
+        Route::post('upload/{resource}','Catalog\UploadController@upload');
+        Route::delete('upload/{resource}','Catalog\UploadController@upload');
+    });
+    
     //CHECKOUT
 });
 
@@ -76,3 +83,6 @@ Route::get('{username}', ['as' => 'member', 'uses' => 'Membership\PageController
  * ?sort-by=discounts  - %-off
  */
 Route::get('{category}/{subcategory}', ['as' => 'shops', 'uses' => 'Site\ShopController@index']);
+
+
+

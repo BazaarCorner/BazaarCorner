@@ -16,7 +16,7 @@
         <div class="divider"><hr><br></div>
         <div class="row-fluid">
             <div class="col-md-12">
-                <!--include('layout.widgets.product-profiler')-->
+                @include('layout.widgets.product-profiler', ['products', $products])
                 <div class="clearfix"></div>
             </div>
         </div>

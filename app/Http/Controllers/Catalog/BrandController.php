@@ -6,9 +6,8 @@ use BazaarCorner\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use BazaarCorner\Models\Catalog\Brand;
-use BazaarCorner\Http\Requests\Catalog\CreateBrandRequest as BrandRequest;
+use BazaarCorner\Http\Requests\Catalog\BrandRequest;
 use BazaarCorner\Services\Traits\SluggableValue;
-use Illuminate\Support\Facades\Input;
 
 class BrandController extends Controller
 {
@@ -27,7 +26,7 @@ class BrandController extends Controller
     
     public function index()
 	{
-        $this->data['brands'] = $this->brand->all();
+        $this->getBrands();
         
 		return view('catalog.brand', $this->data);
 	}
@@ -42,8 +41,9 @@ class BrandController extends Controller
         $input = $request->all();
         $input['slug'] = $this->getSlugValue($input['name']);
         
-        $brand = $this->brand->create($input);
-        $this->data['brands'] = $brand->all();
+        $this->brand->create($input);
+        
+        $this->getBrands();
         
 		return view('catalog.brand', $this->data);
 	}
@@ -53,7 +53,6 @@ class BrandController extends Controller
 	{
 		//
 	}
-
 	
     public function edit($id)
 	{
@@ -70,7 +69,7 @@ class BrandController extends Controller
         $brand->fill($request->all());
         $brand->save();
         
-        $this->data['brands']  = $brand->all();
+        $this->getBrands();
         
 		return view('catalog.brand', $this->data);
 	}
@@ -78,6 +77,14 @@ class BrandController extends Controller
     
 	public function destroy($id)
 	{
-		//
+        
 	}
+    
+    /**
+     * @return void
+     */
+    private function getBrands()
+    {
+        $this->data['brands'] = $this->brand->all();
+    }
 }

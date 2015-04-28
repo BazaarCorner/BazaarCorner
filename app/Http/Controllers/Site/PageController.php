@@ -3,12 +3,15 @@
 namespace BazaarCorner\Http\Controllers\Site;
 
 use BazaarCorner\Http\Controllers\Controller;
+use BazaarCorner\Services\Catalog\ProductService;
 
 class PageController extends Controller
 {
-    public function index()
+    public function index(ProductService $product)
     {
         $this->data['filters'] = $this->getFilters();
+        $this->data['new_items'] = $product->newlyAdded();
+        $this->data['half_priced'] = $product->halfPriced();
         
         return view('site.index', $this->data);
     }

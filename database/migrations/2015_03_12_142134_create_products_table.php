@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->string('excerpt', 250)->default("");
-            $table->text('short_description')->default("");
+            $table->text('description')->default("");
             $table->string('image')->default('product/no-image.jpg');
             $table->boolean('is_active')->default(false);
             $table->timestamps();

@@ -6,9 +6,13 @@ use BazaarCorner\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use BazaarCorner\Models\Catalog\Product;
+use BazaarCorner\Http\Requests\Catalog\ProductRequest;
+use BazaarCorner\Services\Traits\SluggableValue;
 
 class ProductController extends Controller
 {
+    use SluggableValue;
+    
     protected $product;
     
     public function __construct(Guard $auth, Registrar $registrar, Product $product)
@@ -22,11 +26,10 @@ class ProductController extends Controller
     
 	public function index()
 	{
-        $this->data['products'] = $this->product->where('is_active')->get();
+        $this->getProducts();
         
         return view('catalog.product', $this->data);
 	}
-
     
 	public function create()
 	{
@@ -34,9 +37,17 @@ class ProductController extends Controller
 	}
 
     
-	public function store()
+	public function store(ProductRequest $request)
 	{
-		//
+		$input = $request->all();
+//        $input['slug'] = $this->getSlugValue($input['name']);
+        $input['merchant_id'] = $this->auth->user()->id;
+        
+        $this->product->create($input);
+        
+        $this->getProducts();
+        
+        return view('catalog.product', $this->data);
 	}
 
     
@@ -44,17 +55,25 @@ class ProductController extends Controller
 	{
 		//
 	}
-
     
 	public function edit($id)
 	{
-		//
+        $this->data['product'] = $this->product->where('merchant_id', $this->auth->user()->id)->findOrFail($id);
+        
+        return view('catalog.product.update', $this->data);
 	}
 
     
-	public function update($id)
+	public function update($id, ProductRequest $request)
 	{
-		//
+		$product = $this->product->findOrFail($id);
+        
+        $product->fill($request->all());
+        $product->save();
+        
+        $this->getProducts();
+        
+		return view('catalog.product', $this->data);
 	}
 
     
@@ -62,5 +81,14 @@ class ProductController extends Controller
 	{
 		//
 	}
-
+    
+    /**
+     * @return void
+     */
+    private function getProducts()
+    {
+        $this->data['products'] = $this->product
+            ->where('merchant_id', $this->auth->user()->id)
+            ->get();
+    }
 }

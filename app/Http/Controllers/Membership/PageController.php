@@ -5,12 +5,13 @@ namespace BazaarCorner\Http\Controllers\Membership;
 use BazaarCorner\Http\Controllers\Controller;
 use BazaarCorner\Models\Memebership\Member;
 use BazaarCorner\Models\Membership\User;
+use BazaarCorner\Services\Catalog\ProductService;
 
 class PageController extends Controller
 {
     protected $member;
     
-    public function show($username)
+    public function show(ProductService $product, $username)
     {
         $this->member = User::where('username', $username)->first();
         
@@ -20,6 +21,8 @@ class PageController extends Controller
         
         $this->data['product']['filters'] = $this->getFilters();
         $this->data['product']['items'] = $this->getFilteredItems();
+        
+        $this->data['products'] = $product->merchantProducts($this->member->id);
         
         return view('membership.index', $this->data);
     }

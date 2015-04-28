@@ -10,11 +10,11 @@
                 * All input fields are required
             </em>
         <div class="divider"><hr><br></div>
-    
-    <fieldset>
-        <legend>Personal Information: </legend>
-        <div class="row">
+        
+        <div class="row">        
             <div class="col-md-6">
+            <fieldset>
+                <legend>Personal Information: </legend>
                 <div class="form-group">
                     {!! Form::text(
                         'first_name', //input type
@@ -35,8 +35,6 @@
                         ]
                     ) !!}
                 </div>
-            </div>
-            <div class="col-md-6">
                 <div class="form-group">
                     {!! Form::email(
                         'email', // input type
@@ -58,12 +56,10 @@
                         ]
                     ) !!}
                 </div>
+                </fieldset>
             </div>
-        </div>
-    </fieldset>
-    <div class="row">
-        <div class="col-md-6">
-            <fieldset>
+            <div class="col-md-6">
+                <fieldset>
                 <legend>Business Information:</legend>
                 <div class="form-group">
                     {!! Form::text(
@@ -74,40 +70,11 @@
                             'placeholder' => 'Business Name (as Username)'
                         ]
                     ) !!}
-                </div>     
-<!--                <em class="text-muted" style="font-size: 11px;">
-                    This will serve as your url to view your profile.
-                    Example: www.bazaarcorner.com/johndoe
-                </em>
-                <br><br>-->
-<!--                <div class="form-group">
-                    {!! Form::text(
-                        'category', //input type
-                        '', 
-                        [
-                            'class' => 'form-control', 
-                            'placeholder' => 'Product Category'
-                        ]
-                    ) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::text(
-                        'brand', //input type
-                        '', 
-                        [
-                            'class' => 'form-control', 
-                            'placeholder' => 'Product Brand'
-                        ]
-                    ) !!}
-                </div>-->
+                </div> 
                 <div class="form-group">
                     {!! Form::hidden('is_merchant', true) !!}
                 </div>
-            </fieldset>   
-        </div>
-        <div class="col-md-6">
-            <fieldset>
-                <legend>Business Address:</legend>
+                
                 <div class="form-group">
                     {!! Form::text(
                         'address', //input type
@@ -138,9 +105,9 @@
                         ]
                     ) !!}
                 </div>
-            </fieldset>
+                </fieldset>  
+            </div>            
         </div>
-    </div>         
     <br><br>
     <div class="row-fluid pull-right">        
         <div class="form-group">

@@ -8,7 +8,64 @@
         </div>
     </div>
     <div class="content-body">
-        test
+        <div class="container-fluid">
+            {!! Form::open(['route' => 'member.catalog.product.store']) !!}
+            @if($errors->has())
+                <div class="alert alert-warning">
+                    @foreach($errors->all() as $error)
+                        <span class="text-danger">* {{$error}}</span><br>
+                    @endforeach
+                </div>
+            @endif
+                <div class="form-group">
+                    {!! Form::text(
+                        'sku',
+                        '', 
+                        [
+                            'class' => 'form-control', 
+                            'placeholder' => 'SKU'
+                        ]
+                    ) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::text(
+                        'name', //input type
+                        '', 
+                        [
+                            'class' => 'form-control', 
+                            'placeholder' => 'Product name'
+                        ]
+                    ) !!}
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="brand_id">
+                        @foreach($brands as $brand)
+                        <option value="{{$brand->id}}">{{$brand->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    {!! Form::textarea(
+                        'description', //input type
+                        '',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Description'
+                        ]
+                    ) !!}
+                </div>                
+                <div class="row-fluid pull-right">
+                    <div class="form-group">
+                        <a href="{{route('member.catalog.product.index')}}"
+                           role="button"
+                           class="btn btn-default text-uppercase">
+                            Cancel
+                        </a>
+                        <input class="btn btn-danger text-uppercase" type="submit" value="Create">
+                    </div>       
+                </div>
+            {!! Form::close() !!}
+        </div>
     </div>
 </div>
 @stop

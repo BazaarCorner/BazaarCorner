@@ -16,4 +16,9 @@ class Brand extends Model
         'image',
         'description'
     ];
+    
+    public function product()
+    {
+        return $this->hasMany('BazaarCorner\Model\Catalog\Product');
+    }
 }

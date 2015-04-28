@@ -14,5 +14,12 @@ class Product extends Model
         'name',
         'sku',
         'description',
-    ];
+        'merchant_id',
+        'brand_id'
+    ];    
+    
+    public function brand()
+    {
+        return $this->belongsTo('BazaarCorner\Models\Catalog\Brand', 'brand_id', 'id');
+    }
 }

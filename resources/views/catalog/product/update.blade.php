@@ -26,6 +26,17 @@
                     {!! Form::text('name', $product->name, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
+                    {!! Form::label('Brand Name:') !!}
+                    <select class="form-control">
+                        @foreach($brands as $brand)                        
+                        <option value="{{$brand->id}}"                                
+                                @if($product->brand_id === $brand->id) selected @endif >
+                            {{$brand->name}}
+                        </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     {!! Form::label('Description:') !!}
                     {!! Form::textarea('description', $product->description, ['class' => 'form-control']) !!}
                 </div>

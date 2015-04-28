@@ -26,7 +26,7 @@
                             <th>Name</th>
                             <th>Price</th>
                             <th>Brand</th>
-                            <th>Category</th>                            
+                            <!--<th>Category</th>-->
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -48,8 +48,8 @@
                             <td>{{$product->sku}}</td>
                             <td>{{$product->name}}</td>
                             <td>{{$product->price}}</td>
-                            <td>{{$product->brand}}</td>
-                            <td>{{$product->category}}</td>  
+                            <td>{{$product->brand()->getResults()->name}}</td>
+                            <!--<td>{{$product->category}}</td>-->
                             <td>
                                 <div class="btn-group btn-group-sm" role="group">
                                     <button type="button"

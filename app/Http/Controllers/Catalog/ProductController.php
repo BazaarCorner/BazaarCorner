@@ -44,13 +44,12 @@ class ProductController extends Controller
 	public function store(ProductRequest $request)
 	{
 		$input = $request->all();
-//        $input['slug'] = $this->getSlugValue($input['name']);
+        $input['slug'] = $this->getSlugValue($input['name']);
         $input['merchant_id'] = $this->auth->user()->id;
         
-        $this->product->create($input);
+        $this->product->create($input);        
         
-        $this->getProducts();
-        
+        $this->getProducts();        
         return view('catalog.product', $this->data);
 	}
 
@@ -63,7 +62,7 @@ class ProductController extends Controller
 	public function edit($id)
 	{
         $this->data['product'] = $this->product->where('merchant_id', $this->auth->user()->id)->findOrFail($id);
-        
+        $this->data['brands'] = $this->brand->getBrands();
         return view('catalog.product.update', $this->data);
 	}
 

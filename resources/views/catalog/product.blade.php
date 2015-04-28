@@ -43,7 +43,7 @@
                             <td>
                                 <img class="img-center img-thumbnail img-responsive"
                                      style="width: 75px; height: 75px"
-                                     src="{{$product->image}}">
+                                     src="{{asset($product->image)}}">
                             </td>
                             <td>{{$product->sku}}</td>
                             <td>{{$product->name}}</td>

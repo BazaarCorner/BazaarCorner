@@ -40,7 +40,7 @@
                             <td>
                                 <img class="img-center img-thumbnail img-responsive"
                                      style="width: 75px; height: 75px"
-                                     src="{{$brand->image}}">
+                                     src="{{asset($product->image)}}">
                             </td>
                             <td>{{$brand->name}}</td>
                             <td>{{$brand->description}}</td>

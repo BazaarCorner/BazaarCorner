@@ -47,8 +47,9 @@
                     </div>
                     <div class="divider"><hr></div>
                     <div id="brand" class="row-fluid text-center">
-                            <!-- brand name -->
-                            <h6 class="text-uppercase" style="color: #FF4500"> {{$product->brand()->getResults()->name}} </h6>
+                            <h6 class="text-uppercase" style="color: #FF4500"> 
+                                {{isset($product->brand()->getResults()->name) ? $product->brand()->getResults()->name : ""}}
+                            </h6>
                     </div>
                     <div class="clearfix"></div>
                 </div>

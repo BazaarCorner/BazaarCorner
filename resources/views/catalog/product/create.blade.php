@@ -39,6 +39,7 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control" name="brand_id">
+                        <option value="0">Select Brand</option>
                         @foreach($brands as $brand)
                         <option value="{{$brand->id}}">{{$brand->name}}</option>
                         @endforeach
@@ -53,7 +54,7 @@
                             'placeholder' => 'Description'
                         ]
                     ) !!}
-                </div>                
+                </div>
                 <div class="row-fluid pull-right">
                     <div class="form-group">
                         <a href="{{route('member.catalog.product.index')}}"

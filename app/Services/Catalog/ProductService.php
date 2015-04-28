@@ -15,7 +15,7 @@ class ProductService
     
     public function newlyAdded()
     {
-        return $this->product->where('is_active', true  )->get();
+        return $this->product->get();
     }
     
     public function halfPriced()

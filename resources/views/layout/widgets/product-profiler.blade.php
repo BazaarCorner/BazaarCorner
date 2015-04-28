@@ -29,9 +29,9 @@
                                 <div class="col-md-5">
                                     <div class="row-fluid ">
                                         <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
-                                        <span class="text-warning" style="font-size: 20px; color: #FFFFFF">$2,000,000.00</span>
+                                        <span class="text-warning" style="font-size: 20px; color: #FFFFFF">{{$product->price}}</span>
                                         <br>
-                                        <span class="text-muted" style="text-decoration: line-through;">$35,000,000.00</span>    
+                                        <span class="text-muted" style="text-decoration: line-through;">{{$product->price}}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
@@ -48,7 +48,7 @@
                     <div class="divider"><hr></div>
                     <div id="brand" class="row-fluid text-center">
                             <!-- brand name -->
-                            <h6 class="text-uppercase" style="color: #FF4500"> Brand - Category </h6>
+                            <h6 class="text-uppercase" style="color: #FF4500"> {{$product->brand()->getResults()->name}} </h6>
                     </div>
                     <div class="clearfix"></div>
                 </div>

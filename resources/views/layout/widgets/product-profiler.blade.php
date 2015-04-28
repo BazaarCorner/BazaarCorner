@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="ribbon-discount">
-                            <span >60% OFF</span>
+                            <!--<span >60% OFF</span>-->
                         </div>
                     </div>
                     <div class="col-md-8">

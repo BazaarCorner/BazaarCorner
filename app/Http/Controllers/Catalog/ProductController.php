@@ -47,7 +47,7 @@ class ProductController extends Controller
         $input['slug'] = $this->getSlugValue($input['name']);
         $input['merchant_id'] = $this->auth->user()->id;
         
-        $this->product->create($input);        
+        $this->product->create($input);
         
         $this->getProducts();        
         return view('catalog.product', $this->data);

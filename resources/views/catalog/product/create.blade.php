@@ -56,7 +56,7 @@
                     ) !!}
                 </div>
                 <div class="row-fluid pull-right">
-                    <div class="form-group">
+                    <div class="form-group btn-group-xs">
                         <a href="{{route('member.catalog.product.index')}}"
                            role="button"
                            class="btn btn-default text-uppercase">

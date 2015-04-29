@@ -45,7 +45,7 @@
                             <td>{{$brand->name}}</td>
                             <td>{{$brand->description}}</td>
                             <td>
-                                <div class="btn-group btn-group-sm" role="group">
+                                <div class="btn-group btn-group-xs" role="group">
                                     <button type="button"
                                             class="btn btn-default" 
                                             onClick="window.location='{{url("member/catalog/brand/$brand->id/edit")}}'">

@@ -17,6 +17,7 @@ class ProductRequest extends Request
             'sku'           => 'required',
             'name'          => 'required',
             'description'   => 'required',
+            'brand_id'      => 'required',
 		];
 	}
 }

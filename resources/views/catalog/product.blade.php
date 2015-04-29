@@ -24,7 +24,7 @@
                             <th>Image</th>
                             <th>SKU</th>
                             <th>Name</th>
-                            <th>Price</th>
+                            <!--<th>Price</th>-->
                             <th>Brand</th>
                             <!--<th>Category</th>-->
                             <th>Actions</th>
@@ -47,7 +47,7 @@
                             </td>
                             <td>{{$product->sku}}</td>
                             <td>{{$product->name}}</td>
-                            <td>{{$product->price}}</td>
+                            <!--<td>{{$product->price}}</td>-->
                             <td>
                                 {{isset($product->brand()->getResults()->name) ? $product->brand()->getResults()->name : ""}}
                             </td>

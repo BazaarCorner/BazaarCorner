@@ -69,8 +69,7 @@ class ProductController extends Controller
     
 	public function update($id, ProductRequest $request)
 	{
-		$product = $this->product->findOrFail($id);
-        
+		$product = $this->product->findOrFail($id);        
         $product->fill($request->all());
         $product->save();
         

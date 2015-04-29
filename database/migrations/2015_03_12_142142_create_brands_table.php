@@ -15,7 +15,7 @@ class CreateBrandsTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->string('image')->default("brand/no-image.jpg");
+            $table->string('image')->default("assets/bazaarcorner/img/no-image.gif");
             $table->text('description')->default("");
             $table->boolean('is_active')->default(false);
             $table->timestamps();

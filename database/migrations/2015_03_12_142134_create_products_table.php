@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->string('excerpt', 250)->default("");
             $table->text('description')->default("");
-            $table->string('image')->default('product/no-image.jpg');
+            $table->string('image')->default('assets/bazaarcorner/img/no-image.gif');
             $table->boolean('is_active')->default(false);
             $table->bigInteger('merchant_id')->unsigned()->default(0);
             $table->bigInteger('brand_id')->unsigned()->default(0);

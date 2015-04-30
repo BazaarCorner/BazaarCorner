@@ -26,6 +26,10 @@
                     {!! Form::text('name', $product->name, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
+                    {!! Form::label('Price:') !!}
+                    {!! Form::text('price', $product->price, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
                     {!! Form::label('Brand Name:') !!}
                     <select class="form-control" name="brand_id">
                         @foreach($brands as $brand)                        

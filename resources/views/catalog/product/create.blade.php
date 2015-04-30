@@ -38,8 +38,18 @@
                     ) !!}
                 </div>
                 <div class="form-group">
+                    {!! Form::text(
+                        'price', //input type
+                        '0.00', 
+                        [
+                            'class' => 'form-control', 
+                            'placeholder' => 'Price'
+                        ]
+                    ) !!}
+                </div>
+                <div class="form-group">
                     <select class="form-control" name="brand_id">
-                        <option value="0">Select Brand</option>
+                        <option value="0">Select Brand Name</option>
                         @foreach($brands as $brand)
                         <option value="{{$brand->id}}">{{$brand->name}}</option>
                         @endforeach

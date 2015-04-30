@@ -29,9 +29,9 @@
                                 <div class="col-md-5">
                                     <div class="row-fluid ">
                                         <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
-                                        <span class="text-warning" style="font-size: 20px; color: #FFFFFF">{{$product->price}}</span>
+                                        <span class="text-warning" style="font-size: 15px; color: #FFFFFF">${{$product->price}}</span>
                                         <br>
-                                        <span class="text-muted" style="text-decoration: line-through;">{{$product->price}}</span>
+                                        <!--<span class="text-muted" style="text-decoration: line-through; font-size: 12px">{{$product->price}}</span>-->
                                     </div>
                                 </div>
                                 <div class="col-md-7">

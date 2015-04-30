@@ -49,14 +49,13 @@ class ProductController extends Controller
         
         $this->product->create($input);
         
-        $this->getProducts();        
-        return view('catalog.product', $this->data);
+        return redirect(route('member.catalog.product.index'));
 	}
 
     
 	public function show($id)
 	{
-		//
+        //
 	}
     
 	public function edit($id)
@@ -72,16 +71,17 @@ class ProductController extends Controller
 		$product = $this->product->findOrFail($id);        
         $product->fill($request->all());
         $product->save();
-        
-        $this->getProducts();
-        
-		return view('catalog.product', $this->data);
+                
+		return redirect(route('member.catalog.product.index'));
 	}
 
     
 	public function destroy($id)
 	{
-		//
+        $product = $this->product->find($id);
+        $product->delete();
+		
+        return redirect(route('member.catalog.product.index'));
 	}
     
     /**

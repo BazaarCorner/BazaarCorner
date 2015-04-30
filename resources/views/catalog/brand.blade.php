@@ -51,11 +51,21 @@
                                             onClick="window.location='{{url("member/catalog/brand/$brand->id/edit")}}'">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button type="button"
-                                            class="btn btn-default"
-                                            onClick="window.localtion='{{route('member.catalog.brand.destroy', $brand->id)}}'">
-                                        <i class="fa fa-remove"></i>
-                                    </button>
+                                    {!! Form::open(
+                                        [
+                                            'method' => 'DELETE',
+                                            'class' => 'btn-group btn-group-xs',
+                                            'route' => [
+                                                'member.catalog.brand.destroy',
+                                                $brand->id
+                                            ]
+                                        ]
+                                    ) !!}                                          
+                                        <button type="submit"
+                                                class="btn btn-default">
+                                            <i class="fa fa-remove"></i>
+                                        </button>
+                                    {!! Form::close() !!}
                                 </div>
                             </td>
                         </tr>

@@ -32,6 +32,7 @@
                 <div class="form-group">
                     {!! Form::label('Brand Name:') !!}
                     <select class="form-control" name="brand_id">
+                        <option value="0">-- Select Brand Name --</option>
                         @foreach($brands as $brand)                        
                         <option value="{{$brand->id}}"                                
                                 @if($product->brand_id === $brand->id) selected @endif >

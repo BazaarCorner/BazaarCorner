@@ -9,7 +9,7 @@
             <a href="{{route('member.catalog.product.create')}}"
                role="button"
                class="btn btn-danger btn-xs">
-                <i class="fa fa-plus"></i>
+                <i class="fa fa-plus">&nbsp;Create Product</i>
             </a>
         </div>
         </div>
@@ -59,11 +59,22 @@
                                             onClick="window.location='{{url("member/catalog/product/$product->id/edit")}}'">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                    <button type="button"
-                                            class="btn btn-default"
-                                            onClick="window.localtion='{{route('member.catalog.product.destroy', $product->id)}}'">
-                                        <i class="fa fa-remove"></i>
-                                    </button>
+                                    {!! Form::open(
+                                        [
+                                            'method' => 'DELETE',
+                                            'class' => 'btn-group btn-group-xs',
+                                            'route' => [
+                                                'member.catalog.product.destroy',
+                                                $product->id
+                                            ]
+                                        ]
+                                    ) !!}                                          
+                                        <button type="submit"
+                                                class="btn btn-default">
+                                            <i class="fa fa-remove"></i>
+                                        </button>
+                                    {!! Form::close() !!}
+                                    
                                 </div>
                             </td>
                         </tr>

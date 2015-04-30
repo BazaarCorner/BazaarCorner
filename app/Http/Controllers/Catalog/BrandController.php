@@ -43,9 +43,7 @@ class BrandController extends Controller
         
         $this->brand->create($input);
         
-        $this->getBrands();
-        
-		return view('catalog.brand', $this->data);
+        return redirect(route('member.catalog.brand.index'));
 	}
 
 	
@@ -69,15 +67,16 @@ class BrandController extends Controller
         $brand->fill($request->all());
         $brand->save();
         
-        $this->getBrands();
-        
-		return view('catalog.brand', $this->data);
+        return redirect(route('member.catalog.brand.index'));
 	}
 
     
 	public function destroy($id)
 	{
+        $brand = $this->brand->find($id);
+        $brand->delete();
         
+        return redirect(route('member.catalog.brand.index'));
 	}
     
     /**

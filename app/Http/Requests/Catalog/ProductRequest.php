@@ -13,8 +13,7 @@ class ProductRequest extends Request
 	
 	public function rules()
 	{
-		return [
-            'sku'           => 'required',
+		return [            
             'name'          => 'required',
             'description'   => 'required',
             'brand_id'      => 'required',

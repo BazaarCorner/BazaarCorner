@@ -19,16 +19,6 @@
             @endif
                 <div class="form-group">
                     {!! Form::text(
-                        'sku',
-                        '', 
-                        [
-                            'class' => 'form-control', 
-                            'placeholder' => 'SKU'
-                        ]
-                    ) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::text(
                         'name', //input type
                         '', 
                         [

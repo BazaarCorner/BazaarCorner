@@ -8,7 +8,7 @@ class Product extends Model
 {
     protected $table = 'products';
     
-    protected $guarded = ['id', 'created_at', 'updated_at', 'is_active'];
+    protected $guarded = ['id', 'created_at', 'updated_at', 'is_active', 'sku'];
     
     protected $fillable = [
         'name',
@@ -18,7 +18,7 @@ class Product extends Model
         'price',
         'merchant_id',
         'brand_id'
-    ];    
+    ];
     
     public function brand()
     {

@@ -19,7 +19,7 @@
             @endif
                 <div class="form-group">
                     {!! Form::label('SKU:') !!}
-                    {!! Form::text('sku', $product->sku, ['class' => 'form-control']) !!}
+                    {!! Form::text('sku', $product->sku, ['class' => 'form-control', 'disabled']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('Name:') !!}

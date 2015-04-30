@@ -46,6 +46,7 @@ class ProductController extends Controller
 		$input = $request->all();
         $input['slug'] = $this->getSlugValue($input['name']);
         $input['merchant_id'] = $this->auth->user()->id;
+        $input['sku'] = $this->auth->user()->id . "-" . time(); // temporary
         
         $this->product->create($input);
         
@@ -62,6 +63,7 @@ class ProductController extends Controller
 	{
         $this->data['product'] = $this->product->where('merchant_id', $this->auth->user()->id)->findOrFail($id);
         $this->data['brands'] = $this->brand->getBrands();
+        
         return view('catalog.product.update', $this->data);
 	}
 

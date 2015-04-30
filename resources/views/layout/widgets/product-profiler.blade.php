@@ -26,7 +26,7 @@
                     <div class="row-fluid">
                         <div class="container-fluid">
                             <div class="row" style="text-wrap: inherit;">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="row-fluid ">
                                         <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
                                         <span class="text-warning" style="font-size: 15px; color: #FFFFFF">${{$product->price}}</span>
@@ -34,11 +34,16 @@
                                         <!--<span class="text-muted" style="text-decoration: line-through; font-size: 12px">{{$product->price}}</span>-->
                                     </div>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-8">
                                     <!-- cornsilk -->
-                                    <span class="text-right pull-right" style="color: #C11B17;">
+                                    <span class="text-right pull-right" style="color: #C11B17; font-size: 10px;">
+                                        
                                         <!-- item name -->
-                                        {{$product->name}}
+                                        {{$product->sku}}                                        
+                                    </span>
+                                    <br>
+                                    <span class="text-right pull-right"  style="color: cornsilk; font-size: 12px">
+                                        {{isset($product->brand()->getResults()->name) ? $product->brand()->getResults()->name : ""}}
                                     </span>
                                 </div>
                                 <div class="clearfix"></div>
@@ -48,7 +53,7 @@
                     <div class="divider"><hr></div>
                     <div id="brand" class="row-fluid text-center">
                             <h6 class="text-uppercase" style="color: #FF4500"> 
-                                {{isset($product->brand()->getResults()->name) ? $product->brand()->getResults()->name : ""}}
+                                {{$product->name}}
                             </h6>
                     </div>
                     <div class="clearfix"></div>

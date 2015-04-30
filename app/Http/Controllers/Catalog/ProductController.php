@@ -49,7 +49,7 @@ class ProductController extends Controller
         
         $this->product->create($input);
         
-        return redirect(route('member.catalog.product.index'));
+        return redirect(route('member.catalog.product.index'))->with('message', 'Your product has been created!');
 	}
 
     
@@ -72,7 +72,7 @@ class ProductController extends Controller
         $product->fill($request->all());
         $product->save();
                 
-		return redirect(route('member.catalog.product.index'));
+		return redirect(route('member.catalog.product.index'))->with('message', 'Your product has been updated!');
 	}
 
     
@@ -81,7 +81,7 @@ class ProductController extends Controller
         $product = $this->product->find($id);
         $product->delete();
 		
-        return redirect(route('member.catalog.product.index'));
+        return redirect(route('member.catalog.product.index'))->with('message', 'Your product has been deleted!');
 	}
     
     /**

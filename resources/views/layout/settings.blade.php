@@ -13,7 +13,12 @@
                     @include('auth.navigation.sidebar')
                 </div>
                 <div class="col-md-10">
-                    @yield('content')                    
+                    @if (Session::has('message'))
+                        <div class="alert alert-info">
+                            <span class="text-muted">{{ Session::get('message') }}</span>
+                        </div>
+                    @endif
+                    @yield('content')   
                 </div>                
             </div>
             <div class="row" id="site-footer">

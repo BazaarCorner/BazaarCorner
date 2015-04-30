@@ -43,7 +43,7 @@ class BrandController extends Controller
         
         $this->brand->create($input);
         
-        return redirect(route('member.catalog.brand.index'));
+        return redirect(route('member.catalog.brand.index'))->with('message', 'Your brand has been created!');
 	}
 
 	
@@ -67,7 +67,7 @@ class BrandController extends Controller
         $brand->fill($request->all());
         $brand->save();
         
-        return redirect(route('member.catalog.brand.index'));
+        return redirect(route('member.catalog.brand.index'))->with('message', 'Your brand has been updated!');
 	}
 
     
@@ -76,7 +76,7 @@ class BrandController extends Controller
         $brand = $this->brand->find($id);
         $brand->delete();
         
-        return redirect(route('member.catalog.brand.index'));
+        return redirect(route('member.catalog.brand.index'))->with('message', 'Your brand has been deleted!');
 	}
     
     /**

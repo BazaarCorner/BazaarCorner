@@ -10,6 +10,10 @@
 <script type="text/javascript"src="{{asset('assets/bootstrap/js/tooltip.js')}}"></script>
 <script type="text/javascript"src="{{asset('assets/bazaarcorner/js/custom.js')}}"></script>
 
+<script>
+    $('div.alert').delay(2000).slideUp(300);
+</script>
+
 @yield('header-inline-script')
 @yield('content-inline-script')
 @yield('footer-inline-script')

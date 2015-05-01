@@ -9,7 +9,7 @@
             <a href="{{route('member.catalog.product.create')}}"
                role="button"
                class="btn btn-danger btn-xs">
-                <i class="fa fa-plus">&nbsp;Create Product</i>
+                <i class="fa fa-plus">&nbsp;New Product</i>
             </a>
         </div>
         </div>

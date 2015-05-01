@@ -9,6 +9,7 @@ use BazaarCorner\Models\Catalog\Product;
 use BazaarCorner\Http\Requests\Catalog\ProductRequest;
 use BazaarCorner\Services\Traits\SluggableValue;
 use BazaarCorner\Services\Catalog\BrandService;
+use BazaarCorner\Services\Catalog\ProductCategoryService;
 
 class ProductController extends Controller
 {
@@ -16,13 +17,20 @@ class ProductController extends Controller
     
     protected $product;
     protected $brand;
+    protected $category;
 
-    public function __construct(Guard $auth, Registrar $registrar, Product $product, BrandService $brand)
-    {
+    public function __construct(
+            Guard $auth,
+            Registrar $registrar,
+            Product $product,
+            BrandService $brand,
+            ProductCategoryService $category
+    ) {
         $this->auth = $auth;
         $this->registrar = $registrar;
         $this->product = $product;
         $this->brand = $brand;
+        $this->category = $category;
         
         $this->data['user'] = $this->auth->user();
     }
@@ -35,8 +43,10 @@ class ProductController extends Controller
 	}
     
 	public function create()
-	{   
+	{
         $this->data['brands'] = $this->brand->getBrands();
+        $this->data['categories'] = $this->category->getCategories();
+        $this->data['subcategories'] = $this->category->getCategories();
         
         return view("catalog.product.create", $this->data);
 	}
@@ -48,11 +58,13 @@ class ProductController extends Controller
         $input['merchant_id'] = $this->auth->user()->id;
         $input['sku'] = $this->auth->user()->id . "-" . time(); // temporary
         
-        $this->product->create($input);
+        $product = $this->product->create($input);
         
-        return redirect(route('member.catalog.product.index'))->with('message', 'Your product has been created!');
+        var_dump($product->getKey(), $input['category_id']); exit;
+        
+        return redirect(route('member.catalog.product.index'))
+            ->with('message', 'Your product has been created!');
 	}
-
     
 	public function show($id)
 	{
@@ -61,7 +73,10 @@ class ProductController extends Controller
     
 	public function edit($id)
 	{
-        $this->data['product'] = $this->product->where('merchant_id', $this->auth->user()->id)->findOrFail($id);
+        $this->data['product'] = $this->product
+            ->where('merchant_id', $this->auth->user()->id)
+            ->findOrFail($id);
+        
         $this->data['brands'] = $this->brand->getBrands();
         
         return view('catalog.product.update', $this->data);
@@ -74,7 +89,8 @@ class ProductController extends Controller
         $product->fill($request->all());
         $product->save();
                 
-		return redirect(route('member.catalog.product.index'))->with('message', 'Your product has been updated!');
+		return redirect(route('member.catalog.product.index'))
+            ->with('message', 'Your product has been updated!');
 	}
 
     
@@ -83,7 +99,8 @@ class ProductController extends Controller
         $product = $this->product->find($id);
         $product->delete();
 		
-        return redirect(route('member.catalog.product.index'))->with('message', 'Your product has been deleted!');
+        return redirect(route('member.catalog.product.index'))
+            ->with('message', 'Your product has been deleted!');
 	}
     
     /**

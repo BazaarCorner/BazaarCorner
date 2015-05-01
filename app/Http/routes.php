@@ -25,11 +25,11 @@ Route::group(['middleware' => 'auth'], function() {
 //        Route::resource('category', 'Catalog\CategoryController');
     });
     
-    Route::group(['middleware' => 'auth.merchant'], function() {
+    Route::group(['prefix'=> 'member/catalog', 'middleware' => 'auth.merchant'], function() {
         /*JQuery Fileupload*/
-//        Route::get('upload/{resource}','Catalog\UploadController@upload');
-//        Route::post('upload/{resource}','Catalog\UploadController@upload');
-//        Route::delete('upload/{resource}','Catalog\UploadController@upload');
+        Route::get('upload/{resource}', ['as'=>'show-upload', 'uses'=> 'Catalog\UploadController@upload']);
+        Route::post('upload/{resource}', ['as'=>'upload', 'uses'=> 'Catalog\UploadController@upload']);
+        Route::delete('upload/{resource}', ['as'=>'show-upload', 'uses'=> 'Catalog\UploadController@upload']);
     });
     
     //CHECKOUT

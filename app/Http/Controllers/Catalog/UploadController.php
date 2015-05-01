@@ -4,6 +4,7 @@ namespace BazaarCorner\Http\Controllers\Catalog;
 
 use BazaarCorner\Http\Controllers\Controller;
 use BazaarCorner\Services\UploadHandler;
+use Illuminate\Support\Facades\URL;
 
 class UploadController extends Controller
 {
@@ -22,7 +23,8 @@ class UploadController extends Controller
 	}
 
     public function upload($resource = null)
-    {
+    {   
+        echo "text"; exit;
     	switch ($resource) {
     		case 'item':
     			$options = array(
@@ -57,6 +59,7 @@ class UploadController extends Controller
     			break;
     	}
     	$this->options 	= array_merge($this->options,$options);
+        
 		$upload 		= new UploadHandler($this->options);
 	}
 

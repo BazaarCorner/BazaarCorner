@@ -15,6 +15,7 @@
         "jquery": "~2.1",
         "jquery-ui": "~1.11",
         "components-font-awesome": "~4.3",
-        "components-bootstrap": "~3.3"
+        "components-bootstrap": "~3.3",
+	"blueimp-file-upload": "~9.9"
     }
 }

@@ -4,7 +4,7 @@ namespace BazaarCorner\Http\Controllers\Site;
 
 use BazaarCorner\Http\Controllers\Controller;
 use BazaarCorner\Http\Requests\SearchRequest;
-use Illuminate\Http\Request;
+use BazaarCorner\Services\Catalog\ProductService;
 
 /**
  * Search sequence
@@ -16,20 +16,18 @@ use Illuminate\Http\Request;
  */
 class SearchController extends Controller
 {
-    /**
-     * THIS METHOD IS REQUIRED, DO NOT REMOVE.
-     * 
-     * @param Request $request
-     */
-    public function __construct(Request $request)
+    protected $service;
+    
+    public function __construct(ProductService $service)
     {
-        parent::__construct($request);
+        $this->service = $service;
     }
     
     public function index(SearchRequest $request)
     {
         $term = $request->get('q');
         
+        $this->data['products'] = $this->service->search($term);
         $this->data['term'] = $term;
         
         return view('site.serp', $this->data);

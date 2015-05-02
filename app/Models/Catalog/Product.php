@@ -22,6 +22,6 @@ class Product extends Model
     
     public function brand()
     {
-        return $this->belongsTo('BazaarCorner\Models\Catalog\Brand', 'brand_id', 'id');
+        return $this->belongsTo('BazaarCorner\Models\Catalog\Brand');
     }
 }

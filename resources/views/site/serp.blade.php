@@ -7,7 +7,16 @@
         <!--include('shop.partial.sidebar-banner')-->
     </div>
     <div class="col-lg-9 col-md-9">
-        <h1>Look what we have in store for: &QUOT;{{$term}}&QUOT;</h1>
+        @if ($products)
+            <h3>Look what we have in store for: &QUOT;{{$term}}&QUOT;</h3>
+            <div class="container-fluid">
+                <div class="row">
+                     @include('site.partial.item-listing', ['products' => $products])
+                </div>
+            </div>
+        @else
+            <h3>Sorry, no item related to: &QUOT;{{$term}}&QUOT;</h3>
+        @endif
     </div>
 </div>
 @stop

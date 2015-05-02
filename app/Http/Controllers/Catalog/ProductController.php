@@ -20,11 +20,11 @@ class ProductController extends Controller
     protected $category;
 
     public function __construct(
-            Guard $auth,
-            Registrar $registrar,
-            Product $product,
-            BrandService $brand,
-            ProductCategoryService $category
+        Guard $auth,
+        Registrar $registrar,
+        Product $product,
+        BrandService $brand,
+        ProductCategoryService $category
     ) {
         $this->auth = $auth;
         $this->registrar = $registrar;
@@ -35,73 +35,74 @@ class ProductController extends Controller
         $this->data['user'] = $this->auth->user();
     }
     
-	public function index()
-	{
+    public function index()
+    {
         $this->getProducts();
         
         return view('catalog.product', $this->data);
 	}
     
-	public function create()
-	{
+    public function create()
+    {
         $this->data['brands'] = $this->brand->getBrands();
         $this->data['categories'] = $this->category->getCategories();
         $this->data['subcategories'] = $this->category->getCategories();
         
-        return view("catalog.product.create", $this->data);
-	}
+        return view("catalog.product.create", $this->data);    
+    }
     
-	public function store(ProductRequest $request)
-	{
-		$input = $request->all();
+    public function store(ProductRequest $request)
+    {
+        // Append hidden values
+        $input = $request->all();
         $input['slug'] = $this->getSlugValue($input['name']);
         $input['merchant_id'] = $this->auth->user()->id;
         $input['sku'] = $this->auth->user()->id . "-" . time(); // temporary
-        
+
         $product = $this->product->create($input);
-        
-        var_dump($product->getKey(), $input['category_id']); exit;
-        
+
         return redirect(route('member.catalog.product.index'))
             ->with('message', 'Your product has been created!');
-	}
+        
+    }
     
-	public function show($id)
-	{
+
+    public function show($id)
+    {
         //
-	}
-    
-	public function edit($id)
-	{
+    }
+
+    public function edit($id)
+    {
         $this->data['product'] = $this->product
             ->where('merchant_id', $this->auth->user()->id)
             ->findOrFail($id);
-        
-        $this->data['brands'] = $this->brand->getBrands();
-        
-        return view('catalog.product.update', $this->data);
-	}
 
-    
-	public function update($id, ProductRequest $request)
-	{
-		$product = $this->product->findOrFail($id);        
+        $this->data['brands'] = $this->brand->getBrands();
+
+        return view('catalog.product.update', $this->data);
+    }
+
+
+    public function update($id, ProductRequest $request)
+    {
+        $product = $this->product->findOrFail($id);        
         $product->fill($request->all());
         $product->save();
-                
-		return redirect(route('member.catalog.product.index'))
-            ->with('message', 'Your product has been updated!');
-	}
 
-    
-	public function destroy($id)
-	{
+        return redirect(route('member.catalog.product.index'))
+            ->with('message', 'Your product has been updated!');
+    }
+
+
+    public function destroy($id)
+    {
         $product = $this->product->find($id);
         $product->delete();
-		
+
         return redirect(route('member.catalog.product.index'))
             ->with('message', 'Your product has been deleted!');
-	}
+    }
     
     /**
      * @return void

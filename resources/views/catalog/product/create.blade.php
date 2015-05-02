@@ -46,22 +46,6 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" name="category_id">
-                        <option value="0">-- Select Category --</option>
-                        @foreach($categories as $categories)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-control" name="subcategory_id">
-                        <option value="0">-- Select Subcategory --</option>
-                        @foreach($subcategories as $subcategories)
-                        <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
                     {!! Form::textarea(
                         'description', //input type
                         '',
@@ -70,22 +54,6 @@
                             'placeholder' => 'Description'
                         ]
                     ) !!}
-                </div>
-                <div class='form-group'>
-                    <div style="margin-bottom:10px;position:relative;">
-                        <span class="btn btn-success btn-sm fileinput-button"><i class="glyphicon glyphicon-plus"></i><span>Add images...</span>
-                            <input id="upload_item_image" type="file" name="files[]" multiple data-url="upload/item/" style="cursor:pointer;">
-                        </span>
-                        <button id="fileupload-delete-all" type="button" class="btn btn-sm btn-danger delete" style="display:none;">
-                            <i class="glyphicon glyphicon-trash"></i>
-                            <span>Delete All</span>
-                        </button>
-                    </div>
-                    <div id="item-image-error" class="alert alert-danger alert-dismissable" style="display:none;"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><strong>Please upload an image</strong></div>
-                    <div id="fileupload-progress" class="progress" style="display:none;"><div class="progress-bar progress-bar-success"></div></div>
-                    <input id="item_primary_image" name="item_primary_image" type="hidden" value=""/>
-                    <table id="uploaded_images" role="presentation" class="table table-striped">
-                    </table>
                 </div>
                 <div class="row-fluid pull-right">
                     <div class="form-group btn-group-xs">

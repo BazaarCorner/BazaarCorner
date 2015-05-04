@@ -10,7 +10,10 @@
         <div class="row content-holder">
             <div class="col-md-12 col-sm-12">
                 @if ($products)
-                    <h4>Look what we have in store for: &QUOT;{{$term}}&QUOT;</h4>
+                    <h4>
+                        Look what we have in store for: &QUOT;{{$term}}&QUOT;
+                        <small class="text-uppercase">({!! $products->count() !!} items found)</small>
+                    </h4>
                     <div class="container-fluid">
                         <div class="row">
                              @include('site.partial.item-listing', ['products' => $products])

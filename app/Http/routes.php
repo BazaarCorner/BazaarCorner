@@ -17,21 +17,7 @@ Route::group(['middleware' => 'auth'], function() {
     
     Route::get('member/account', ['as' => 'profile', 'uses' => 'Auth\AuthController@viewAccount']);
     Route::post('member/{username}/edit', ['as' => 'profile.update', 'uses' => 'Auth\AuthController@edit']);
-    
-    Route::group(['prefix'=> 'member/catalog', 'middleware' => 'auth.merchant'], function() {
-        Route::get('/', ['as' => 'catalog-dashboard', 'uses'=> 'Catalog\DashboardController@index']);
-        Route::resource('product', 'Catalog\ProductController');
-        Route::resource('brand', 'Catalog\BrandController');
-//        Route::resource('category', 'Catalog\CategoryController');
-    });
-    
-    Route::group(['prefix'=> 'member/catalog', 'middleware' => 'auth.merchant'], function() {
-        /*JQuery Fileupload*/
-        Route::get('upload/{resource}', ['as'=>'show-upload', 'uses'=> 'Catalog\UploadController@upload']);
-        Route::post('upload/{resource}', ['as'=>'upload', 'uses'=> 'Catalog\UploadController@upload']);
-        Route::delete('upload/{resource}', ['as'=>'show-upload', 'uses'=> 'Catalog\UploadController@upload']);
-    });
-    
+        
     //CHECKOUT
 });
 

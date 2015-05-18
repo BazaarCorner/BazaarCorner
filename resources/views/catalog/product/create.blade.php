@@ -4,7 +4,7 @@
 <div class="content-holder">
     <div class="content-header">
         <div class="container-fluid text-capitalize">
-            <div class="pull-left">Catalog - New Product</div>            
+            <div class="pull-left">Catalog - New Product</div>
         </div>
     </div>
     <div class="content-body">
@@ -63,7 +63,7 @@
                             Cancel
                         </a>
                         <input class="btn btn-danger text-uppercase" type="submit" value="Create">
-                    </div>       
+                    </div>
                 </div>
             {!! Form::close() !!}
         </div>
@@ -99,5 +99,3 @@
 $("#item_price").inputmask({alias:'currency'});
 </script>
 @stop
-
-

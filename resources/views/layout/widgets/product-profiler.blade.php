@@ -26,6 +26,17 @@
                     <div class="row-fluid">
                         <div class="container-fluid">
                             <div class="row" style="text-wrap: inherit;">
+                                <div class="col-md-8">
+                                    <!-- cornsilk -->
+                                    <span style="color: #C11B17; font-size: 10px;">
+                                        <!-- item name -->
+                                        {{$product->sku}}                                        
+                                    </span>
+                                    <br>
+                                    <span style="color: cornsilk; font-size: 12px">
+                                        {{isset($product->brand()->getResults()->name) ? $product->brand()->getResults()->name : ""}}
+                                    </span>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="row-fluid ">
                                         <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
@@ -33,19 +44,7 @@
                                         <br>
                                         <!--<span class="text-muted" style="text-decoration: line-through; font-size: 12px">{{$product->price}}</span>-->
                                     </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <!-- cornsilk -->
-                                    <span class="text-right pull-right" style="color: #C11B17; font-size: 10px;">
-                                        
-                                        <!-- item name -->
-                                        {{$product->sku}}                                        
-                                    </span>
-                                    <br>
-                                    <span class="text-right pull-right"  style="color: cornsilk; font-size: 12px">
-                                        {{isset($product->brand()->getResults()->name) ? $product->brand()->getResults()->name : ""}}
-                                    </span>
-                                </div>
+                                </div>                                
                                 <div class="clearfix"></div>
                             </div>
                         </div>

@@ -43,7 +43,8 @@ class BrandController extends Controller
         
         $this->brand->create($input);
         
-        return redirect(route('member.catalog.brand.index'))->with('message', 'Your brand has been created!');
+        return redirect(route('member.catalog.brand.index'))
+            ->with('message', 'Your brand has been created!');
 	}
 
 	

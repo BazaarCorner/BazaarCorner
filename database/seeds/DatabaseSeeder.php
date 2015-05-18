@@ -4,8 +4,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-use BazaarCorner\ProductCategory;
-use BazaarCorner\MainCategory;
+use BazaarCorner\Models\Catalog\ProductCategory;
+use BazaarCorner\Models\Catalog\MainCategory;
 
 abstract class AbstractTableSeeder extends Seeder
 {
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
         $this->call('ShoppingCategoryTableSeeder');
         
         
-        $this->call('BrandTableSeeder');
+//        $this->call('BrandTableSeeder');
         
 //        $this->call('ProductStoreCategoryTableSeeder');        
 //        $this->call('ProductSubcategoryTableSeeder');

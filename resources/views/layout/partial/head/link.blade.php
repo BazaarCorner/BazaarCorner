@@ -7,6 +7,7 @@ $styles = [
     'bazaarcorner/css/layout.css',
     'bazaarcorner/css/widgets.css',
     'bazaarcorner/css/navigation.css',
+    'bazaarcorner/css/override.css',
 ];
 ?>
 

@@ -7,7 +7,7 @@ use BazaarCorner\Models\Catalog\Brand;
 
 class ProductService
 {
-    CONST RESULT_PER_PAGE = 16;
+    CONST RESULT_PER_PAGE = 12;
     
     private $product;    
     
@@ -26,7 +26,9 @@ class ProductService
     
     public function halfPriced()
     {
-        return $this->product->where('is_active', true)->get();
+        return $this->product
+//            ->where('is_active', true)
+            ->get();
     }
     
     public function merchantProducts($id)

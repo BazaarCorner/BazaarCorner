@@ -1,5 +1,5 @@
 @foreach($products as $product)
-<div class="col-md-3 col-sm-6 col-xs-12" style="padding: 3px;">
+<div class="col-md-4 col-sm-6 col-xs-12" style="padding: 5px;">
     <div class="img-center img-responsive img-thumbnail">
         <div id="item-container" class="default">
             <div class="row-fluid">
@@ -21,7 +21,7 @@
                 <div class="double-line"></div>       
             </div>                
             <div class="row-fluid" style="border: solid 1px silver">
-                <img src="{{asset($product->image)}}" style="width: 100%; height: 100%;">
+                <img src="{{asset('uploads/uploads/item/medium/'. $product->images()[0]->name)}}" style="width: 100%; height: 100%;">
                 <div style="width: 100%; height:inherit; position: relative; background-color: black; opacity: 0.9;">
                     <div class="row-fluid">
                         <div class="container-fluid">
@@ -51,8 +51,8 @@
                     </div>
                     <div class="divider"><hr></div>
                     <div id="brand" class="row-fluid text-center">
-                            <h6 class="text-uppercase" style="color: #FF4500"> 
-                                {{$product->name}}
+                            <h6 class="text-uppercase" style="color: #FF4500; font-size: 15px;"> 
+                                {{str_limit($product->name, 20)}}
                             </h6>
                     </div>
                     <div class="clearfix"></div>

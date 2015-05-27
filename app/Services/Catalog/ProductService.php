@@ -55,19 +55,19 @@ class ProductService
         //Category search here
         
         
-        $brand = $this->brand->where("name", $query);
+        $brand = $this->brand->where("name", 'like', '%'.$query.'%');
         if ($brand->count() > 0) {
             return $this->product
                 ->where('brand_id', $brand->first()->id)
                 ->paginate(self::RESULT_PER_PAGE);
         }
         
-        $product = $this->product->where("name", $query);
+        $product = $this->product->where("name", 'like',  '%'.$query.'%');
         if ($product->count() > 0) {
             return $product->paginate(self::RESULT_PER_PAGE);
         }
         
-        $product = $this->product->where("sku", $query);
+        $product = $this->product->where("sku", 'like', '%'.$query.'%');
         if ($product->count() > 0) {
             return $product->paginate(self::RESULT_PER_PAGE);
         }

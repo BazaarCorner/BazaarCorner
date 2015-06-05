@@ -27,7 +27,6 @@ class Product extends Model
     
     public function images()
     {
-        return $this->hasMany('BazaarCorner\Models\Catalog\ProductImage', 'item_id', 'id')
-            ->where('is_primary', 1)->get();
+        return $this->morphMany('BazaarCorner\Models\Catalog\ProductImage', 'imageable');
     }
 }

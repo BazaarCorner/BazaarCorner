@@ -30,10 +30,6 @@ class PageController extends Controller
     private function getInfo()
     {
         if ($this->member) {
-            $this->member->facebook = "https://www.facebook.com/gabbydgab";
-            $this->member->twitter = "https://twitter.com/gabbydgab";
-            $this->member->address = "Philippines";
-            $this->member->age = 18;
             return $this->member;
         }
         

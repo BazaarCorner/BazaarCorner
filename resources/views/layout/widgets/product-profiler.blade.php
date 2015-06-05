@@ -21,7 +21,7 @@
                 <div class="double-line"></div>       
             </div>                
             <div class="row-fluid" style="border: solid 1px silver">
-                <img src="{{url(env('CDN').$product->images()[0]->name)}}" style="width: 100%; height: 100%;">
+                <img src="{{url(env('CDN').$product->display_image)}}" style="width: 100%; height: 100%;">
                 <div style="width: 100%; height:inherit; position: relative; background-color: black; opacity: 0.9;">
                     <div class="row-fluid">
                         <div class="container-fluid">

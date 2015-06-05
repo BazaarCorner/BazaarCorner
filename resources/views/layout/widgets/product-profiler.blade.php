@@ -40,13 +40,19 @@
                                 <div class="col-md-4">
                                     <div class="row-fluid ">
                                         <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
+                                        @if($product->discount_id > 0)
                                         <span class="text-warning" style="font-size: 15px; color: #FFFFFF">
-                                            ${{$product->orig_price}}
+                                            ${{$product->list_price}}
                                         </span>
                                         <br>
                                         <span class="text-muted" style="text-decoration: line-through; font-size: 12px">
-                                            {{$product->list_price}}
+                                            {{$product->orig_price}}
                                         </span>
+                                        @else 
+                                        <span class="text-warning" style="font-size: 15px; color: #FFFFFF">
+                                            ${{$product->orig_price}}
+                                        </span>
+                                        @endif
                                     </div>
                                 </div>                                
                                 <div class="clearfix"></div>

@@ -9,5 +9,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ProductImage extends Model
 {
-    protected $table = 'item_images';
+    protected $table = 'images';
+    
+    public function imageable()
+    {
+        return $this->morphTo();
+    }
 }

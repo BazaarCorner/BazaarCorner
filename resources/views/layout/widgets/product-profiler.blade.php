@@ -40,9 +40,13 @@
                                 <div class="col-md-4">
                                     <div class="row-fluid ">
                                         <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
-                                        <span class="text-warning" style="font-size: 15px; color: #FFFFFF">${{$product->price}}</span>
+                                        <span class="text-warning" style="font-size: 15px; color: #FFFFFF">
+                                            ${{$product->orig_price}}
+                                        </span>
                                         <br>
-                                        <!--<span class="text-muted" style="text-decoration: line-through; font-size: 12px">{{$product->price}}</span>-->
+                                        <span class="text-muted" style="text-decoration: line-through; font-size: 12px">
+                                            {{$product->list_price}}
+                                        </span>
                                     </div>
                                 </div>                                
                                 <div class="clearfix"></div>

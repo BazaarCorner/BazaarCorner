@@ -21,15 +21,14 @@
                 <div class="double-line"></div>       
             </div>                
             <div class="row-fluid" style="border: solid 1px silver">
-                <img src="{{url(env('CDN').$product->display_image)}}" style="width: 100%; height: 100%;">
+                <img src="{{url(env('CDN').$product->display_image)}}" style="width: 250px; height: 250px;">
                 <div style="width: 100%; height:inherit; position: relative; background-color: black; opacity: 0.9;">
                     <div class="row-fluid">
                         <div class="container-fluid">
                             <div class="row" style="text-wrap: inherit;">
                                 <div class="col-md-8">
                                     <!-- cornsilk -->
-                                    <span style="color: #C11B17; font-size: 10px;">
-                                        <!-- item name -->
+                                    <span style="color: #C11B17; font-size: 10px;">                                        
                                         {{$product->sku}}                                        
                                     </span>
                                     <br>
@@ -46,7 +45,7 @@
                                         </span>
                                         <br>
                                         <span class="text-muted" style="text-decoration: line-through; font-size: 12px">
-                                            {{$product->orig_price}}
+                                            ${{$product->orig_price}}
                                         </span>
                                         @else 
                                         <span class="text-warning" style="font-size: 15px; color: #FFFFFF">

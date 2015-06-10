@@ -63,6 +63,8 @@ Route::get('{username}', ['as' => 'member', 'uses' => 'Membership\PageController
  * 
  * Filter parameters would be the following:
  * 
+ * @todo
+ * 
  * ?sort-by=popularity  - Popular/Most Liked/With good feedback
  * ?sort-by=most-recent - Newly added products
  * ?sort-by=most-bought - Popular/Most Ordered

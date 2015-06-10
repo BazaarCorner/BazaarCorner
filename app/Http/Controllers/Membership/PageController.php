@@ -3,8 +3,7 @@
 namespace BazaarCorner\Http\Controllers\Membership;
 
 use BazaarCorner\Http\Controllers\Controller;
-use BazaarCorner\Models\Memebership\Member;
-use BazaarCorner\Models\Membership\User;
+use BazaarCorner\Models\Membership\Member;
 use BazaarCorner\Services\Catalog\ProductService;
 
 class PageController extends Controller
@@ -13,7 +12,7 @@ class PageController extends Controller
     
     public function show(ProductService $product, $username)
     {
-        $this->member = User::where('username', $username)->first();
+        $this->member = Member::where('slug', $username)->first();
         
         $this->data['member']['info'] = $this->getInfo();
         $this->data['member']['rankings'] = $this->getRankings();

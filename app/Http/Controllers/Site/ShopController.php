@@ -17,12 +17,14 @@ class ShopController extends Controller
     
     private function getCategories($category, $subcategory)
     {
-        $this->category = Category::where('slug', $category)
+        $category = Category::where('slug', $category)
                 ->where('is_active', true)
                 ->first();
         
-        if (!$this->category) {
+        if (!$category) {
             abort(404);
         }
+        
+        return $category;
     }
 }

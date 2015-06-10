@@ -16,15 +16,15 @@
 <div class="container">
     <div class="row" style="padding-bottom: 10px;">        
         <div class="col-lg-3 col-md-3">
-<!--            <div class="row-fluid widget-container">
-                include('layout.widgets.featured-merchant')
+            <div class="row-fluid widget-container">
+                @include('layout.widgets.featured-merchant')
             </div>
             <div class="row-fluid widget-container">
-                include('layout.widgets.most-bought-item')
+                @include('layout.widgets.most-bought-item')
             </div>
             <div class="row-fluid widget-container">
-                include('layout.widgets.top-brand')
-            </div>-->
+                @include('layout.widgets.top-brand')
+            </div>
         </div>
         <div class="col-lg-9 col-md-9">
             <div class="row"> @include('layout.widgets.index-banner') </div>
@@ -32,7 +32,7 @@
                 <div class="col-sm-12 col-md-12">
                     <h4>
                         <strong>Recently Added Stuff</strong>
-                        <small class="text-uppercase">({!! $new_items->count() !!} new items)</small>
+                        <!--<small class="text-uppercase">({!! $new_items->count() !!} new items)</small>-->
                     </h4>
                     <div class="container-fluid">
                         <div class="row">
@@ -43,15 +43,15 @@
             </div>
         </div>        
     </div>
-<!--    <div class="row-fluid content-holder">
+    <div class="row-fluid content-holder">
         <div class="container-fluid">
             <div class="row" style="background-color: rgb(204,0,51);">
                 <img src="{{asset('assets/bazaarcorner/img/site/half_price_shop.png')}}">                
             </div>
             <div class="row">
-                 include('layout.widgets.half-price-tag', ['products' => $half_priced])
+                 <!--include('layout.widgets.half-price-tag', ['products' => $half_priced])-->
             </div>
         </div>      
-    </div>-->
+    </div>
 </div>
 @stop

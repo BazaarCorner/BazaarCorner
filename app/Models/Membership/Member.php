@@ -15,11 +15,9 @@ class Member extends Model implements
     use Authenticatable;
     use CanResetPassword;
     
-    protected $table = 'members';
+    protected $table = 'merchants';
     
-    protected $fillable = [
-        'username',
-        'password',
+    protected $fillable = [        
         'email',
         "first_name",
         'middle_name',

@@ -27,7 +27,7 @@ class ProductService
     {
         return $this->product
             ->discount()
-//            ->where('type', 'rate')
+            ->where('type', 'rate')
             ->where('rate', '>=', 10.00)
             ->get();
     }
@@ -38,11 +38,10 @@ class ProductService
             ->where('merchant_id', $id)
             ->paginate(self::RESULT_PER_PAGE);
     }
-    
-    
+        
     /**
      * Search order
-     * 1. Category
+     * @todo 1. Category 
      * 2. Subcategory
      * 3. Brand
      * 4. Product Name
@@ -53,9 +52,6 @@ class ProductService
      */
     public function search($query)
     {
-        //Category search here
-        
-        
         $brand = $this->brand->where("name", 'like', '%'.$query.'%');
         if ($brand->count() > 0) {
             return $this->product

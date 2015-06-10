@@ -11,11 +11,10 @@ class BrandService
     public function __construct(Brand $brand)
     {
         $this->brand = $brand;
-    }
-    
+    }    
     
     public function getBrands()
     {
-        return $this->brand->get();
+        return $this->brand->all()->random(10);
     }
 }

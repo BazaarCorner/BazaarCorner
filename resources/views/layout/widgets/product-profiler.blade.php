@@ -33,9 +33,14 @@
                                     </span>
                                     <br>
                                     <span style="color: cornsilk; font-size: 12px">
-                                        {{isset($product->brand()->getResults()->name) ? $product->brand()->getResults()->name : ""}}
+                                        @if(isset($product->brand()->getResults()->name))
+                                            {{$product->brand()->getResults()->name}}
+                                        @else
+                                            &nbsp;&nbsp;
+                                        @endif
                                     </span>
-                                </div>
+                                    <div class="clearfix"></div>
+                                </div>                                
                                 <div class="col-md-4">
                                     <div class="row-fluid ">
                                         <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
@@ -44,19 +49,23 @@
                                             ${{$product->list_price}}
                                         </span>
                                         <br>
-                                        <span class="text-muted" style="text-decoration: line-through; font-size: 12px">
+                                        <span class="text-muted" style="text-decoration: line-through; font-size: 10px">
                                             ${{$product->orig_price}}
                                         </span>
                                         @else 
                                         <span class="text-warning" style="font-size: 15px; color: #FFFFFF">
                                             ${{$product->orig_price}}
                                         </span>
+                                        <span class="text-muted" style="font-size: 10px">
+                                            &nbsp;&nbsp;
+                                        </span>
                                         @endif
                                     </div>
-                                </div>                                
-                                <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
+                                </div>
                             </div>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                     <div class="divider"><hr></div>
                     <div id="brand" class="row-fluid text-center">

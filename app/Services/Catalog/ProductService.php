@@ -20,14 +20,15 @@ class ProductService
     public function newlyAdded()
     {
         return $this->product
-            //->where()
             ->paginate(self::RESULT_PER_PAGE);
     }
     
     public function halfPriced()
     {
         return $this->product
-//            ->where('is_active', true)
+            ->discount()
+//            ->where('type', 'rate')
+            ->where('rate', '>=', 10.00)
             ->get();
     }
     

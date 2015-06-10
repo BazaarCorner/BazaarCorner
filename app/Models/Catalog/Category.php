@@ -8,8 +8,8 @@ class Category extends Model
 {
     protected $table = 'categories';
     
-    public function subcategory()
+    public function getSubcategory($id)
     {
-        return;
+        return $this->where('parent_id', $id)->get();
     }
 }

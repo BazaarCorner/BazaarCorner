@@ -32,6 +32,6 @@ class Product extends Model
     
     public function category()
     {
-        return $this->belongsTo('BazaarCorner\Models\Catalog\ProductCategory', 'id', 'item_id');
+        return $this->hasMany('BazaarCorner\Models\Catalog\ProductCategory', 'item_id', 'id');
     }
 }

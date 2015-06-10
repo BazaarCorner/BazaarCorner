@@ -78,7 +78,9 @@ class ProductService
     
     public function getProductsByCategory($subcat_id)
     {
-        return $this->product->category()->where('category_id', $subcat_id)
+        return $this->product->with('category')
+            ->join('item_categories','id','=','item_categories.item_id')
+            ->where('category_id', $subcat_id)
             ->paginate(self::RESULT_PER_PAGE);
     }
 }

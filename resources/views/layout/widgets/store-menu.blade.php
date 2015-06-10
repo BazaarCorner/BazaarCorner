@@ -1,7 +1,7 @@
-<div class="col-md-12" style="font-size: 12px">
-    <ul class="nav nav-pills">        
+<div class="categories" style="font-size: 12px">
+    <ul class="nav nav-pills">
         @foreach($stores as $store)
-        <li class="dropdown">
+        <li role="presentation" class="dropdown">
           <a data-toggle="dropdown" class="dropdown-toggle">{{$store->name}} <b class="caret"></b></a>
           <ul class="dropdown-menu"  style="font-size: 12px">
             @foreach($store->getSubcategory($store->id) as $subcategory)

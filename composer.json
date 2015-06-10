@@ -3,7 +3,7 @@
     "description": "Official website of Bazaar Corner",
     "type": "website",
     "require": {
-        "laravel/framework": "~5.0",
+        "laravel/framework": "5.0.*",
         "doctrine/dbal": "~2.5",
         "illuminate/html": "~5.0",
         "omnipay/paypal": "~2.0"

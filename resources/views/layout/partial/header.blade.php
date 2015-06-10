@@ -28,11 +28,17 @@
               <div class="nav-collapse">    
                   @include('layout.widgets.search')                  
               </div><!-- /.nav-collapse -->
-            </div>
+            </div>            
+        </div>
+    </div>
+    <div class="container">
+        <div class="row-fluid">
             @include('layout.widgets.store-menu')
         </div>
     </div>
+    
 </div>
+
 
 
 

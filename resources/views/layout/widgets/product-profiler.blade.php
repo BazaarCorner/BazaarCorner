@@ -27,11 +27,6 @@
                         <div class="container-fluid">
                             <div class="row" style="text-wrap: inherit;">
                                 <div class="col-md-8">
-                                    <!-- cornsilk -->
-                                    <span style="color: #C11B17; font-size: 10px;">                                        
-                                        {{$product->sku}}                                        
-                                    </span>
-                                    <br>
                                     <span style="color: cornsilk; font-size: 12px">
                                         @if(isset($product->brand()->getResults()->name))
                                             {{$product->brand()->getResults()->name}}
@@ -42,8 +37,7 @@
                                     <div class="clearfix"></div>
                                 </div>                                
                                 <div class="col-md-4">
-                                    <div class="row-fluid ">
-                                        <!-- this design will cater ONLY $X,XXX,XXX.XX color: #C11B17-->
+                                    <div class="row-fluid ">                                       
                                         @if($product->discount_id > 0)
                                         <span class="text-warning" style="font-size: 15px; color: #FFFFFF">
                                             ${{$product->list_price}}

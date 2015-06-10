@@ -75,4 +75,10 @@ class ProductService
         // Return empty array if no available
         return [];
     }
+    
+    public function getProductsByCategory($subcat_id)
+    {
+        return $this->product->category()->where('category_id', $subcat_id)
+            ->paginate(self::RESULT_PER_PAGE);
+    }
 }

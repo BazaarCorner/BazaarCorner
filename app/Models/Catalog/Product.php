@@ -29,4 +29,9 @@ class Product extends Model
     {
         return $this->morphMany('BazaarCorner\Models\Catalog\ProductImage', 'imageable');
     }
+    
+    public function category()
+    {
+        return $this->belongsTo('BazaarCorner\Models\Catalog\ProductCategory', 'id', 'item_id');
+    }
 }

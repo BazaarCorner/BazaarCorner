@@ -13,7 +13,7 @@
          <!--include('shop.partial.sidebar-banner')-->                
     </div>
     <div class="col-lg-9 col-md-9">
-        @include('layout.widgets.store-banner')
+        <!--include('layout.widgets.store-banner')-->
         @include('site.partial.item-listing')
     </div>
 @stop

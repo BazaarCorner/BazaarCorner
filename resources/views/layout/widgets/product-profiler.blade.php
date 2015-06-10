@@ -18,7 +18,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="clearfix"></div>
-                <div class="double-line"></div>       
+                <div class="double-line"></div>
             </div>                
             <div class="row-fluid" style="border: solid 1px silver">
                 <img src="{{url(env('CDN').$product->display_image)}}" style="width: 250px; height: 250px;">

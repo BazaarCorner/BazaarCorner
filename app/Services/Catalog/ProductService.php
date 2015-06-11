@@ -81,8 +81,8 @@ class ProductService
             ->paginate(self::RESULT_PER_PAGE);
     }
     
-    public function getProductInfo($sku)
-    {
-        return $this->product->where('sku', $sku)->first();
+    public function getProductInfo($slug)
+    {        
+        return $this->product->where('slug', $slug)->first();
     }
 }

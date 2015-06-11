@@ -14,10 +14,13 @@ class SkuDetailsController extends Controller
         $this->product = $product;
     }
     
-    
-    public function index($sku)
+    public function index($slug)
     {
-        $this->data['product'] = $this->product->getProductInfo($sku);
+        $this->data['product'] = $this->product->getProductInfo($slug);
+        
+        if( !$this->data['product'] ) {
+            abort(404);
+        }
         
         return view('site.sku', $this->data);
     }

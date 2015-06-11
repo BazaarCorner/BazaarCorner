@@ -7,7 +7,7 @@ Route::get('policy', ['as' => 'policy', 'uses' => 'Site\PageController@privacyPo
 Route::get('terms-and-condition', ['as' => 'terms', 'uses'=> 'Site\PageController@termsAndCondition']);
 
 Route::get('item/search', ['as' => 'serp', 'uses' => 'Site\SearchController@index']);
-Route::get('item/{sku}', ['as' => 'sku-details', 'uses' => 'Site\SkuDetailsController@index']);
+Route::get('item/{slug}', ['as' => 'sku-details', 'uses' => 'Site\SkuDetailsController@index']);
 
 /**
  * Must be authorized to navigate the following routes

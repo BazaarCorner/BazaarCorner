@@ -27,7 +27,7 @@
             </h5>
             <h3> 
                 @if($product->discount_id > 0)
-                    $&nbsp;{{$product->list_price}}
+                    <span class="text-success">$&nbsp;{{$product->list_price}}</span>
                     <small class="text-muted" style="text-decoration: line-through;">
                     ${{$product->orig_price}}
                     </small>

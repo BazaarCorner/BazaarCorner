@@ -1,5 +1,5 @@
 @foreach($products as $product)
-<a href="{{route('sku-details', $product->sku)}}">
+<a class="item" href="{{route('sku-details', $product->sku)}}">
 <div class="col-md-4 col-sm-6 col-xs-12" style="padding: 5px;">
     <div class="img-center img-responsive img-thumbnail">
         <div id="item-container" class="default">

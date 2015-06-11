@@ -5,10 +5,9 @@ Route::get('about', ['as' => 'about', 'uses' => 'Site\PageController@aboutUs']);
 Route::get('help', ['as' => 'help', 'uses' => 'Site\PageController@getHelp']);
 Route::get('policy', ['as' => 'policy', 'uses' => 'Site\PageController@privacyPolicy']);
 Route::get('terms-and-condition', ['as' => 'terms', 'uses'=> 'Site\PageController@termsAndCondition']);
-/**
- * @todo SERP implementation
- */
+
 Route::get('item/search', ['as' => 'serp', 'uses' => 'Site\SearchController@index']);
+Route::get('item/{sku}', ['as' => 'sku-details', 'uses' => 'Site\SkuDetailsController@index']);
 
 /**
  * Must be authorized to navigate the following routes

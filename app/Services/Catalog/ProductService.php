@@ -80,4 +80,9 @@ class ProductService
             ->where('category_id', $subcat_id)
             ->paginate(self::RESULT_PER_PAGE);
     }
+    
+    public function getProductInfo($sku)
+    {
+        return $this->product->where('sku', $sku)->first();
+    }
 }

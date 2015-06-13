@@ -10,10 +10,9 @@
 @section('content')
     <div class="col-lg-3 col-md-3">
         @include('site.partial.store-category-filter')
-         <!--include('shop.partial.sidebar-banner')-->                
     </div>
     <div class="col-lg-9 col-md-9">
-        <!--include('layout.widgets.store-banner')-->
+        @include('layout.widgets.store-banner')
         @include('site.partial.item-listing')
     </div>
 @stop

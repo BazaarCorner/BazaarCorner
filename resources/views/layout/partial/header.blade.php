@@ -1,23 +1,57 @@
-<div class="container">
-    <div class="row" style="padding-top: 15px">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="center-block" style="width: 100%; height: 100%; text-align: center;">
-                <a href="{{route('home')}}" style="">
-                    <img src="{{asset('assets/bazaarcorner/img/site/logo.png')}}" class="img-center">
+<div class="navbar navbar-fixed-top" style="background-color: white; box-shadow: 1px 0px 4px silver;" role="navigation">
+    <div class="container">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </a>
-            </div>              
+                <a href="{{route('home')}}">
+                    <img src="{{asset('assets/bazaarcorner/img/site/logo.png')}}" style="width: 200px; height: inherit" class="navbar-brand img-responsive img-center">
+                </a>
+                <div class="navbar-form navbar-left" style="width: 550px">
+                    @include('layout.widgets.search')                  
+                </div><!-- /.nav-collapse -->
+<!--                <div class="navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"> Market Place </a></li>
+                        <li class="dropdown">
+                            <a href="#"
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-expanded="false">
+                                <i class="fa fa-user"></i> Account
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                            @if(Auth::guest())
+                                <li>
+                                    <a href="{{url('member/login')}}">Sign In</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('member/register')}}">Register</a>
+                                </li>
+                            @endif
+                            @if(Auth::check())
+                                <li>
+                                    <a href="{{route('profile')}}">Profile Settings</a>
+                                </li>                        
+                                <li><a href="{{url('member/logout')}}">Logout</a></li>
+                            @endif
+                            </ul>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
         </div>
-        <div class="clearfix"></div>
     </div>
-    <div class="row">
-        <div class="col-md-3">
-            <!--include('layout.widgets.store-menu')-->
-        </div>
-        <div class="col-md-6">
-            @include('layout.widgets.search')
-        </div>
-        <div class="col-md-3">
-            
+    <div class="container-fluid">
+        <div class="row navbar-inverse">
+            <div class="menu col-md-12 center-block" style="padding: -50px">
+                @include('layout.widgets.store-menu')
+            </div>
         </div>
     </div>
 </div>

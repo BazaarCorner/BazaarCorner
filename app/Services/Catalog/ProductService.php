@@ -28,7 +28,7 @@ class ProductService
         return $this->product
             ->join('discounts', 'items.merchant_id', '=','discounts.merchant_id')
             ->where('type', '=', 'rate')
-            ->where('rate', '>=', 0)
+            ->where('rate', '>=', 50)
             ->groupBy('items.id')
             ->get();
     }

@@ -1,6 +1,6 @@
 @foreach($products as $product)
 <a class="item" href="{{route('sku-details', $product->slug)}}">
-<div class="col-md-4 col-sm-6 col-xs-12" style="padding: 5px;">
+<div class="col-md-3 col-sm-6 col-xs-12" style="padding: 3px;">
     <div class="img-center img-responsive img-thumbnail">
         <div id="item-container" class="default">
             <div class="row-fluid">
@@ -22,13 +22,13 @@
                 <div class="double-line"></div>
             </div>                
             <div class="row-fluid" style="border: solid 1px silver">
-                <img src="{{url(env('CDN').$product->display_image)}}" style="width: 250px; height: 250px;">
+                <img src="{{url(env('CDN').$product->display_image)}}" style="width: 190px; height: 190px;">
                 <div style="width: 100%; height:inherit; position: relative; background-color: black; opacity: 0.9;">
                     <div class="row-fluid">
                         <div class="container-fluid">
                             <div class="row" style="text-wrap: inherit;">
                                 <div class="col-md-8">
-                                    <span style="color: cornsilk; font-size: 12px">
+                                    <span style="color: cornsilk; font-size: 10px">
                                         @if(isset($product->brand()->getResults()->name))
                                             {{$product->brand()->getResults()->name}}
                                         @else
@@ -40,7 +40,7 @@
                                 <div class="col-md-4">
                                     <div class="row-fluid ">                                       
                                         @if($product->discount_id > 0)
-                                        <span class="text-warning" style="font-size: 15px; color: #FFFFFF">
+                                        <span class="text-warning" style="font-size: 12px; color: #FFFFFF">
                                             ${{$product->list_price}}
                                         </span>
                                         <br>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="divider"><hr></div>
                     <div id="brand" class="row-fluid text-center">
-                            <h6 class="text-uppercase" style="color: #FF4500; font-size: 15px;"> 
+                            <h6 class="text-uppercase" style="color: #FF4500; font-size: 10px;"> 
                                 {{str_limit($product->name, 20)}}
                             </h6>
                     </div>

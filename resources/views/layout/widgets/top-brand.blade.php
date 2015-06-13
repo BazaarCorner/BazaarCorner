@@ -8,7 +8,7 @@
                                 src="{{ isset($merchant->logo) ? url(env('CDN').$product->display_image) : asset('assets/bazaarcorner/img/no-image.gif') }}"
                                 style="width: 125px; height: 125px;">
                 
-                <span class="text-capitalize text-center" style="font-size: 10px; text-align: center"> {{$brand->name}} </span>
+                <span class="text-capitalize text-center" style="font-size: 10px; text-align: center"> {{str_limit($brand->name, 20)}} </span>
             </div>
             @endforeach
             <div class="clearfix"></div>

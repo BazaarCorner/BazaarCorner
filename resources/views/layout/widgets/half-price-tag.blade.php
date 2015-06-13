@@ -2,7 +2,7 @@
     @foreach($products as $item)
     <div class="slide">
         <div class="row-fluid">
-            <img src="{{url(env('CDN').$item->display_image)}}" style="width: 250px; height: 250px;">
+            <img src="{{url(env('CDN').$item->display_image)}}" style="width: 250px; height: 170px;">
         </div>
         <div class="row-fluid text-center">
             <h6>{{str_limit($item->name, 20)}}</h6>

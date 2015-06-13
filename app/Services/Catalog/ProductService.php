@@ -26,9 +26,10 @@ class ProductService
     public function halfPriced()
     {
         return $this->product
-            ->discount()
-            ->where('type', 'rate')
-            ->where('rate', '>=', 10.00)
+            ->join('discounts', 'items.merchant_id', '=','discounts.merchant_id')
+            ->where('type', '=', 'rate')
+            ->where('rate', '>=', 0)
+            ->groupBy('items.id')
             ->get();
     }
     

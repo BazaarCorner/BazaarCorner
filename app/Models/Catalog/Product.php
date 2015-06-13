@@ -34,9 +34,4 @@ class Product extends Model
     {
         return $this->hasMany('BazaarCorner\Models\Catalog\ProductCategory', 'item_id', 'id');
     }
-    
-    public function discount()
-    {
-        return $this->hasMany('BazaarCorner\Models\Catalog\ProductPricing', 'id', 'discount_id');
-    }
 }

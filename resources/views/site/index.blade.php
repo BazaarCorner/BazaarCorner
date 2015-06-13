@@ -27,17 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="divider"><br></div>
-            <div class="row content-holder">
-                <div class="container-fluid">
-                    <div class="row" style="background-color: rgb(204,0,51);">
-                        <img src="{{asset('assets/bazaarcorner/img/site/half_price_shop.png')}}">                
-                    </div>
-                    <div class="row">
-                         @include('layout.widgets.half-price-tag', ['products' => $half_priced])
-                    </div>
-                </div>
-            </div>
+            
         </div>
         <div class="col-lg-3 col-md-3">
             <div class="row-fluid widget-container">
@@ -51,5 +41,18 @@
             </div>
         </div>
     </div>    
+    <div class="divider"><br></div>
+    @if($half_priced->count() > 0)
+    <div class="row content-holder">
+        <div class="container-fluid">
+            <div class="row" style="background-color: rgb(204,0,51);">
+                <img src="{{asset('assets/bazaarcorner/img/site/half_price_shop.png')}}">                
+            </div>
+            <div class="row-fluid">
+                 @include('layout.widgets.half-price-tag', ['products' => $half_priced])
+            </div>
+        </div>
+    </div>
+    @endif
 </div>
 @stop

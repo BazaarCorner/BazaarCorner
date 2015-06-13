@@ -8,6 +8,7 @@ $styles = [
     'bazaarcorner/css/widgets.css',
     'bazaarcorner/css/navigation.css',
     'bazaarcorner/css/override.css',
+    'bxslider/jquery.bxslider.css',
 ];
 ?>
 

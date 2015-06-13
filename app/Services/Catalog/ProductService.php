@@ -4,12 +4,13 @@ namespace BazaarCorner\Services\Catalog;
 
 use BazaarCorner\Models\Catalog\Product;
 use BazaarCorner\Models\Catalog\Brand;
+use Carbon\Carbon;
 
 class ProductService
 {
     CONST RESULT_PER_PAGE = 12;
     
-    private $product;    
+    private $product;
     
     public function __construct(Product $product, Brand $brand)
     {
@@ -20,16 +21,17 @@ class ProductService
     public function newlyAdded()
     {
         return $this->product
+            ->orderBy('id', 'desc')
+            ->where('created_at', '>=', Carbon::now()->subMonth())
             ->paginate(self::RESULT_PER_PAGE);
     }
     
     public function halfPriced()
     {
-        return $this->product
-            ->join('discounts', 'items.merchant_id', '=','discounts.merchant_id')
+        return $this->product->where('items.discount_id', '>', 0)
+            ->join('discounts', 'items.discount_id', '=', 'discounts.id')            
             ->where('type', '=', 'rate')
-            ->where('rate', '>=', 50)
-            ->groupBy('items.id')
+            ->groupBy('items.merchant_id', 'items.id')
             ->get();
     }
     

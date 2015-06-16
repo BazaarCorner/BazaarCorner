@@ -1,4 +1,4 @@
-{!! Form::open(['route' => 'serp', 'method' => 'get', 'name'=> 'search', 'class' => 'center-block']) !!}
+{!! Form::open(['route' => 'serp', 'method' => 'get', 'name'=> 'search', 'class' => 'center-block', 'style' => 'width:600px; display:block; padding-top:10px']) !!}
     <div class="form-group">
         <div class="input-group">
             <em>

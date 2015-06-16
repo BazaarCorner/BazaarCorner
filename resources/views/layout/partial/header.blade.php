@@ -10,7 +10,7 @@
                 <a href="{{route('home')}}">
                     <img src="{{asset('assets/bazaarcorner/img/site/logo.png')}}" style="width: 200px; height: inherit" class="navbar-brand img-responsive img-center">
                 </a>
-                <div class="navbar-form navbar-left" style="width: 550px">
+                <div class="navbar-left">
                     @include('layout.widgets.search')                  
                 </div><!-- /.nav-collapse -->
                 <div class="navbar-nav navbar-right">

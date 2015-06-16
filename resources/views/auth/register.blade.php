@@ -23,25 +23,25 @@
         @endif
     </div>
     <div class="row">
-        <div class="col-md-12">
+<!--        <div class="col-md-12">
             <h3>Would you love to sell your products here at Bazaar Corner?</h3>
             <p>
                 Join our community of known merchants and resellers by creating
                 your <strong class="text-warning">FREE*</strong> account now.
             </p>
-            @include('auth.form.merchant.registration')
-        </div>
-<!--        <div class="col-md-4" style="border-left: 1px solid silver">
+            include('auth.form.merchant.registration')
+        </div>-->
+        <div class="col-md-12">
             <h3>I'm a Buyer 
                 <small class="text-warning">
                     (<strong>FREE account</strong>)
                 </small>
             </h3>
             <p>I would like to join the Bazaar Corner community</p>
-            include('auth.form.customer.registration')
+            @include('auth.form.customer.registration')
             <div class="clearfix"></div>
             <?php // echo $this->partial('template/partial/socials', []); ?>  
-        </div>-->
+        </div>
     </div>
     <div class="row-fluid">
         <div class="row-fluid" style="font-weight: bold;">

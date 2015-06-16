@@ -41,10 +41,10 @@ Route::post('subscribe', ['as' => 'subscription', 'uses' => 'Site\SubscriptionCo
 //Route::get('wishlist', ['as'=>'wishlist', 'uses'=> 'WishlistController@index']);
 
 
-//Route::controllers([
-//    'member' => 'Auth\AuthController',
-//    'password' => 'Auth\PasswordController'
-//]);
+Route::controllers([
+    'member' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);
 
 /**
  * Filter parameters would be the following:

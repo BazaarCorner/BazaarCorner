@@ -13,16 +13,25 @@
                 <div class="navbar-form navbar-left" style="width: 550px">
                     @include('layout.widgets.search')                  
                 </div><!-- /.nav-collapse -->
-<!--                <div class="navbar-nav navbar-right">
+                <div class="navbar-nav navbar-right">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"> Market Place </a></li>
+                        <li>
+                            <a href="{{url('basket')}}"> 
+                                <i class="fa fa-cart-plus"></i>&nbsp;My Cart
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('wishlist')}}"> 
+                                <i class="fa fa-heart"></i>&nbsp;My Wishlist
+                            </a>
+                        </li>
                         <li class="dropdown">
                             <a href="#"
                                class="dropdown-toggle"
                                data-toggle="dropdown"
                                role="button"
                                aria-expanded="false">
-                                <i class="fa fa-user"></i> Account
+                                <i class="fa fa-user"></i>&nbsp;Account
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
@@ -43,7 +52,7 @@
                             </ul>
                         </li>
                     </ul>
-                </div>-->
+                </div>
             </div>
         </div>
     </div>

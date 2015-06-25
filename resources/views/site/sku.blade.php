@@ -5,15 +5,15 @@
     <div class="row-fluid">
         <div class="col-md-5" style="padding: 5px">
             <div class="col-sm-2">
-                <img style="border: 1px solid silver; width: 50px; height: 50px;"
-                     class="img-center img-responsive" 
+                <img style="border: 1px solid silver;"
+                     class="img-responsive" 
                      src="{{url(env('CDN').$product->display_image)}}"
                      >
             </div>
             <div class="col-sm-10">
-                <img class="img-center img-responsive img-thumbnail" 
+                <img class="img-responsive img-thumbnail" 
                      src="{{url(env('CDN').$product->display_image)}}"
-                     style="width: 450px; height: 500px;">
+                     >
             </div>
         </div>
         <div class="col-md-7">
@@ -35,10 +35,34 @@
                     $&nbsp;{{$product->orig_price}}
                 @endif
             </h3>
-            <p>
-                {{$product->description}}
-            </p>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#details">Details</a></li>
+                    <li><a href="#sizes-and-fit">Sizes &AMP; Fit</a></li>
+                </ul>
+                <div id="details">
+                    <p>{{$product->description}}</p>
+                </div>
+                <div id="sizes-and-fit">
+                    <p>{{$product->attributes}}</p>
+                </div>
+            </div>            
         </div>
     </div>
 </div>
+@stop
+
+@section('head-link')
+    <link type="text/css" rel="stylesheet" media="screen" href="{{asset('/assets/jquery-ui/themes/blitzer/jquery-ui.min.css')}}">
+    <link type="text/css" rel="stylesheet" media="screen" href="{{asset('/assets/jquery-ui/themes/blitzer/theme.css')}}">
+@stop
+
+@section('content-inline-script')
+<script type="text/javascript"src="{{asset('assets/jquery-ui/jquery-ui.min.js')}}"></script>
+<script type="text/javascript"src="{{asset('assets/jquery-ui/ui/tabs.js')}}"></script>
+<script>
+    $(function() {
+        $( "#tabs" ).tabs();
+    });
+</script>
 @stop

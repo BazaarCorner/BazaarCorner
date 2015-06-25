@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="row-fluid">
-                            <!--<span class="text-danger pull-right" ><i class="fa fa-star" aria-hidden="true"></i></span>-->
+                            <!--<span class="text-danger pull-right" ><i class="fa fa-heart" aria-hidden="true"></i></span>-->
                             <!--<span class="text-danger pull-right" ><i class="fa icon-plus-sign" aria-hidden="true"></i></span>-->
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                 <div class="double-line"></div>
             </div>                
             <div class="row-fluid" style="border: solid 1px silver">
-                <img src="{{url(env('CDN').$product->display_image)}}" style="width: 194px; height: 194px;">
+                <img src="{{url(env('CDN').$product->display_image)}}" style="width: 194px; height: 194px;" class="img-responsive img-center">
                 <div style="width: 100%; height:inherit; position: relative; background-color: black; opacity: 0.9;">
                     <div class="row-fluid">
                         <div class="col-sm-7">

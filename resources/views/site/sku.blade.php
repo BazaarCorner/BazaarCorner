@@ -37,14 +37,18 @@
             </h3>
             <div id="tabs">
                 <ul>
-                    <li><a href="#details">Details</a></li>
-                    <li><a href="#sizes-and-fit">Sizes &AMP; Fit</a></li>
+                    <li><a href="#description">Description</a></li>
+                    <li><a href="#attributes">Product Attributes</a></li>
+                    <li><a href="#shipping-policy">Shipping Policy</a></li>
                 </ul>
-                <div id="details">
+                <div id="description">
                     <p>{{$product->description}}</p>
                 </div>
-                <div id="sizes-and-fit">
+                <div id="attributes">
                     <p>{{$product->attributes}}</p>
+                </div>
+                <div id="shipping-policy">
+                    <p>{{$product->shipping}}</p>
                 </div>
             </div>            
         </div>

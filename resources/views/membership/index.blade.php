@@ -12,16 +12,21 @@
     </div>
 </div>
 <div class="col-md-9">
-    <div class="row-fluid" style="background-image: url('assets/bazaarcorner/img/site/cover.jpg'); background-repeat: no-repeat; background-position: center;">
-        <div class="merchant-logo" style="height: 150px; position: inherit; display: block; text-align-last: inherit;">
-<!--            <img class="img-center img-responsive img-circle" 
+    <div class="row-fluid" style="background-image: url('assets/bazaarcorner/img/site/cover.jpg'); background-repeat: no-repeat; background-position: center; max-height: 135px; width:100%; background-size: cover; display: block;">
+        <div class="merchant-logo" style="display: block; text-align-last: inherit; padding-top: 35px; padding-left: 10px; background: ">
+            <img class="img-center img-responsive img-circle" 
                                 src="{{ isset($merchant->logo) ? url(env('CDN').$product->display_image) : asset('assets/bazaarcorner/img/no-image.gif') }}"
-                                style="width: 80px; height: 80px;">            -->
+                                style="width: 100px; height: 100px;">
         </div>
-        <div class="merchant-description">
-            
-        </div>
+        <div class="merchant-description" style="background:#cacaca; height: inherit; padding: 10px 0; color: white;">
+            <div class="pull-right" style="padding-right: 30px;">
+                <button class="btn btn-danger">Follow</button>
+            </div>
+            <p style="text-align: center;"> </p>
+            <div class="clearfix"></div>
+        </div>        
     </div>
+    <div class="clearfix"></div>    
     <div class="row">
         @include('site.partial.item-listing', ['filters' => $product['filters'], 'items' => $product['items']])        
     </div>

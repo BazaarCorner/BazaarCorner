@@ -1,4 +1,3 @@
-{{dd($member['info'])}}
 @extends('layout.site')
 @section('content')
 <div class="col-md-3">

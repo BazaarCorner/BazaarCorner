@@ -26,7 +26,8 @@
             <div class="clearfix"></div>
         </div>        
     </div>
-    <div class="clearfix"></div>    
+    <div class="clearfix"></div> 
+    <div class="divider"><br><hr></div>
     <div class="row">
         @include('site.partial.item-listing', ['filters' => $product['filters'], 'items' => $product['items']])        
     </div>

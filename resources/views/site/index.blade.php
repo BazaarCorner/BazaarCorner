@@ -19,9 +19,7 @@
             <div class="row"> @include('layout.widgets.index-banner') </div>
             <div class="row content-holder">
                 <div class="col-sm-12 col-md-12">
-                    <h4>
-                        <strong>Recently Added Stuff</strong>                        
-                    </h4>
+                    <h4> <strong>Recently Added Stuff</strong> </h4>
                     <div class="row">
                         @include('site.partial.item-listing', ['products' => $new_items])
                     </div>

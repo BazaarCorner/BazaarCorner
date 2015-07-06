@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <img class="img-center img-responsive img-rounded" 
-                                src="{{ isset($merchant->logo) ? url(env('CDN').$product->display_image) : asset('assets/bazaarcorner/img/no-image.gif') }}"
+                                src="{{ isset($merchant->logo) ? url(env('MERCHANT_LOGO').$merchant->logo) : asset('assets/bazaarcorner/img/no-image.gif') }}"
                                 style="width: 50px; height: 50px;">
                         </div>
                         <div class="col-xs-8" style="padding-left: 5px">

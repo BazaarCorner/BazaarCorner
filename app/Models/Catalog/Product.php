@@ -34,4 +34,9 @@ class Product extends Model
     {
         return $this->hasMany('BazaarCorner\Models\Catalog\ProductCategory', 'item_id', 'id');
     }
+    
+    public function merchant()
+    {
+        return $this->belongsTo('BazaarCorner\Models\Membership\Member');
+    }
 }

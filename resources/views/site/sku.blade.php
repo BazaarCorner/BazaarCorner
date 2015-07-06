@@ -1,5 +1,4 @@
 @extends('layout.site')
-
 @section('content')
 <div class="container">
     <div class="row-fluid">
@@ -18,18 +17,14 @@
         </div>
         <div class="col-md-7">
             <h3 class="item-name">{{$product->name}}</h3>
-            <h5 class="brand-name">
-                @if($product->brand()->getResults())
-                    {{$product->brand->getResults()->name}}
-                @else
-                    &nbsp;&nbsp;
-                @endif
-            </h5>
+            <h4 class="brand-name">
+                <a href="{{route('member', [$product->merchant()->getResults()->slug])}}">{{$product->merchant()->getResults()->name}}</a>
+            </h4>
             <h3> 
                 @if($product->discount_id > 0)
                     <span class="text-success">$&nbsp;{{$product->list_price}}</span>
                     <small class="text-muted" style="text-decoration: line-through;">
-                    ${{$product->orig_price}}
+                        ${{$product->orig_price}}
                     </small>
                 @else
                     $&nbsp;{{$product->orig_price}}

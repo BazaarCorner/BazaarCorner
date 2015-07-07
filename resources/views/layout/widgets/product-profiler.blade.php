@@ -5,15 +5,21 @@
         <div id="item-container" class="default">
             <div class="row-fluid">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="ribbon-discount">
-                            <!--<span >60% OFF</span>-->
+                    <div class="col-md-7">
+                        @if($product->discount_id > 0)
+                        <div class="ribbon-discount" style="background-image: url('assets/bazaarcorner/img/site/icons/ribbon-discount.png'); background-repeat: no-repeat; background-position: center; padding: 3px; color: #FFFFFF; font-size: 14px">
+                            <span>&nbsp;</span>
                         </div>
+                        @else
+                        <div class="ribbon-discount" style="padding: 3px; color: #FFFFFF">
+                            <span>&nbsp;</span>
+                        </div>
+                        @endif
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-5">
                         <div class="row-fluid">
-                            <!--<span class="text-danger pull-right" ><i class="fa fa-heart" aria-hidden="true"></i></span>-->
-                            <!--<span class="text-danger pull-right" ><i class="fa icon-plus-sign" aria-hidden="true"></i></span>-->
+                            <span class="text-danger" ><i class="fa fa-heart" aria-hidden="true"></i></span>
+                            <button class="btn btn-xs btn-danger">share</button>
                         </div>
                     </div>
                     <div class="clearfix"></div>

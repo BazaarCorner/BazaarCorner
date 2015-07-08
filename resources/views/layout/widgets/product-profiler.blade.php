@@ -8,7 +8,7 @@
                     <div class="col-md-7">
                         @if($product->discount_id > 0)
                         <div class="ribbon-discount" style="background-image: url('assets/bazaarcorner/img/site/icons/ribbon-discount.png'); background-repeat: no-repeat; background-position: center; padding: 3px; color: #FFFFFF; font-size: 14px">
-                            <span>&nbsp;</span>
+                            <span style="padding-left: 5px;">{{ $product->discount()->getResults()->rate }}% OFF</span>
                         </div>
                         @else
                         <div class="ribbon-discount" style="padding: 3px; color: #FFFFFF">

@@ -39,4 +39,9 @@ class Product extends Model
     {
         return $this->belongsTo('BazaarCorner\Models\Membership\Member');
     }
+    
+    public function discount()
+    {
+        return $this->belongsTo('BazaarCorner\Models\Catalog\ProductPricing');
+    }
 }

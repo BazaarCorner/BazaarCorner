@@ -33,4 +33,9 @@ class User extends Model implements
     * @var array
     */
     protected $hidden = ['password', 'remember_token'];
+    
+    public function followers()
+    {
+        return $this->hasMany('BazaarCorner\Models\Membership\Follower', 'user_id');
+    }
 }

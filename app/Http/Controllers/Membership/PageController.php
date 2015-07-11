@@ -41,7 +41,7 @@ class PageController extends Controller
         return [
             'items' => 0,
             'ratings' => 0,
-            'followers' => 0,
+            'followers' => $this->member->users()->getResults()->followers()->count(),
         ];
     }
     

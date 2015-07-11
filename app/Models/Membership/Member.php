@@ -31,4 +31,9 @@ class Member extends Model implements
     * @var array
     */
     protected $hidden = ['password', 'remember_token'];
+    
+    public function users()
+    {
+        return $this->belongsTo("BazaarCorner\Models\Membership\User", 'user_id', 'id');
+    }
 }

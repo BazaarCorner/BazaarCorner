@@ -1,14 +1,15 @@
 <?php
 
-class Follower extends Eloquent{
+namespace BazaarCorner\Models\Membership;
 
-	protected $table 		= 'followers';
-	protected $primaryKey 	= array('follower_id','user_id');
-	
-	/*====================================================================================================================================
-	| RELATIONSHIPS
-	/*====================================================================================================================================*/
-	public function users(){
-        return $this->belongsTo('User','id','user_id');
-    }
+use Illuminate\Database\Eloquent\Model;
+
+class Follower extends Model
+{
+    protected $table    = 'followers';
+    
+    protected $fillable = [
+        'user_id',
+        'follower_id'
+    ];
 }

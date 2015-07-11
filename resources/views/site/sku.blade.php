@@ -18,7 +18,7 @@
         <div class="col-md-7">
             @if($product->discount_id > 0)
             <div  style="background-image: url('../assets/bazaarcorner/img/site/icons/ribbon-discount-reverse.png'); background-repeat: no-repeat; background-position: right; text-align: right; color: #FFFFFF; font-size: 14px;">
-                <span style="padding-right: 5px;">{{ $product->discount()->getResults()->rate }}% OFF</span>
+                <span style="padding-right: 5px;">{{ (int) $product->discount()->getResults()->rate }}% OFF</span>
             </div>
             @endif
             <h3 class="item-name">{{$product->name}}</h3>

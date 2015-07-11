@@ -26,9 +26,9 @@ class Member extends Model implements
     ];
     
     /**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = ['password', 'remember_token'];
+    * The attributes excluded from the model's JSON form.
+    *
+    * @var array
+    */
+    protected $hidden = ['password', 'remember_token'];
 }

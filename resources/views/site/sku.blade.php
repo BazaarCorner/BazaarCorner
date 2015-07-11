@@ -42,13 +42,13 @@
                     <li><a href="#shipping-policy">Shipping Policy</a></li>
                 </ul>
                 <div id="description">
-                    <p>{{$product->description}}</p>
+                    {!! $product->description !!}
                 </div>
                 <div id="attributes">
-                    <p>{{$product->attributes}}</p>
+                    {!! $product->attributes !!}
                 </div>
                 <div id="shipping-policy">
-                    <p>{{$product->shipping}}</p>
+                    {!! $product->shipping !!}
                 </div>
             </div>            
         </div>

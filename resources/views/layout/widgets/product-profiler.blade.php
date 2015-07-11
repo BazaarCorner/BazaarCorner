@@ -17,9 +17,8 @@
                         @endif
                     </div>
                     <div class="col-md-5">
-                        <div class="row-fluid">
+                        <div class="row-fluid pull-right">
                             <span class="text-danger" ><i class="fa fa-heart" aria-hidden="true"></i></span>
-                            <button class="btn btn-xs btn-danger">share</button>
                         </div>
                     </div>
                     <div class="clearfix"></div>

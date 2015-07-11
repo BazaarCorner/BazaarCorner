@@ -28,8 +28,23 @@
     </div>
     <div class="clearfix"></div> 
     <div class="divider"><br><hr></div>
+     <div class="row-fluid">
+        <span style="float: left; margin-top: 10px; display: block;">Sort by:</span>
+        <ul class="list-inline sortby">
+            @foreach($product['filters'] as $filter)
+                <li role="presentation" 
+                    @if($filter['active'])
+                        class="active"
+                    @endif
+                >
+                    <a href="{{url($filter['url'])}}">{{$filter['name']}}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+    <div class="clearfix"></div>
     <div class="row">
-        @include('site.partial.item-listing', ['filters' => $product['filters'], 'items' => $product['items']])        
+        @include('site.partial.item-listing', ['items' => $product['items']])        
     </div>
 </div>
 @stop
